@@ -13,6 +13,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -20,10 +21,12 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import app.krafted.tigeralmanac.data.ZodiacRepository
 import app.krafted.tigeralmanac.data.db.AppDatabase
+import app.krafted.tigeralmanac.ui.HomeScreen
 import app.krafted.tigeralmanac.ui.ProfileSetupScreen
 import app.krafted.tigeralmanac.ui.SplashScreen
 import app.krafted.tigeralmanac.ui.theme.TigerAlmanacTheme
 import app.krafted.tigeralmanac.ui.theme.TigerSurface
+import app.krafted.tigeralmanac.viewmodel.HomeViewModel
 import app.krafted.tigeralmanac.viewmodel.UserProfileViewModel
 
 object Routes {
@@ -51,6 +54,7 @@ class MainActivity : ComponentActivity() {
         val zodiacRepository = ZodiacRepository(this)
         val userProfileViewModelFactory =
             UserProfileViewModel.factory(userProfileDao, zodiacRepository)
+        val homeViewModelFactory = HomeViewModel.factory(this, userProfileDao)
 
         setContent {
             TigerAlmanacTheme {
@@ -60,7 +64,8 @@ class MainActivity : ComponentActivity() {
 
                 TigerAlmanacNavHost(
                     navController = navController,
-                    userProfileViewModel = userProfileViewModel
+                    userProfileViewModel = userProfileViewModel,
+                    homeViewModelFactory = homeViewModelFactory
                 )
             }
         }
@@ -70,7 +75,8 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun TigerAlmanacNavHost(
     navController: NavHostController,
-    userProfileViewModel: UserProfileViewModel
+    userProfileViewModel: UserProfileViewModel,
+    homeViewModelFactory: ViewModelProvider.Factory
 ) {
     NavHost(navController = navController, startDestination = Routes.SPLASH) {
         composable(Routes.SPLASH) {
@@ -98,7 +104,16 @@ fun TigerAlmanacNavHost(
                 }
             )
         }
-        composable(Routes.HOME) { PlaceholderScreen(Routes.HOME) }
+        composable(Routes.HOME) {
+            val homeViewModel: HomeViewModel = viewModel(factory = homeViewModelFactory)
+            HomeScreen(
+                viewModel = homeViewModel,
+                onNavigateIching = { navController.navigate(Routes.ICHING) },
+                onNavigateZodiac = { navController.navigate(Routes.ZODIAC) },
+                onNavigateFengshui = { navController.navigate(Routes.FENGSHUI_ROOMS) },
+                onNavigateProfile = { navController.navigate(Routes.SETTINGS) },
+            )
+        }
         composable(Routes.ICHING) { PlaceholderScreen(Routes.ICHING) }
         composable(Routes.ICHING_ARCHIVE) { PlaceholderScreen(Routes.ICHING_ARCHIVE) }
         composable(Routes.ZODIAC) { PlaceholderScreen(Routes.ZODIAC) }
