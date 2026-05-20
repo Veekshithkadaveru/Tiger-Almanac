@@ -16,17 +16,22 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import app.krafted.tigeralmanac.data.ZodiacRepository
 import app.krafted.tigeralmanac.data.db.AppDatabase
 import app.krafted.tigeralmanac.ui.HomeScreen
 import app.krafted.tigeralmanac.ui.ProfileSetupScreen
 import app.krafted.tigeralmanac.ui.SplashScreen
+import app.krafted.tigeralmanac.ui.iching.HexagramArchiveScreen
+import app.krafted.tigeralmanac.ui.iching.TodaysHexagramScreen
 import app.krafted.tigeralmanac.ui.theme.TigerAlmanacTheme
 import app.krafted.tigeralmanac.ui.theme.TigerSurface
 import app.krafted.tigeralmanac.viewmodel.HomeViewModel
+import app.krafted.tigeralmanac.viewmodel.IChingViewModel
 import app.krafted.tigeralmanac.viewmodel.UserProfileViewModel
 
 object Routes {
@@ -34,7 +39,10 @@ object Routes {
     const val PROFILE_SETUP = "profile_setup"
     const val HOME = "home"
     const val ICHING = "iching"
+    const val ICHING_ROUTE = "iching?hexagramId={hexagramId}"
     const val ICHING_ARCHIVE = "iching_archive"
+
+    fun ichingWithHexagram(hexagramId: Int) = "iching?hexagramId=$hexagramId"
     const val ZODIAC = "zodiac"
     const val ANIMAL_PROFILE = "animal_profile"
     const val COMPATIBILITY = "compatibility"
@@ -51,21 +59,27 @@ class MainActivity : ComponentActivity() {
 
         val database = AppDatabase.getDatabase(this)
         val userProfileDao = database.userProfileDao()
+        val hexagramHistoryDao = database.hexagramHistoryDao()
         val zodiacRepository = ZodiacRepository(this)
         val userProfileViewModelFactory =
             UserProfileViewModel.factory(userProfileDao, zodiacRepository)
         val homeViewModelFactory = HomeViewModel.factory(this, userProfileDao)
+        val iChingViewModelFactory =
+            IChingViewModel.factory(this, userProfileDao, hexagramHistoryDao)
 
         setContent {
             TigerAlmanacTheme {
                 val navController = rememberNavController()
                 val userProfileViewModel: UserProfileViewModel =
                     viewModel(factory = userProfileViewModelFactory)
+                val iChingViewModel: IChingViewModel =
+                    viewModel(factory = iChingViewModelFactory)
 
                 TigerAlmanacNavHost(
                     navController = navController,
                     userProfileViewModel = userProfileViewModel,
-                    homeViewModelFactory = homeViewModelFactory
+                    homeViewModelFactory = homeViewModelFactory,
+                    iChingViewModel = iChingViewModel
                 )
             }
         }
@@ -76,7 +90,8 @@ class MainActivity : ComponentActivity() {
 fun TigerAlmanacNavHost(
     navController: NavHostController,
     userProfileViewModel: UserProfileViewModel,
-    homeViewModelFactory: ViewModelProvider.Factory
+    homeViewModelFactory: ViewModelProvider.Factory,
+    iChingViewModel: IChingViewModel
 ) {
     NavHost(navController = navController, startDestination = Routes.SPLASH) {
         composable(Routes.SPLASH) {
@@ -114,8 +129,33 @@ fun TigerAlmanacNavHost(
                 onNavigateProfile = { navController.navigate(Routes.SETTINGS) },
             )
         }
-        composable(Routes.ICHING) { PlaceholderScreen(Routes.ICHING) }
-        composable(Routes.ICHING_ARCHIVE) { PlaceholderScreen(Routes.ICHING_ARCHIVE) }
+        composable(
+            route = Routes.ICHING_ROUTE,
+            arguments = listOf(
+                navArgument("hexagramId") {
+                    type = NavType.StringType
+                    nullable = true
+                    defaultValue = null
+                }
+            )
+        ) { backStackEntry ->
+            val hexagramId = backStackEntry.arguments?.getString("hexagramId")?.toIntOrNull()
+            TodaysHexagramScreen(
+                viewModel = iChingViewModel,
+                hexagramId = hexagramId,
+                onBack = { navController.popBackStack() },
+                onViewArchive = { navController.navigate(Routes.ICHING_ARCHIVE) },
+            )
+        }
+        composable(Routes.ICHING_ARCHIVE) {
+            HexagramArchiveScreen(
+                viewModel = iChingViewModel,
+                onBack = { navController.popBackStack() },
+                onOpenHexagram = { id ->
+                    navController.navigate(Routes.ichingWithHexagram(id))
+                },
+            )
+        }
         composable(Routes.ZODIAC) { PlaceholderScreen(Routes.ZODIAC) }
         composable(Routes.ANIMAL_PROFILE) { PlaceholderScreen(Routes.ANIMAL_PROFILE) }
         composable(Routes.COMPATIBILITY) { PlaceholderScreen(Routes.COMPATIBILITY) }
