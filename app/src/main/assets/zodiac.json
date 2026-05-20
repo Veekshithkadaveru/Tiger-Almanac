@@ -1,0 +1,532 @@
+{
+  "animals": [
+    {
+      "id": "RAT",
+      "name": "Rat",
+      "chineseName": "鼠",
+      "years": [1924, 1936, 1948, 1960, 1972, 1984, 1996, 2008, 2020],
+      "element": "Water",
+      "polarity": "Yang",
+      "personality": "Rats are among the most resourceful and intelligent of the zodiac animals. Quick-witted, charming, and highly adaptable, they thrive in complex social environments and have an extraordinary ability to find opportunity where others see only obstacle. Their sharp minds and warm sociability make them natural networkers. At their shadow side, Rats can be calculating, hoarding, and prone to anxiety.",
+      "strengths": ["Intelligent", "Resourceful", "Adaptable", "Charming", "Diligent"],
+      "weaknesses": ["Calculating", "Anxious", "Hoarding", "Indecisive", "Overcritical"],
+      "luckyNumbers": [2, 3],
+      "luckyColours": ["Blue", "Gold", "Green"],
+      "luckyDirections": ["North", "Northwest", "West"],
+      "compatibility": {
+        "excellent": ["OX", "DRAGON", "MONKEY"],
+        "good": ["RAT"],
+        "challenging": ["HORSE", "ROOSTER"]
+      },
+      "yearFortune": {
+        "2026": {
+          "overall": "The Year of the Horse creates some tension for Rats — Horse and Rat are in opposition in the Chinese zodiac. This is not a year for dramatic expansion but for consolidation, deepening, and careful management of what already exists. Focus on strengthening existing relationships and systems rather than beginning major new ventures. Those who use 2026 for inner development and relationship strengthening will find 2027 opens powerfully.",
+          "career": "Maintain and deepen current professional relationships. This is not a year to change jobs or start new ventures.",
+          "relationships": "Existing relationships benefit enormously from attention and care this year. New significant relationships are better begun in 2027.",
+          "health": "Anxiety management is the key health focus. Establish strong daily practices for mental wellbeing.",
+          "finance": "Conservative management. Protect savings and avoid risk.",
+          "luckyMonths": [2, 5, 8, 11],
+          "challengingMonths": [4, 10]
+        }
+      },
+      "monthlyFortune": {
+        "1": "January brings clarity after recent confusion. A decision you have been avoiding becomes clear.",
+        "2": "February is your strongest month this year. Significant positive development in career or finances.",
+        "3": "March asks for patience with a difficult person or situation. Perseverance is rewarded later.",
+        "4": "April is challenging. Maintain your long-term perspective and avoid reactive decisions.",
+        "5": "May brings welcome relief and positive social connections.",
+        "6": "June favours communication and negotiation. Agreements reached now are favourable.",
+        "7": "July is quiet but productive. Deep work done now pays off in September.",
+        "8": "August brings recognition and possibly financial reward for previous work.",
+        "9": "September offers an important opportunity. Be ready to act quickly.",
+        "10": "October requires careful navigation of a complex situation. Seek trusted advice.",
+        "11": "November is your second strongest month. Significant positive movement in key areas.",
+        "12": "December brings good closure to the year. Rest and reflect with genuine satisfaction."
+      }
+    },
+    {
+      "id": "OX",
+      "name": "Ox",
+      "chineseName": "牛",
+      "years": [1925, 1937, 1949, 1961, 1973, 1985, 1997, 2009, 2021],
+      "element": "Earth",
+      "polarity": "Yin",
+      "personality": "The Ox is the zodiac's most reliable and diligent worker — patient, methodical, and possessed of extraordinary endurance. Ox people are not flashy but they are deeply dependable, and over time their consistent effort produces remarkable results. They value stability, tradition, and practical achievement. At their shadow side, Oxen can be stubborn to the point of self-defeat and struggle to adapt when circumstances change.",
+      "strengths": ["Diligent", "Reliable", "Patient", "Honest", "Determined"],
+      "weaknesses": ["Stubborn", "Inflexible", "Slow to adapt", "Conservative", "Unimaginative"],
+      "luckyNumbers": [1, 4],
+      "luckyColours": ["White", "Yellow", "Green"],
+      "luckyDirections": ["North", "South"],
+      "compatibility": {
+        "excellent": ["RAT", "SNAKE", "ROOSTER"],
+        "good": ["MONKEY"],
+        "challenging": ["TIGER", "DRAGON", "HORSE", "GOAT"]
+      },
+      "yearFortune": {
+        "2026": {
+          "overall": "The Year of the Horse is a productive year for Ox people who are willing to move at a slightly faster pace than usual. Horse energy rewards those who can combine Ox diligence with a degree of Horse spontaneity. Career momentum is strong throughout the year. A partnership or collaboration begun in Spring carries significant long-term potential.",
+          "career": "Career advances through consistent excellence. A new collaboration offers exciting expansion.",
+          "relationships": "A partnership deepens significantly. For single Oxen, a new relationship begun in spring has long-term potential.",
+          "health": "Physical health is strong. Focus on mental flexibility as your primary wellness practice.",
+          "finance": "Steady growth. Investments in education or property are favoured.",
+          "luckyMonths": [3, 6, 9, 12],
+          "challengingMonths": [2, 8]
+        }
+      },
+      "monthlyFortune": {
+        "1": "January is steady and productive. Lay careful groundwork for what you want to achieve this year.",
+        "2": "February brings an unexpected challenge. Your characteristic patience is your best response.",
+        "3": "March opens powerfully. A new opportunity or partnership emerges — embrace it.",
+        "4": "April is excellent for financial decisions and long-term planning.",
+        "5": "May brings warm social energy. Relationships of all kinds benefit from your attention.",
+        "6": "June is your strongest month. Major positive developments in career and relationships.",
+        "7": "July asks for adaptability. A situation shifts unexpectedly — your flexibility determines the outcome.",
+        "8": "August is challenging. Maintain your course and do not make reactive changes.",
+        "9": "September brings harvest energy. Work done carefully in the first half of the year shows results.",
+        "10": "October is socially rich. Connections made now are valuable long-term.",
+        "11": "November brings a decision point. Your deliberate approach serves you well here.",
+        "12": "December ends the year with quiet satisfaction and genuine gratitude."
+      }
+    },
+    {
+      "id": "TIGER",
+      "name": "Tiger",
+      "chineseName": "虎",
+      "years": [1926, 1938, 1950, 1962, 1974, 1986, 1998, 2010, 2022],
+      "element": "Wood",
+      "polarity": "Yang",
+      "personality": "Tigers are natural leaders — brave, charismatic, and fiercely independent. They pursue their goals with intensity and rarely accept defeat. Their generosity and warmth draw people to them, but their stubbornness and short temper can create conflict. Tigers are at their best when they have a worthy challenge to rise to.",
+      "strengths": ["Courageous", "Confident", "Generous", "Charismatic", "Protective"],
+      "weaknesses": ["Impulsive", "Stubborn", "Short-tempered", "Reckless", "Possessive"],
+      "luckyNumbers": [1, 3, 4],
+      "luckyColours": ["Blue", "Grey", "Orange"],
+      "luckyDirections": ["East", "North", "South"],
+      "compatibility": {
+        "excellent": ["HORSE", "DOG"],
+        "good": ["PIG"],
+        "challenging": ["MONKEY", "SNAKE", "TIGER"]
+      },
+      "yearFortune": {
+        "2026": {
+          "overall": "The Year of the Horse brings powerful momentum for Tigers. Your natural boldness finds fertile ground this year — opportunities that seemed blocked begin to open. Career advancement is strongly favoured in the first half of the year. Relationships deepen if you choose vulnerability over pride. Financial growth is possible but requires discipline — avoid impulsive investments in the summer months.",
+          "career": "Leadership opportunities will appear unexpectedly. Accept them. Your natural authority is particularly respected this year.",
+          "relationships": "A significant relationship deepens or a new important one begins. Vulnerability is your strength this year, not weakness.",
+          "health": "Pay attention to stress management. Tigers tend to push through until they collapse. Schedule genuine rest.",
+          "finance": "Strong growth potential but avoid speculation between June and September.",
+          "luckyMonths": [1, 4, 7, 10],
+          "challengingMonths": [6, 9]
+        }
+      },
+      "monthlyFortune": {
+        "1": "January brings fresh energy. New initiatives launched now carry strong Tiger momentum.",
+        "2": "February calls for patience. Old matters require resolution before new ones can begin.",
+        "3": "March opens with unexpected opportunity in your professional life. Move quickly.",
+        "4": "April is your strongest month this year. Major decisions made now carry lasting positive impact.",
+        "5": "May asks for generosity. What you give freely now returns significantly later.",
+        "6": "June requires careful financial management. Avoid major purchases or investments.",
+        "7": "July brings relationship clarity. Important conversations that have been delayed become unavoidable — and ultimately beneficial.",
+        "8": "August favours creative projects and unexpected collaborations.",
+        "9": "September is a challenging month. Maintain patience and your long-term perspective.",
+        "10": "October marks a turning point. What has been building since April now bears visible fruit.",
+        "11": "November brings recognition for work done well. Accept it with grace.",
+        "12": "December asks for reflection and preparation. Plan carefully for the year ahead."
+      }
+    },
+    {
+      "id": "RABBIT",
+      "name": "Rabbit",
+      "chineseName": "兔",
+      "years": [1927, 1939, 1951, 1963, 1975, 1987, 1999, 2011, 2023],
+      "element": "Wood",
+      "polarity": "Yin",
+      "personality": "Rabbits are the gentle diplomats of the zodiac — refined, sensitive, and gifted with an instinct for harmony. They move through life with grace and tact, preferring quiet influence to open confrontation. Their aesthetic sensibility and emotional intelligence make them treasured companions and thoughtful advisors. At their shadow side, Rabbits can be conflict-avoidant, overly cautious, and inclined to withdraw when life grows demanding.",
+      "strengths": ["Gentle", "Diplomatic", "Compassionate", "Artistic", "Prudent"],
+      "weaknesses": ["Conflict-averse", "Timid", "Indecisive", "Detached", "Oversensitive"],
+      "luckyNumbers": [3, 4, 6],
+      "luckyColours": ["Pink", "Red", "Purple", "Blue"],
+      "luckyDirections": ["East", "South", "Northwest"],
+      "compatibility": {
+        "excellent": ["GOAT", "DOG", "PIG"],
+        "good": ["RABBIT"],
+        "challenging": ["ROOSTER", "DRAGON", "RAT"]
+      },
+      "yearFortune": {
+        "2026": {
+          "overall": "The Year of the Horse brings a warmer, more sociable rhythm to Rabbit life. Horse energy gently coaxes you out of your comfortable shell and into rooms where new connections wait. The first half of the year favours quiet relationship-building over bold moves, while the autumn rewards a single decisive step you have long hesitated to take. Career progress comes through allies rather than confrontation. Guard your sensitive nature against the year's faster pace by protecting your rest and your boundaries.",
+          "career": "Advancement comes through collaboration and the goodwill you have patiently built. Let trusted allies open doors you would not push on alone.",
+          "relationships": "A tender relationship deepens through small, consistent kindnesses. For single Rabbits, an introduction in spring carries quiet promise.",
+          "health": "Protect your nervous system from the year's hurry. Gentle, regular movement and ample sleep keep you steady.",
+          "finance": "Modest, careful growth. Avoid lending to others and resist pressure to commit funds quickly.",
+          "luckyMonths": [3, 5, 8, 11],
+          "challengingMonths": [6, 12]
+        }
+      },
+      "monthlyFortune": {
+        "1": "January favours quiet planning. Sketch your hopes for the year before the pace picks up.",
+        "2": "February brings a gentle social opening. Accept an invitation you would normally decline.",
+        "3": "March is warm and fortunate. A relationship or creative pursuit blossoms.",
+        "4": "April asks for patience with a misunderstanding. Soft words restore harmony.",
+        "5": "May is one of your brightest months. Beauty, affection, and good news arrive together.",
+        "6": "June is unsettled. Avoid overcommitting and guard against emotional exhaustion.",
+        "7": "July rewards a small act of courage. Speak the truth you have been holding back.",
+        "8": "August is rich and harmonious. Connections made now ripen beautifully later.",
+        "9": "September favours home and family. Tend your nest and it will sustain you.",
+        "10": "October brings a quiet financial improvement through patience and prudence.",
+        "11": "November is strong and gracious. Recognition arrives for work done gently but well.",
+        "12": "December is tiring. Withdraw, rest deeply, and let the year close in peace."
+      }
+    },
+    {
+      "id": "DRAGON",
+      "name": "Dragon",
+      "chineseName": "龍",
+      "years": [1928, 1940, 1952, 1964, 1976, 1988, 2000, 2012, 2024],
+      "element": "Earth",
+      "polarity": "Yang",
+      "personality": "Dragons are the zodiac's visionaries — magnetic, ambitious, and brimming with creative fire. They think on a grand scale and inspire others simply by their presence, drawing people into bold undertakings that lesser spirits would never attempt. Their confidence and generosity are matched by a deep idealism. At their shadow side, Dragons can be arrogant, impatient with ordinary detail, and intolerant of those who cannot match their pace.",
+      "strengths": ["Visionary", "Confident", "Charismatic", "Ambitious", "Generous"],
+      "weaknesses": ["Arrogant", "Impatient", "Domineering", "Restless", "Intolerant"],
+      "luckyNumbers": [1, 6, 7],
+      "luckyColours": ["Gold", "Silver", "Grey"],
+      "luckyDirections": ["East", "North", "South"],
+      "compatibility": {
+        "excellent": ["RAT", "MONKEY", "ROOSTER"],
+        "good": ["TIGER", "SNAKE"],
+        "challenging": ["OX", "GOAT", "DOG"]
+      },
+      "yearFortune": {
+        "2026": {
+          "overall": "The Year of the Horse stokes the Dragon's fire, and the two share a love of momentum and grand gestures. This is a year to launch the ambitious project you have been circling — the cosmic winds are at your back through the spring and early summer. Recognition and influence expand, but so does the temptation to overreach. Channel your visionary energy into one or two great efforts rather than scattering it across many. Relationships flourish when you remember to listen as well as inspire.",
+          "career": "A bold venture launched in the first half of the year carries far. Lead, but delegate the detail you find tedious.",
+          "relationships": "Your magnetism draws admirers easily this year. Depth comes from listening — let others shine beside you.",
+          "health": "Your energy is high but burns hot. Guard against burnout by building genuine rest into your ambitious schedule.",
+          "finance": "Strong earning potential. Invest in your grand vision but avoid the year's late-summer speculation.",
+          "luckyMonths": [2, 4, 7, 9],
+          "challengingMonths": [8, 11]
+        }
+      },
+      "monthlyFortune": {
+        "1": "January crackles with ambition. Define the great undertaking of your year.",
+        "2": "February opens doors. An influential ally champions your vision.",
+        "3": "March favours bold first steps. Launch what you have been planning.",
+        "4": "April is one of your strongest months. Momentum and recognition build together.",
+        "5": "May asks for patience with slower collaborators. Lead without dominating.",
+        "6": "June rewards generosity. What you give to others returns multiplied.",
+        "7": "July is brilliant and expansive. A major opportunity arrives — seize it.",
+        "8": "August is challenging. Curb impatience and avoid impulsive financial moves.",
+        "9": "September brings visible results from spring's bold beginnings.",
+        "10": "October favours partnership. Share the stage and your reach grows.",
+        "11": "November tests your humility. Listen more than you speak.",
+        "12": "December invites reflection. Survey how far you have come and plan the next ascent."
+      }
+    },
+    {
+      "id": "SNAKE",
+      "name": "Snake",
+      "chineseName": "蛇",
+      "years": [1929, 1941, 1953, 1965, 1977, 1989, 2001, 2013, 2025],
+      "element": "Fire",
+      "polarity": "Yin",
+      "personality": "Snakes are the zodiac's deep thinkers — intuitive, perceptive, and gifted with a quiet, hypnotic charm. They observe far more than they reveal, moving toward their aims with patience and subtle strategy rather than open force. Their wisdom and elegance are matched by a strong inner life and refined taste. At their shadow side, Snakes can be secretive, possessive, and prone to a suspicion that isolates them from those who care for them.",
+      "strengths": ["Wise", "Intuitive", "Strategic", "Elegant", "Composed"],
+      "weaknesses": ["Secretive", "Suspicious", "Possessive", "Aloof", "Calculating"],
+      "luckyNumbers": [2, 8, 9],
+      "luckyColours": ["Black", "Red", "Yellow"],
+      "luckyDirections": ["East", "West", "Southwest"],
+      "compatibility": {
+        "excellent": ["OX", "ROOSTER"],
+        "good": ["DRAGON"],
+        "challenging": ["TIGER", "PIG", "MONKEY"]
+      },
+      "yearFortune": {
+        "2026": {
+          "overall": "The Year of the Horse moves at a pace the contemplative Snake does not naturally favour, making this a year to choose your moments with characteristic precision. Rather than matching the Horse's gallop, let it carry you toward a single, well-chosen goal while you conserve your subtle strength. Your intuition is exceptionally sharp this year — trust the quiet inner signals that others overlook. Career rewards come to those who position themselves wisely behind the scenes. Guard against the suspicion that can sour otherwise promising relationships.",
+          "career": "Strategic positioning matters more than visible effort this year. A quiet move made in spring pays off handsomely by autumn.",
+          "relationships": "Your depth attracts a meaningful bond, but only if you let your guard down. Trust offered is trust returned.",
+          "health": "Your inner intensity needs an outlet. Meditation and reflective practice keep your mind clear and your body calm.",
+          "finance": "Shrewd, patient gains. A well-researched investment quietly outperforms; avoid acting on others' urgency.",
+          "luckyMonths": [2, 6, 9, 12],
+          "challengingMonths": [5, 7]
+        }
+      },
+      "monthlyFortune": {
+        "1": "January favours quiet observation. Watch and learn before you commit.",
+        "2": "February is fortunate. Your intuition guides you to an unexpected advantage.",
+        "3": "March rewards patient strategy. A long game begins to pay off.",
+        "4": "April asks for discretion. Keep your plans to yourself a little longer.",
+        "5": "May is challenging. Resist suspicion and give a trusted person the benefit of the doubt.",
+        "6": "June is strong and clear. A well-timed move advances your position.",
+        "7": "July is unsettled. Avoid hasty decisions made under social pressure.",
+        "8": "August favours refinement. Polish what you have built rather than expanding it.",
+        "9": "September is one of your brightest months. Quiet effort earns visible reward.",
+        "10": "October deepens an important relationship through honesty.",
+        "11": "November rewards careful financial study. Research before you commit.",
+        "12": "December is wise and fortunate. Close the year having quietly achieved much."
+      }
+    },
+    {
+      "id": "HORSE",
+      "name": "Horse",
+      "chineseName": "馬",
+      "years": [1930, 1942, 1954, 1966, 1978, 1990, 2002, 2014, 2026],
+      "element": "Fire",
+      "polarity": "Yang",
+      "personality": "Horses are the free spirits of the zodiac — energetic, warm-hearted, and forever drawn toward the open horizon. They love movement, adventure, and the company of others, throwing themselves into life with infectious enthusiasm. Their independence and honesty win them many friends, and they inspire others to chase their own freedom. At their shadow side, Horses can be impatient, restless to the point of inconstancy, and inclined to bolt from commitments that begin to feel confining.",
+      "strengths": ["Energetic", "Independent", "Warm-hearted", "Adventurous", "Honest"],
+      "weaknesses": ["Impatient", "Restless", "Inconstant", "Impulsive", "Self-centred"],
+      "luckyNumbers": [2, 3, 7],
+      "luckyColours": ["Yellow", "Green", "Red"],
+      "luckyDirections": ["East", "West", "South"],
+      "compatibility": {
+        "excellent": ["TIGER", "GOAT", "DOG"],
+        "good": ["HORSE"],
+        "challenging": ["RAT", "OX", "ROOSTER"]
+      },
+      "yearFortune": {
+        "2026": {
+          "overall": "This is your year — the Year of the Horse — and it brings the surge of vitality and opportunity you thrive on. Doors open readily, journeys both literal and figurative call to you, and your natural enthusiasm meets a world ready to respond. Yet the tradition warns that one's own zodiac year (ben ming nian) can be turbulent as well as bright, so temper your gallop with a little caution. Wear a touch of red for protection, honour your commitments, and the year delivers remarkable growth. Love and friendship flourish wherever you bring your warmth.",
+          "career": "Opportunities arrive in abundance — choose the one worth committing to rather than chasing every horizon. Bold moves made early are favoured.",
+          "relationships": "Your charisma is irresistible this year. The challenge is constancy: stay where your heart truly is and the bond deepens.",
+          "health": "High energy can tip into recklessness in your own year. Channel your vigour into exercise and avoid taking physical risks.",
+          "finance": "Earnings flow freely but so does spending. Save during the strong months to cushion the impulsive ones.",
+          "luckyMonths": [1, 5, 8, 11],
+          "challengingMonths": [4, 9]
+        }
+      },
+      "monthlyFortune": {
+        "1": "January bursts with vitality. Set your sights high — this is your year.",
+        "2": "February favours travel and new connections. Say yes to adventure.",
+        "3": "March rewards a bold professional move. Momentum is on your side.",
+        "4": "April is restless and tricky. Slow down and honour your commitments.",
+        "5": "May is one of your brightest months. Opportunity and affection arrive together.",
+        "6": "June asks for follow-through. Finish what your enthusiasm began.",
+        "7": "July favours friendship and collaboration. You inspire those around you.",
+        "8": "August is strong and fortunate. A long-held goal comes within reach.",
+        "9": "September is challenging. Curb impulsiveness and avoid physical risks.",
+        "10": "October rewards constancy in love. Stay present and the bond deepens.",
+        "11": "November is bright and expansive. Recognition and reward arrive.",
+        "12": "December invites you to rest your tireless spirit and reflect on a remarkable year."
+      }
+    },
+    {
+      "id": "GOAT",
+      "name": "Goat",
+      "chineseName": "羊",
+      "years": [1931, 1943, 1955, 1967, 1979, 1991, 2003, 2015, 2027],
+      "element": "Earth",
+      "polarity": "Yin",
+      "personality": "Goats are the zodiac's gentle artists — tender-hearted, imaginative, and deeply attuned to beauty and feeling. They create harmony around them and offer compassion freely, often sensing the unspoken needs of others before they are voiced. Their creativity and kindness make them beloved, and they flourish in supportive, peaceful surroundings. At their shadow side, Goats can be insecure, overly dependent, and prone to worry that drains their natural sweetness.",
+      "strengths": ["Compassionate", "Creative", "Gentle", "Empathetic", "Peace-loving"],
+      "weaknesses": ["Insecure", "Indecisive", "Dependent", "Pessimistic", "Worrisome"],
+      "luckyNumbers": [2, 7],
+      "luckyColours": ["Green", "Red", "Purple"],
+      "luckyDirections": ["North", "East", "South"],
+      "compatibility": {
+        "excellent": ["RABBIT", "HORSE", "PIG"],
+        "good": ["GOAT"],
+        "challenging": ["OX", "DOG"]
+      },
+      "yearFortune": {
+        "2026": {
+          "overall": "The Year of the Horse is warm and supportive for Goats, who count the Horse among their finest allies. This year's lively energy lifts your spirits and surrounds you with the encouragement you need to flourish. Creative work is especially favoured — what you make from the heart this year finds an appreciative audience. Lean on the Horse's confidence to act on the dreams you usually only imagine. Guard your sensitive nature from worry, and let supportive friends carry you past your moments of self-doubt.",
+          "career": "Creative and caring work is richly rewarded. A supportive ally helps you act on ideas you would otherwise leave unspoken.",
+          "relationships": "A warm, secure bond grows this year. Surround yourself with kind people and your confidence blossoms.",
+          "health": "Worry is your chief health risk. Build calming routines and lean on others when anxiety rises.",
+          "finance": "Gentle, steady improvement. A creative pursuit may bring unexpected income.",
+          "luckyMonths": [2, 5, 7, 10],
+          "challengingMonths": [3, 9]
+        }
+      },
+      "monthlyFortune": {
+        "1": "January favours gentle beginnings. Nurture one cherished idea into life.",
+        "2": "February is warm and fortunate. Supportive friends lift your spirits.",
+        "3": "March is uncertain. Resist worry and lean on those who love you.",
+        "4": "April rewards creative work. What you make from the heart is well received.",
+        "5": "May is one of your brightest months. Confidence and affection grow together.",
+        "6": "June favours home and harmony. Tend your peaceful nest.",
+        "7": "July is strong and tender. A relationship deepens beautifully.",
+        "8": "August asks for a small act of self-trust. Decide and the path clears.",
+        "9": "September is challenging. Protect your sensitive nature and rest often.",
+        "10": "October brings welcome recognition for your gentle, devoted efforts.",
+        "11": "November favours connection. Reach out and you will be warmly met.",
+        "12": "December closes the year in comfort. Rest among those who cherish you."
+      }
+    },
+    {
+      "id": "MONKEY",
+      "name": "Monkey",
+      "chineseName": "猴",
+      "years": [1932, 1944, 1956, 1968, 1980, 1992, 2004, 2016, 2028],
+      "element": "Metal",
+      "polarity": "Yang",
+      "personality": "Monkeys are the zodiac's clever inventors — quick, curious, and endlessly inventive in solving problems others find impossible. Their wit and sociability make them delightful company, and their adaptability lets them thrive in almost any situation. They love a challenge and the chance to outsmart it. At their shadow side, Monkeys can be mischievous to the point of unreliability, restless, and tempted to use their cleverness for shortcuts rather than honest effort.",
+      "strengths": ["Clever", "Inventive", "Witty", "Versatile", "Sociable"],
+      "weaknesses": ["Restless", "Mischievous", "Unreliable", "Opportunistic", "Easily bored"],
+      "luckyNumbers": [1, 7, 8],
+      "luckyColours": ["White", "Blue", "Gold"],
+      "luckyDirections": ["North", "Northwest", "West"],
+      "compatibility": {
+        "excellent": ["RAT", "DRAGON"],
+        "good": ["OX"],
+        "challenging": ["TIGER", "SNAKE", "PIG"]
+      },
+      "yearFortune": {
+        "2026": {
+          "overall": "The Year of the Horse keeps the restless Monkey wonderfully engaged, offering a steady stream of fresh problems to solve and novelties to explore. Your quick mind is perfectly suited to the year's fast pace, and clever solutions you devise now earn real recognition. The key to a great year is finishing what you start — your appetite for new diversions can scatter your considerable talent. Channel your inventiveness into one ambitious project and see it through. Friendships multiply, and a playful approach opens doors that earnestness would not.",
+          "career": "Your ingenuity is in demand. A clever solution earns recognition — but follow it through to completion to claim the full reward.",
+          "relationships": "Your wit attracts many, yet depth requires you to stay put. Choose presence over the next exciting distraction.",
+          "health": "Mental restlessness can disturb your sleep. Give your busy mind a creative outlet and a firm bedtime.",
+          "finance": "Quick opportunities abound. Pursue the legitimate ones and resist the temptation of risky shortcuts.",
+          "luckyMonths": [3, 6, 8, 11],
+          "challengingMonths": [2, 10]
+        }
+      },
+      "monthlyFortune": {
+        "1": "January sparks fresh ideas. Pick the most promising and commit to it.",
+        "2": "February is tricky. Avoid shortcuts and finish what you have begun.",
+        "3": "March rewards your ingenuity. A clever move advances your standing.",
+        "4": "April favours collaboration. Your wit makes you the heart of any team.",
+        "5": "May asks for follow-through. See a lingering project to completion.",
+        "6": "June is bright and busy. Opportunity arrives for those who deliver.",
+        "7": "July favours learning something new. Curiosity opens an unexpected door.",
+        "8": "August is one of your strongest months. Recognition follows real results.",
+        "9": "September rewards loyalty in friendship. Stay present for those who matter.",
+        "10": "October is unsettled. Resist boredom and avoid risky shortcuts.",
+        "11": "November is fortunate. A finished project brings well-earned reward.",
+        "12": "December invites you to consolidate gains and plan your next clever venture."
+      }
+    },
+    {
+      "id": "ROOSTER",
+      "name": "Rooster",
+      "chineseName": "雞",
+      "years": [1933, 1945, 1957, 1969, 1981, 1993, 2005, 2017, 2029],
+      "element": "Metal",
+      "polarity": "Yin",
+      "personality": "Roosters are the zodiac's confident perfectionists — observant, hardworking, and proud of a job done precisely right. They have a sharp eye for detail and a flair for presentation, and they speak their minds with unflinching honesty. Their diligence and reliability earn deep respect. At their shadow side, Roosters can be critical, vain, and so exacting that they exhaust both themselves and the people around them.",
+      "strengths": ["Observant", "Hardworking", "Honest", "Confident", "Organised"],
+      "weaknesses": ["Critical", "Vain", "Perfectionist", "Blunt", "Impatient"],
+      "luckyNumbers": [5, 7, 8],
+      "luckyColours": ["Gold", "Brown", "Yellow"],
+      "luckyDirections": ["South", "Southeast"],
+      "compatibility": {
+        "excellent": ["OX", "SNAKE", "DRAGON"],
+        "good": ["ROOSTER"],
+        "challenging": ["RAT", "RABBIT", "DOG"]
+      },
+      "yearFortune": {
+        "2026": {
+          "overall": "The Year of the Horse moves quickly past the meticulous Rooster, who prefers everything in its proper order, making this a year to loosen your grip on perfection. Progress comes to those who can accept good enough and adapt on the move rather than polishing every detail. Your hard work is noticed and rewarded, but pair it with flexibility and the year flourishes. Relationships improve markedly when you soften your honest critiques into encouragement. Trust that not everything must be flawless for it to succeed.",
+          "career": "Your diligence earns advancement, but flexibility unlocks it. Adapt to changing plans rather than insisting on the original blueprint.",
+          "relationships": "Soften your honesty into kindness this year. Encouragement, not critique, deepens the bonds you value.",
+          "health": "Perfectionism breeds tension. Schedule genuine downtime and let some standards relax for the sake of your nerves.",
+          "finance": "Disciplined saving pays off. A well-organised budget grows steadily through the year.",
+          "luckyMonths": [1, 4, 7, 10],
+          "challengingMonths": [6, 11]
+        }
+      },
+      "monthlyFortune": {
+        "1": "January favours organisation. Set clear systems for the year ahead.",
+        "2": "February rewards adaptability. Bend with a change rather than resisting it.",
+        "3": "March brings recognition for diligent work. Accept praise graciously.",
+        "4": "April is one of your strongest months. Effort and reward align.",
+        "5": "May asks for patience with imperfection. Good enough truly is enough.",
+        "6": "June is challenging. Soften your criticism and protect your relationships.",
+        "7": "July favours career advancement through flexible cooperation.",
+        "8": "August rewards careful financial planning. Your budget bears fruit.",
+        "9": "September favours honest conversation tempered with kindness.",
+        "10": "October is bright and productive. A well-organised effort succeeds.",
+        "11": "November is tense. Relax your standards and rest your busy mind.",
+        "12": "December invites you to take pride in a year of solid, disciplined work."
+      }
+    },
+    {
+      "id": "DOG",
+      "name": "Dog",
+      "chineseName": "狗",
+      "years": [1934, 1946, 1958, 1970, 1982, 1994, 2006, 2018, 2030],
+      "element": "Earth",
+      "polarity": "Yang",
+      "personality": "Dogs are the zodiac's faithful guardians — loyal, honest, and driven by a deep sense of justice. They stand by the people and principles they believe in with unwavering devotion, and they can be counted on in any crisis. Their sincerity and protective warmth make them trusted friends and steadfast partners. At their shadow side, Dogs can be anxious, stubborn, and quick to expect the worst, carrying worries that weigh on their generous hearts.",
+      "strengths": ["Loyal", "Honest", "Just", "Protective", "Dependable"],
+      "weaknesses": ["Anxious", "Pessimistic", "Stubborn", "Critical", "Wary"],
+      "luckyNumbers": [3, 4, 9],
+      "luckyColours": ["Green", "Red", "Purple"],
+      "luckyDirections": ["East", "South", "Northeast"],
+      "compatibility": {
+        "excellent": ["TIGER", "RABBIT", "HORSE"],
+        "good": ["DOG"],
+        "challenging": ["DRAGON", "GOAT", "ROOSTER"]
+      },
+      "yearFortune": {
+        "2026": {
+          "overall": "The Year of the Horse is encouraging for Dogs, who find a loyal and energetic ally in the Horse. The year's optimism is exactly the tonic for your worry-prone heart, lifting burdens you have carried too long. Your faithfulness is rewarded with deeper trust and new opportunities offered by those who value your integrity. Take a brave step toward a goal you have hesitated over — the supportive winds are with you. Let go of pessimism and allow yourself to expect good things; this year, they are coming.",
+          "career": "Your integrity attracts opportunity and trust. A role offered by someone who values your reliability proves a fine fit.",
+          "relationships": "Loyalty is richly rewarded this year. A faithful bond deepens, and your devotion is met in kind.",
+          "health": "Release the worry you habitually carry. Time in nature and the company of friends restores your spirits.",
+          "finance": "Steady, honest gains. A prudent decision made with a trusted advisor improves your footing.",
+          "luckyMonths": [2, 5, 8, 11],
+          "challengingMonths": [4, 7]
+        }
+      },
+      "monthlyFortune": {
+        "1": "January favours a fresh, hopeful start. Set aside an old worry.",
+        "2": "February is warm and fortunate. Loyalty earns you a welcome reward.",
+        "3": "March rewards a brave step toward a long-held goal.",
+        "4": "April is anxious. Lean on trusted friends and avoid expecting the worst.",
+        "5": "May is one of your brightest months. Trust and opportunity grow together.",
+        "6": "June favours fairness. Standing up for what is right earns lasting respect.",
+        "7": "July is challenging. Guard against pessimism and protect your peace.",
+        "8": "August is strong and steady. A faithful effort bears real fruit.",
+        "9": "September deepens an important bond through honesty and devotion.",
+        "10": "October rewards prudent financial choices made with good counsel.",
+        "11": "November is bright. Your integrity is recognised and rewarded.",
+        "12": "December closes the year in warmth. Rest among loyal friends."
+      }
+    },
+    {
+      "id": "PIG",
+      "name": "Pig",
+      "chineseName": "豬",
+      "years": [1935, 1947, 1959, 1971, 1983, 1995, 2007, 2019, 2031],
+      "element": "Water",
+      "polarity": "Yin",
+      "personality": "Pigs are the zodiac's generous souls — sincere, good-natured, and blessed with a warm capacity for enjoyment and contentment. They give freely of themselves, trust readily, and find genuine pleasure in life's comforts and in the happiness of others. Their honesty and easygoing kindness make them deeply likeable. At their shadow side, Pigs can be naive, self-indulgent, and so trusting that they are taken advantage of by those less scrupulous.",
+      "strengths": ["Generous", "Sincere", "Good-natured", "Diligent", "Compassionate"],
+      "weaknesses": ["Naive", "Self-indulgent", "Gullible", "Materialistic", "Over-trusting"],
+      "luckyNumbers": [2, 5, 8],
+      "luckyColours": ["Yellow", "Grey", "Brown", "Gold"],
+      "luckyDirections": ["East", "Southwest", "Northeast"],
+      "compatibility": {
+        "excellent": ["GOAT", "RABBIT"],
+        "good": ["TIGER", "PIG"],
+        "challenging": ["SNAKE", "MONKEY"]
+      },
+      "yearFortune": {
+        "2026": {
+          "overall": "The Year of the Horse brings a cheerful, sociable energy that suits the warm-hearted Pig well. Good fortune flows toward you through the many friendships you cultivate, and your generosity returns to you in unexpected kindnesses. This is a year of comfortable progress rather than dramatic upheaval — enjoy its pleasures, but keep a watchful eye on your trusting nature. Not everyone deserves the open-handed faith you offer so freely. Protect your resources from those who would exploit your good heart, and the year is genuinely abundant.",
+          "career": "Goodwill and honest effort carry you forward. A friendly collaboration opens a comfortable new opportunity.",
+          "relationships": "Warmth and sincerity deepen your bonds. A relationship grows happily, nourished by your generous spirit.",
+          "health": "Enjoy life's comforts in moderation. Balance your love of indulgence with regular, gentle activity.",
+          "finance": "Income flows steadily, but guard against the gullible generosity that drains it. Verify before you lend or invest.",
+          "luckyMonths": [3, 6, 9, 12],
+          "challengingMonths": [5, 8]
+        }
+      },
+      "monthlyFortune": {
+        "1": "January is warm and sociable. Friendships sown now bear fortune later.",
+        "2": "February favours honest effort. Steady work earns comfortable reward.",
+        "3": "March is bright and lucky. Goodwill returns to you generously.",
+        "4": "April rewards generosity given wisely. Help where it is truly needed.",
+        "5": "May is challenging. Guard your trust and verify before you commit.",
+        "6": "June is one of your strongest months. Comfort and progress arrive together.",
+        "7": "July favours family and shared pleasures. Gather those you love.",
+        "8": "August asks for caution with money. Protect your resources from exploitation.",
+        "9": "September is fortunate. A friendly collaboration opens a fine opportunity.",
+        "10": "October rewards moderation. Enjoy life's comforts without excess.",
+        "11": "November deepens a cherished relationship through sincere warmth.",
+        "12": "December closes the year in abundance. Celebrate among loyal friends."
+      }
+    }
+  ]
+}

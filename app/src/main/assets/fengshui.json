@@ -1,0 +1,356 @@
+{
+  "rooms": [
+    {
+      "id": "ENTRANCE",
+      "name": "Entrance & Hallway",
+      "chineseName": "入口",
+      "symbol": "tiger004_sym_1",
+      "background": "tiger004_back_1",
+      "principle": "The entrance is the mouth of your home — where all energy enters. What the entrance welcomes, the home receives.",
+      "energyRole": "The entrance sets the energetic tone for the entire home. Energy — positive and negative — enters primarily through the front door. A clear, welcoming, well-maintained entrance allows good chi to flow freely into your home and life.",
+      "tips": [
+        {
+          "title": "Keep the Path Clear",
+          "category": "Flow",
+          "priority": "Essential",
+          "body": "The path from the street to your front door must be clear of obstacles, overgrown plants, broken steps, or accumulated clutter. Energy follows the path — anything that impedes the physical path impedes the flow of good fortune. Fix broken steps, trim overgrown paths, and remove any obstructions immediately."
+        },
+        {
+          "title": "A Well-Lit Entrance Welcomes Opportunity",
+          "category": "Light",
+          "priority": "Important",
+          "body": "Darkness at the entrance creates stagnant energy and signals that the home is closed to the outside world. Ensure the entrance is well-lit — particularly at night. A bright, warm light beside or above the front door actively attracts positive energy and creates a welcoming signal to both visitors and fortune."
+        },
+        {
+          "title": "The Front Door Colour Matters",
+          "category": "Elements",
+          "priority": "Meaningful",
+          "body": "The front door colour interacts with the compass direction it faces. A south-facing door benefits from red or orange — fire colours. A north-facing door benefits from blue or black — water colours. East-facing doors suit green or brown — wood colours. West-facing doors suit white or grey — metal colours."
+        },
+        {
+          "title": "Remove Shoes and Clutter Immediately Inside",
+          "category": "Cleanliness",
+          "priority": "Essential",
+          "body": "Shoes carry the energy of everywhere you have been. Leaving them beyond the entrance threshold prevents outside energy from being tracked through the home. A shoe rack just inside or outside the door is ideal. Keep the hallway completely clear of clutter — a cluttered entrance creates the feeling of difficulty and constriction whenever you enter your own home."
+        },
+        {
+          "title": "A Mirror Facing the Door Pushes Energy Away",
+          "category": "Placement",
+          "priority": "Important",
+          "body": "A common Feng Shui mistake: placing a mirror directly facing the front door. This reflects incoming energy back out before it can circulate through the home. If you have a mirror facing the front door, move it to a side wall instead. A mirror on the side wall of a hallway actually enhances energy by expanding the sense of space."
+        },
+        {
+          "title": "Fresh Plants Attract Living Energy",
+          "category": "Life",
+          "priority": "Recommended",
+          "body": "A healthy, thriving plant near the entrance attracts living chi — the energy of growth and vitality. Round-leafed plants are preferred over sharp or spiky ones. Keep plants healthy — a dying plant creates negative energy. Replace or remove any plant that is wilting or diseased immediately."
+        },
+        {
+          "title": "Sound at the Entrance Activates Chi",
+          "category": "Activation",
+          "priority": "Optional",
+          "body": "A wind chime near the front door — particularly a metal one for homes with west or northwest-facing doors — activates and circulates energy as you enter and leave. The sound breaks up stagnant chi and signals movement and openness. Choose a chime with a pleasant, clear tone rather than a harsh or discordant one."
+        }
+      ]
+    },
+    {
+      "id": "LIVING_ROOM",
+      "name": "Living Room",
+      "chineseName": "客廳",
+      "symbol": "tiger004_sym_2",
+      "background": "tiger004_back_2",
+      "principle": "The living room is where family energy gathers and guests are received. It reflects the social and relational vitality of the household.",
+      "energyRole": "The living room is the social heart of the home — where family bonds strengthen and the household presents itself to the outside world through guests. Its Feng Shui directly affects the quality of relationships, social opportunities, and the overall sense of wellbeing for everyone in the home.",
+      "tips": [
+        {
+          "title": "The Command Position for Seating",
+          "category": "Placement",
+          "priority": "Essential",
+          "body": "The main sofa or chair should be positioned with a solid wall behind it and a clear view of the room's entrance — this is the command position. Sitting with your back to the door creates subconscious vulnerability and unease. If furniture currently has its back to the door, rearrange to give the primary seating a wall behind it and a sight line to the entrance."
+        },
+        {
+          "title": "Natural Light is Living Energy",
+          "category": "Light",
+          "priority": "Essential",
+          "body": "The living room requires good natural light during the day. Dark living rooms create heavy, stagnant energy that depresses mood and blocks opportunity. If natural light is limited, add full-spectrum lighting, mirrors to reflect available light, and keep windows spotlessly clean. Light-coloured walls in dark rooms significantly improve energy."
+        },
+        {
+          "title": "Clutter is the Number One Energy Killer",
+          "category": "Cleanliness",
+          "priority": "Essential",
+          "body": "Clutter in the living room — accumulated books, objects, clothing, toys, or decorations — creates dense, stagnant energy that literally slows down everyone in the household. The living room should be cleared completely of anything that is not actively used, genuinely beautiful, or deeply meaningful. Less is consistently more in Feng Shui."
+        },
+        {
+          "title": "Round and Oval Shapes Promote Harmony",
+          "category": "Shape",
+          "priority": "Recommended",
+          "body": "Sharp corners — particularly those pointing toward seating — create what Feng Shui calls 'poison arrows' of cutting energy. Round coffee tables, oval rugs, and curved furniture edges promote smooth energy flow and a sense of harmony. Where sharp-cornered furniture cannot be replaced, soften corners with plants, fabric, or repositioning."
+        },
+        {
+          "title": "Balance the Five Elements",
+          "category": "Elements",
+          "priority": "Meaningful",
+          "body": "A harmonious living room contains all five elements in balance. Wood: plants or wooden furniture. Fire: candles or a fireplace. Earth: ceramic or stone objects. Metal: metallic accents or frames. Water: a small water feature, aquarium, or artwork depicting water. An excess of any one element creates imbalance. A good test: stand in the room and notice which element seems dominant."
+        },
+        {
+          "title": "Family Photos Create Warm Yang Energy",
+          "category": "Symbolism",
+          "priority": "Recommended",
+          "body": "Displaying happy family photos in the living room generates warm, positive yang energy and strengthens family bonds. Photos should show people at their happiest and most connected. Avoid displaying photos of people alone, in conflict, or in unhappy circumstances. The energy of what is displayed on walls radiates into the room."
+        }
+      ]
+    },
+    {
+      "id": "KITCHEN",
+      "name": "Kitchen",
+      "chineseName": "廚房",
+      "symbol": "tiger004_sym_3",
+      "background": "tiger004_back_3",
+      "principle": "The kitchen governs the health and prosperity of the household. The stove is the most powerful Feng Shui object in the home.",
+      "energyRole": "In Chinese tradition, the kitchen is where the family is nourished — both physically and financially. The stove is considered the most significant object in the home from a Feng Shui perspective, as it represents the family's prosperity and the health of all who eat from it.",
+      "tips": [
+        {
+          "title": "The Stove Must Never Face the Door",
+          "category": "Placement",
+          "priority": "Essential",
+          "body": "The cook should never have their back to the kitchen door while cooking. This creates a subconscious sense of vulnerability and is considered very inauspicious. If the stove currently faces the door, use a reflective surface behind the stove — such as a mirror or reflective tile — so the cook can see anyone entering. Alternatively, cook on a different burner that provides a better sightline."
+        },
+        {
+          "title": "Use All Burners Regularly",
+          "category": "Activation",
+          "priority": "Important",
+          "body": "Using only one or two burners while others sit permanently unused is considered to limit prosperity. Feng Shui tradition holds that all burners represent abundance — rotating their use symbolises and activates the full potential of the household's prosperity. Make a habit of using different burners regularly."
+        },
+        {
+          "title": "Keep the Kitchen Clean and Orderly",
+          "category": "Cleanliness",
+          "priority": "Essential",
+          "body": "A dirty, cluttered kitchen directly affects the health and financial energy of the household in Feng Shui understanding. Clean the stove after every use. Keep counters as clear as possible. Fix leaking taps immediately — leaking water symbolises and creates financial leakage. An orderly kitchen reflects and creates an orderly, prosperous household."
+        },
+        {
+          "title": "Fire and Water Must Not Directly Face Each Other",
+          "category": "Elements",
+          "priority": "Important",
+          "body": "The stove (fire) and the sink or refrigerator (water) in direct opposition creates elemental conflict that generates tension in the household. If your stove and sink face each other directly, place a wooden object or plant between them — wood mediates between water and fire in the five element cycle and harmonises the conflict."
+        },
+        {
+          "title": "Fresh Food and Abundance Symbols",
+          "category": "Symbolism",
+          "priority": "Recommended",
+          "body": "A bowl of fresh fruit, particularly oranges, in the kitchen or dining area is one of the most traditional Chinese symbols of prosperity and abundance. Keep the fruit bowl full and replenish it regularly. The visual presence of abundance creates the energetic conditions for abundance."
+        }
+      ]
+    },
+    {
+      "id": "BEDROOM",
+      "name": "Bedroom",
+      "chineseName": "臥室",
+      "symbol": "tiger004_sym_4",
+      "background": "tiger004_back_4",
+      "principle": "The bedroom governs rest, health, and romantic relationships. Its energy directly affects the quality of sleep and the depth of intimate bonds.",
+      "energyRole": "We spend approximately a third of our lives in the bedroom, and the quality of energy we rest in profoundly shapes our health, emotional state, and relationship quality. The bedroom is where we are most yin — most receptive and vulnerable — and its Feng Shui has a direct and powerful effect on wellbeing.",
+      "tips": [
+        {
+          "title": "The Bed in the Command Position",
+          "category": "Placement",
+          "priority": "Essential",
+          "body": "The bed should be positioned so the sleeper can see the bedroom door without being in direct line with it — the command position. Sleeping with your feet pointing directly at the door (the coffin position) is considered very inauspicious. The ideal position is diagonally opposite the door with a solid wall behind the headboard."
+        },
+        {
+          "title": "A Solid Headboard for Support",
+          "category": "Placement",
+          "priority": "Important",
+          "body": "A solid, stable headboard against a solid wall provides energetic support during sleep. It symbolises and creates the sense of having strong backing in life. Avoid beds with no headboard, headboards with gaps or bars, or beds positioned away from any wall. The feeling of support during sleep translates directly into feeling supported in waking life."
+        },
+        {
+          "title": "No Mirror Facing the Bed",
+          "category": "Placement",
+          "priority": "Essential",
+          "body": "A mirror that reflects the bed during sleep is one of the most commonly cited Feng Shui concerns. The reflection of sleeping occupants is believed to disturb rest and invite a third-party energy into relationships. If you have a mirror facing your bed, cover it at night or relocate it to a position where it does not reflect the sleeping area."
+        },
+        {
+          "title": "Electronics Create Yang Energy in a Yin Space",
+          "category": "Energy",
+          "priority": "Important",
+          "body": "The bedroom is ideally a yin space — quiet, restful, and free from active stimulation. Electronics — particularly televisions, computers, and phones — generate active yang energy that disrupts the restful yin quality needed for deep sleep and genuine regeneration. Keep electronics out of the bedroom where possible, or position them where they are not visible from the bed."
+        },
+        {
+          "title": "Fresh Air and Natural Light During the Day",
+          "category": "Vitality",
+          "priority": "Essential",
+          "body": "A bedroom that is kept dark and closed during the day accumulates stagnant yin energy that becomes oppressive. Open windows daily to allow fresh air to circulate. Let natural light in during the day. A room that breathes during waking hours is a room that genuinely rests you during sleeping hours."
+        },
+        {
+          "title": "Pairs and Couples Symbolism for Relationships",
+          "category": "Symbolism",
+          "priority": "Recommended",
+          "body": "For those seeking to attract or deepen a romantic partnership, the bedroom should contain imagery and objects in pairs — two bedside lamps of equal size, two bedside tables, artwork showing couples or pairs in harmony. Single people who want partnership should avoid prominent single imagery (a lone figure, a single flower) and replace it with paired symbols."
+        }
+      ]
+    },
+    {
+      "id": "STUDY",
+      "name": "Study / Home Office",
+      "chineseName": "書房",
+      "symbol": "tiger004_sym_5",
+      "background": "tiger004_back_5",
+      "principle": "The study governs intellectual development, career success, and the household's connection to the wider world of opportunity.",
+      "energyRole": "The study or home office is where mental energy concentrates and career opportunity enters the home. Its Feng Shui directly affects focus, creativity, productivity, and the quality of career outcomes for those who work from home.",
+      "tips": [
+        {
+          "title": "Face the Door From Your Desk",
+          "category": "Placement",
+          "priority": "Essential",
+          "body": "The desk should be positioned so you face the door while working — not with your back to it. Sitting with your back to the door creates subconscious anxiety and vulnerability that drains concentration. The command position at the desk — facing the door with a solid wall behind — creates maximum focus and authority."
+        },
+        {
+          "title": "The Desk Should Not Face a Wall Directly",
+          "category": "Placement",
+          "priority": "Important",
+          "body": "Sitting at a desk facing a blank wall creates a sense of blocked horizons and limited thinking. If space constraints require facing a wall, use the wall to create a vision board, hang inspiring artwork, or add a mirror that expands the visual field. The goal is to open the sense of possibility in your field of vision."
+        },
+        {
+          "title": "Clear Desk Creates Clear Mind",
+          "category": "Cleanliness",
+          "priority": "Essential",
+          "body": "A cluttered desk creates a cluttered mind. Remove everything from your desk that is not directly relevant to your current work. Files and papers that are not active should be stored out of sight. The physical clarity of your workspace directly translates into mental clarity and the ability to think creatively and strategically."
+        },
+        {
+          "title": "Plants Bring Growth Energy to Career Work",
+          "category": "Life",
+          "priority": "Recommended",
+          "body": "A healthy plant in the study brings wood element energy — the energy of growth, ambition, and upward movement. This is particularly beneficial for career development and creative work. Position the plant to your left (the dragon side) while seated at your desk. Choose a plant that grows upright — bamboo is traditionally used for career advancement."
+        },
+        {
+          "title": "Good Lighting Prevents Energy Stagnation",
+          "category": "Light",
+          "priority": "Important",
+          "body": "Dim lighting in a workspace creates lethargy and stagnant thinking energy. Ensure strong, good-quality light at your workspace — ideally natural light supplemented by warm artificial light for evening work. Position your desk to receive natural light from the side rather than behind (which creates glare) or in front (which creates shadows)."
+        }
+      ]
+    },
+    {
+      "id": "BATHROOM",
+      "name": "Bathroom",
+      "chineseName": "浴室",
+      "symbol": "tiger004_sym_6",
+      "background": "tiger004_back_1",
+      "principle": "The bathroom governs the draining of energy from the home. What flows away takes prosperity with it if not carefully managed.",
+      "energyRole": "Bathrooms are the most energetically challenging rooms in the home because they are primary drain points — water and energy literally flow away through them. Feng Shui bathroom practice focuses on keeping drains closed, keeping the space clean and bright, and ensuring that the bathroom does not become a dominant feature of the home's energy.",
+      "tips": [
+        {
+          "title": "Keep the Toilet Lid Closed",
+          "category": "Drain",
+          "priority": "Essential",
+          "body": "An open toilet is the most significant energy drain in the home. Wealth and positive energy literally drain away through an open toilet. Make closing the toilet lid after every use a household habit without exception. This single practice has more impact on bathroom Feng Shui than almost any other."
+        },
+        {
+          "title": "Keep the Bathroom Door Closed",
+          "category": "Containment",
+          "priority": "Important",
+          "body": "A bathroom door left constantly open allows drain energy to circulate through the home. Keep the bathroom door closed except when in use. If the bathroom is directly visible from the main living areas, this is particularly important — the drain energy of the bathroom flows toward the open space it faces."
+        },
+        {
+          "title": "Fix Leaks Immediately",
+          "category": "Maintenance",
+          "priority": "Essential",
+          "body": "A leaking tap is one of the clearest symbols and causes of financial drain in Feng Shui. The sound of water constantly dripping represents and creates a steady leakage of prosperity. Fix all leaks immediately — this is non-negotiable. If a leak has existed for some time, fixing it can genuinely shift the financial energy of the household."
+        },
+        {
+          "title": "Bright, Clean, and Well-Ventilated",
+          "category": "Energy",
+          "priority": "Essential",
+          "body": "A dark, damp, poorly ventilated bathroom accumulates the most negative energy of any room in the home. Ensure strong lighting, regular thorough cleaning, and good ventilation or frequent airing. A bathroom that smells clean and feels bright creates the minimum negative energy possible for this inherently draining space."
+        },
+        {
+          "title": "Mirrors Expand the Space and Brighten Energy",
+          "category": "Enhancement",
+          "priority": "Recommended",
+          "body": "A good-quality, clean mirror in the bathroom brightens the energy and creates a sense of spaciousness that counteracts the contracting drain energy. Keep mirrors impeccably clean — a dirty or spotty mirror in the bathroom is considered to distort personal and relational clarity."
+        }
+      ]
+    },
+    {
+      "id": "DINING",
+      "name": "Dining Room",
+      "chineseName": "飯廳",
+      "symbol": "tiger004_sym_7",
+      "background": "tiger004_back_2",
+      "principle": "The dining room is where the family gathers to nourish and connect. It represents the quality of family bonds and shared abundance.",
+      "energyRole": "The dining room is where the family comes together around the shared act of eating — one of the most powerful bonding activities in human life. Its Feng Shui affects the quality of family relationships, the sense of abundance, and the health of all who eat there.",
+      "tips": [
+        {
+          "title": "A Round or Oval Table Promotes Harmony",
+          "category": "Shape",
+          "priority": "Recommended",
+          "body": "A round or oval dining table has no head position and no sharp corners — everyone seated at it is energetically equal and connected. This promotes harmony and genuine conversation. A rectangular table creates hierarchy (head of the table) and sharp corners that generate subtle tension. If you have a rectangular table, soften its energy with a round centrepiece and ensure no one sits at the corner positions."
+        },
+        {
+          "title": "Good Lighting Creates Abundance Energy",
+          "category": "Light",
+          "priority": "Important",
+          "body": "Dining under good, warm light creates the feeling and energetic reality of abundance. Dim, harsh, or flickering light creates discomfort and suppresses the sense of plenty. A chandelier or warm pendant light directly above the dining table is ideal — it focuses warm light on the shared meal and creates a gathering point for positive energy."
+        },
+        {
+          "title": "A Mirror Reflecting the Dining Table Doubles Abundance",
+          "category": "Enhancement",
+          "priority": "Recommended",
+          "body": "Placing a mirror on the wall beside the dining table so it reflects the food and the family eating is one of the most traditional prosperity enhancements in Feng Shui. The mirror doubles the image of abundance — symbolically and energetically. Ensure the mirror is at a height that reflects the table and seated people rather than just the ceiling."
+        },
+        {
+          "title": "Fresh Flowers or Fruit as a Centrepiece",
+          "category": "Symbolism",
+          "priority": "Recommended",
+          "body": "A centrepiece of fresh flowers, a bowl of fruit, or a healthy plant on the dining table maintains living energy at the heart of family gathering. Replace flowers before they begin to fade — dying flowers at the centre of the dining table creates declining energy. Artificial flowers carry significantly less positive energy than living ones."
+        },
+        {
+          "title": "The Dining Room Should Not Be Directly Visible From the Front Door",
+          "category": "Placement",
+          "priority": "Important",
+          "body": "If the dining room and its table are immediately visible upon entering the front door, food energy disperses before it can nourish the household. Use a screen, room divider, plants, or furniture positioning to create a visual separation between the entrance and the dining area."
+        }
+      ]
+    },
+    {
+      "id": "GARDEN",
+      "name": "Garden / Balcony",
+      "chineseName": "花園",
+      "symbol": "tiger004_sym_1",
+      "background": "tiger004_back_3",
+      "principle": "The garden or outdoor space represents the household's connection to natural chi — the living energy of heaven and earth.",
+      "energyRole": "Outdoor spaces — whether a large garden or a small balcony — are where the home connects with natural chi, the living energy of the natural world. A well-tended outdoor space brings fresh, vibrant energy toward the home. A neglected one creates stagnant, oppressive energy that presses inward.",
+      "tips": [
+        {
+          "title": "A Clear, Well-Maintained Path Attracts Chi",
+          "category": "Flow",
+          "priority": "Essential",
+          "body": "The path leading to your home is the primary channel through which energy approaches. Keep it clear, clean, and well-lit. Repair broken paving, remove weeds from cracks, and ensure the path feels welcoming rather than obstructed. A gently curving path is more auspicious than a straight one — curved paths allow energy to meander and build rather than rushing past."
+        },
+        {
+          "title": "Healthy Plants Create Living Energy",
+          "category": "Life",
+          "priority": "Essential",
+          "body": "Healthy, thriving plants in the garden or on the balcony bring the most powerful living chi available. Prioritise plants that grow strongly and healthily in your climate rather than exotic ones that struggle. Remove or replace plants that are dying, diseased, or permanently struggling — they create negative energy that affects the home."
+        },
+        {
+          "title": "Water Features Attract Prosperity",
+          "category": "Elements",
+          "priority": "Recommended",
+          "body": "A water feature — fountain, pond, or birdbath — in the garden attracts prosperity chi if positioned correctly. Water flowing toward the home (not away from it) is most auspicious. The sound of moving water activates chi and creates a sense of abundance. Keep water features clean — stagnant water has the opposite effect."
+        },
+        {
+          "title": "Avoid Sharp, Spiky Plants Near the Entrance",
+          "category": "Placement",
+          "priority": "Important",
+          "body": "Plants with sharp spines or thorns — particularly cactuses — placed near the entrance create cutting energy that challenges those entering and leaving. Reposition spiky plants away from entry points. Round-leafed, full, lush plants are preferred near entrances as they create welcoming, expansive energy."
+        },
+        {
+          "title": "Garden Lighting Extends Positive Energy Into the Night",
+          "category": "Light",
+          "priority": "Recommended",
+          "body": "Lighting the garden or balcony at night extends the positive yang energy of the space beyond daylight hours. Solar-powered lights along paths, warm uplighting on trees, and soft illumination of water features all maintain living energy in the outdoor space after dark. Dark, unlit outdoor spaces become yin heavy and create stagnant energy."
+        }
+      ]
+    }
+  ]
+}
