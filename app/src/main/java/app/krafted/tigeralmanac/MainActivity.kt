@@ -30,6 +30,7 @@ import app.krafted.tigeralmanac.ui.iching.HexagramArchiveScreen
 import app.krafted.tigeralmanac.ui.iching.TodaysHexagramScreen
 import app.krafted.tigeralmanac.ui.theme.TigerAlmanacTheme
 import app.krafted.tigeralmanac.ui.theme.TigerSurface
+import app.krafted.tigeralmanac.ui.zodiac.AnimalProfileScreen
 import app.krafted.tigeralmanac.ui.zodiac.ZodiacDashboardScreen
 import app.krafted.tigeralmanac.viewmodel.HomeViewModel
 import app.krafted.tigeralmanac.viewmodel.IChingViewModel
@@ -169,7 +170,14 @@ fun TigerAlmanacNavHost(
                 onViewFullProfile = { navController.navigate(Routes.ANIMAL_PROFILE) },
             )
         }
-        composable(Routes.ANIMAL_PROFILE) { PlaceholderScreen(Routes.ANIMAL_PROFILE) }
+        composable(Routes.ANIMAL_PROFILE) {
+            val zodiacViewModel: ZodiacViewModel = viewModel(factory = zodiacViewModelFactory)
+            AnimalProfileScreen(
+                viewModel = zodiacViewModel,
+                onBack = { navController.popBackStack() },
+                onNavigateToCompatibility = { navController.navigate(Routes.COMPATIBILITY) }
+            )
+        }
         composable(Routes.COMPATIBILITY) { PlaceholderScreen(Routes.COMPATIBILITY) }
         composable(Routes.FENGSHUI_ROOMS) { PlaceholderScreen(Routes.FENGSHUI_ROOMS) }
         composable(Routes.FENGSHUI_DETAIL) { PlaceholderScreen(Routes.FENGSHUI_DETAIL) }
