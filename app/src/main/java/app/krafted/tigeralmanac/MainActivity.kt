@@ -30,9 +30,11 @@ import app.krafted.tigeralmanac.ui.iching.HexagramArchiveScreen
 import app.krafted.tigeralmanac.ui.iching.TodaysHexagramScreen
 import app.krafted.tigeralmanac.ui.theme.TigerAlmanacTheme
 import app.krafted.tigeralmanac.ui.theme.TigerSurface
+import app.krafted.tigeralmanac.ui.zodiac.ZodiacDashboardScreen
 import app.krafted.tigeralmanac.viewmodel.HomeViewModel
 import app.krafted.tigeralmanac.viewmodel.IChingViewModel
 import app.krafted.tigeralmanac.viewmodel.UserProfileViewModel
+import app.krafted.tigeralmanac.viewmodel.ZodiacViewModel
 
 object Routes {
     const val SPLASH = "splash"
@@ -66,6 +68,7 @@ class MainActivity : ComponentActivity() {
         val homeViewModelFactory = HomeViewModel.factory(this, userProfileDao)
         val iChingViewModelFactory =
             IChingViewModel.factory(this, userProfileDao, hexagramHistoryDao)
+        val zodiacViewModelFactory = ZodiacViewModel.factory(this, userProfileDao)
 
         setContent {
             TigerAlmanacTheme {
@@ -79,7 +82,8 @@ class MainActivity : ComponentActivity() {
                     navController = navController,
                     userProfileViewModel = userProfileViewModel,
                     homeViewModelFactory = homeViewModelFactory,
-                    iChingViewModel = iChingViewModel
+                    iChingViewModel = iChingViewModel,
+                    zodiacViewModelFactory = zodiacViewModelFactory
                 )
             }
         }
@@ -91,7 +95,8 @@ fun TigerAlmanacNavHost(
     navController: NavHostController,
     userProfileViewModel: UserProfileViewModel,
     homeViewModelFactory: ViewModelProvider.Factory,
-    iChingViewModel: IChingViewModel
+    iChingViewModel: IChingViewModel,
+    zodiacViewModelFactory: ViewModelProvider.Factory
 ) {
     NavHost(navController = navController, startDestination = Routes.SPLASH) {
         composable(Routes.SPLASH) {
@@ -156,7 +161,14 @@ fun TigerAlmanacNavHost(
                 },
             )
         }
-        composable(Routes.ZODIAC) { PlaceholderScreen(Routes.ZODIAC) }
+        composable(Routes.ZODIAC) {
+            val zodiacViewModel: ZodiacViewModel = viewModel(factory = zodiacViewModelFactory)
+            ZodiacDashboardScreen(
+                viewModel = zodiacViewModel,
+                onBack = { navController.popBackStack() },
+                onViewFullProfile = { navController.navigate(Routes.ANIMAL_PROFILE) },
+            )
+        }
         composable(Routes.ANIMAL_PROFILE) { PlaceholderScreen(Routes.ANIMAL_PROFILE) }
         composable(Routes.COMPATIBILITY) { PlaceholderScreen(Routes.COMPATIBILITY) }
         composable(Routes.FENGSHUI_ROOMS) { PlaceholderScreen(Routes.FENGSHUI_ROOMS) }
