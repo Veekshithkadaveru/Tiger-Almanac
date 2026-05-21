@@ -86,7 +86,7 @@ class HomeViewModel(
         val whisperIching = todayHexagram?.guidance?.let { truncate(it) } ?: ""
         val whisperZodiac =
             zodiacProfile?.monthlyFortune?.get(month.toString())?.let { truncate(it) } ?: ""
-        val whisperFengshui = rooms.find { it.id == "bedroom" }
+        val whisperFengshui = rooms.find { it.id.equals("BEDROOM", ignoreCase = true) }
             ?.tips?.firstOrNull()?.body?.let { truncate(it) } ?: ""
 
         _state.value = HomeState(

@@ -30,9 +30,12 @@ import app.krafted.tigeralmanac.ui.iching.HexagramArchiveScreen
 import app.krafted.tigeralmanac.ui.iching.TodaysHexagramScreen
 import app.krafted.tigeralmanac.ui.theme.TigerAlmanacTheme
 import app.krafted.tigeralmanac.ui.theme.TigerSurface
+import app.krafted.tigeralmanac.ui.fengshui.RoomDetailScreen
+import app.krafted.tigeralmanac.ui.fengshui.RoomSelectScreen
 import app.krafted.tigeralmanac.ui.zodiac.AnimalProfileScreen
 import app.krafted.tigeralmanac.ui.zodiac.CompatibilityScreen
 import app.krafted.tigeralmanac.ui.zodiac.ZodiacDashboardScreen
+import app.krafted.tigeralmanac.viewmodel.FengShuiViewModel
 import app.krafted.tigeralmanac.viewmodel.HomeViewModel
 import app.krafted.tigeralmanac.viewmodel.IChingViewModel
 import app.krafted.tigeralmanac.viewmodel.UserProfileViewModel
@@ -51,7 +54,8 @@ object Routes {
     const val ANIMAL_PROFILE = "animal_profile"
     const val COMPATIBILITY = "compatibility"
     const val FENGSHUI_ROOMS = "fengshui_rooms"
-    const val FENGSHUI_DETAIL = "fengshui_detail"
+    const val FENGSHUI_DETAIL_ROUTE = "fengshui_detail/{roomId}"
+    fun fengShuiDetailWithRoom(roomId: String) = "fengshui_detail/$roomId"
     const val SEARCH = "search"
     const val SETTINGS = "settings"
 }
@@ -71,6 +75,7 @@ class MainActivity : ComponentActivity() {
         val iChingViewModelFactory =
             IChingViewModel.factory(this, userProfileDao, hexagramHistoryDao)
         val zodiacViewModelFactory = ZodiacViewModel.factory(this, userProfileDao)
+        val fengShuiViewModelFactory = FengShuiViewModel.factory(this, database.bookmarkDao())
 
         setContent {
             TigerAlmanacTheme {
@@ -79,13 +84,16 @@ class MainActivity : ComponentActivity() {
                     viewModel(factory = userProfileViewModelFactory)
                 val iChingViewModel: IChingViewModel =
                     viewModel(factory = iChingViewModelFactory)
+                val fengShuiViewModel: FengShuiViewModel =
+                    viewModel(factory = fengShuiViewModelFactory)
 
                 TigerAlmanacNavHost(
                     navController = navController,
                     userProfileViewModel = userProfileViewModel,
                     homeViewModelFactory = homeViewModelFactory,
                     iChingViewModel = iChingViewModel,
-                    zodiacViewModelFactory = zodiacViewModelFactory
+                    zodiacViewModelFactory = zodiacViewModelFactory,
+                    fengShuiViewModel = fengShuiViewModel
                 )
             }
         }
@@ -98,7 +106,8 @@ fun TigerAlmanacNavHost(
     userProfileViewModel: UserProfileViewModel,
     homeViewModelFactory: ViewModelProvider.Factory,
     iChingViewModel: IChingViewModel,
-    zodiacViewModelFactory: ViewModelProvider.Factory
+    zodiacViewModelFactory: ViewModelProvider.Factory,
+    fengShuiViewModel: FengShuiViewModel
 ) {
     NavHost(navController = navController, startDestination = Routes.SPLASH) {
         composable(Routes.SPLASH) {
@@ -186,8 +195,25 @@ fun TigerAlmanacNavHost(
                 onBack = { navController.popBackStack() },
             )
         }
-        composable(Routes.FENGSHUI_ROOMS) { PlaceholderScreen(Routes.FENGSHUI_ROOMS) }
-        composable(Routes.FENGSHUI_DETAIL) { PlaceholderScreen(Routes.FENGSHUI_DETAIL) }
+        composable(Routes.FENGSHUI_ROOMS) {
+            RoomSelectScreen(
+                viewModel = fengShuiViewModel,
+                onBack = { navController.popBackStack() },
+                onSelectRoom = { id ->
+                    navController.navigate(Routes.fengShuiDetailWithRoom(id))
+                }
+            )
+        }
+        composable(
+            route = Routes.FENGSHUI_DETAIL_ROUTE,
+            arguments = listOf(navArgument("roomId") { type = NavType.StringType })
+        ) { backStackEntry ->
+            RoomDetailScreen(
+                viewModel = fengShuiViewModel,
+                roomId = backStackEntry.arguments?.getString("roomId"),
+                onBack = { navController.popBackStack() }
+            )
+        }
         composable(Routes.SEARCH) { PlaceholderScreen(Routes.SEARCH) }
         composable(Routes.SETTINGS) { PlaceholderScreen(Routes.SETTINGS) }
     }
