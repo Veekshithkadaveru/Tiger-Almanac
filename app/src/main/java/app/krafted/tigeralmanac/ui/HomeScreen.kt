@@ -69,6 +69,7 @@ fun HomeScreen(
     onNavigateZodiac: () -> Unit,
     onNavigateFengshui: () -> Unit,
     onNavigateProfile: () -> Unit,
+    onNavigateSearch: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val state by viewModel.state.collectAsState()
@@ -120,6 +121,7 @@ fun HomeScreen(
                             name = state.profile?.name ?: "Traveller",
                             birthYear = state.profile?.birthYear ?: 1990,
                             onNavigateProfile = onNavigateProfile,
+                            onNavigateSearch = onNavigateSearch,
                         )
                     }
                 }
@@ -188,6 +190,7 @@ private fun GreetingHeader(
     name: String,
     birthYear: Int,
     onNavigateProfile: () -> Unit,
+    onNavigateSearch: () -> Unit,
 ) {
     val emoji = ZodiacAnimal.calculateZodiacAnimal(birthYear).emoji
     Row(
@@ -216,6 +219,18 @@ private fun GreetingHeader(
                 .clip(RoundedCornerShape(12.dp))
                 .background(TigerInk)
                 .border(1.dp, TigerGold.copy(alpha = 0.40f), RoundedCornerShape(12.dp))
+                .clickable { onNavigateSearch() },
+            contentAlignment = Alignment.Center,
+        ) {
+            Text(text = "🔍", fontSize = 22.sp)
+        }
+        Spacer(modifier = Modifier.width(12.dp))
+        Box(
+            modifier = Modifier
+                .size(48.dp)
+                .clip(RoundedCornerShape(12.dp))
+                .background(TigerInk)
+                .border(1.dp, TigerGold.copy(alpha = 0.40f), RoundedCornerShape(12.dp))
                 .clickable { onNavigateProfile() },
             contentAlignment = Alignment.Center,
         ) {
@@ -230,8 +245,12 @@ private fun TodayPanel(
 ) {
     val now = remember { LocalDate.now() }
     val dateText = remember { now.format(DateTimeFormatter.ofPattern("EEE, MMM d")) }
-    val yearText = remember { now.year.toString() }
     val luck = state.dailyLuck
+
+    val lunarDate = state.lunarDate.ifEmpty { "4th Moon · Day 4" }
+    val dayPillar = state.dayPillar.ifEmpty { "戊寅" }
+    val dayAnimal = state.dayAnimal.ifEmpty { "Tiger" }
+    val dayElement = state.dayElement.ifEmpty { "Wood" }
 
     GoldFrame(modifier = Modifier.fillMaxWidth()) {
         SealHeader(
@@ -239,57 +258,79 @@ private fun TodayPanel(
             subtitle = "TODAY'S READING",
             symbolRes = R.drawable.tiger004_sym_1,
         )
-        Spacer(modifier = Modifier.height(10.dp))
+        Spacer(modifier = Modifier.height(14.dp))
         Row(
             modifier = Modifier.fillMaxWidth(),
             verticalAlignment = Alignment.CenterVertically,
         ) {
             Column(modifier = Modifier.weight(1f)) {
                 Text(
-                    text = dateText,
+                    text = "TODAY",
                     fontFamily = InterFont,
-                    fontWeight = FontWeight.Medium,
+                    fontSize = 9.sp,
+                    letterSpacing = 2.sp,
+                    color = TigerCream.copy(alpha = 0.78f),
+                )
+                Spacer(modifier = Modifier.height(2.dp))
+                Text(
+                    text = dateText,
+                    fontFamily = CormorantGaramond,
+                    fontWeight = FontWeight.SemiBold,
+                    fontSize = 22.sp,
+                    color = TigerGoldLight,
+                )
+                Spacer(modifier = Modifier.height(2.dp))
+                Text(
+                    text = lunarDate,
+                    fontFamily = CormorantGaramond,
+                    fontWeight = FontWeight.Normal,
                     fontSize = 13.sp,
                     color = TigerCream,
                 )
-                Text(
-                    text = yearText,
-                    fontFamily = InterFont,
-                    fontWeight = FontWeight.Normal,
-                    fontSize = 11.sp,
-                    color = TigerCream.copy(alpha = 0.60f),
-                )
             }
-            if (luck != null) {
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    Box(
-                        modifier = Modifier
-                            .clip(RoundedCornerShape(8.dp))
-                            .background(TigerGold.copy(alpha = 0.20f))
-                            .border(1.dp, TigerGold.copy(alpha = 0.20f), RoundedCornerShape(8.dp))
-                            .padding(horizontal = 10.dp, vertical = 4.dp),
-                    ) {
-                        Text(
-                            text = luck.luckyColour,
-                            fontFamily = InterFont,
-                            fontSize = 11.sp,
-                            color = TigerGold,
-                        )
-                    }
-                    Spacer(modifier = Modifier.width(8.dp))
-                    Text(
-                        text = "No. ${luck.luckyNumber}",
-                        fontFamily = InterFont,
-                        fontSize = 11.sp,
-                        color = TigerGold,
-                    )
-                }
+
+            Column(horizontalAlignment = Alignment.End) {
+                Text(
+                    text = dayPillar,
+                    fontFamily = CormorantGaramond,
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 28.sp,
+                    color = TigerGold,
+                )
+                Spacer(modifier = Modifier.height(4.dp))
+                Text(
+                    text = "${dayAnimal.uppercase()} · ${dayElement.uppercase()}",
+                    fontFamily = InterFont,
+                    fontSize = 9.sp,
+                    letterSpacing = 1.5.sp,
+                    color = TigerCream.copy(alpha = 0.78f),
+                )
             }
         }
         Spacer(modifier = Modifier.height(12.dp))
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(1.dp)
+                .background(
+                    Brush.horizontalGradient(
+                        listOf(
+                            Color.Transparent,
+                            TigerGold.copy(alpha = 0.25f),
+                            Color.Transparent,
+                        )
+                    )
+                ),
+        )
+        Spacer(modifier = Modifier.height(10.dp))
         if (luck != null) {
             Row(modifier = Modifier.fillMaxWidth()) {
-                LuckCell(modifier = Modifier.weight(1f), label = "COLOUR", value = luck.luckyColour)
+                LuckCell(
+                    modifier = Modifier.weight(1f),
+                    label = "COLOUR",
+                    value = luck.luckyColour,
+                    swatch = true
+                )
                 LuckCell(
                     modifier = Modifier.weight(1f),
                     label = "NUMBER",
@@ -318,7 +359,7 @@ private fun TodayPanel(
             )
             Spacer(modifier = Modifier.height(10.dp))
             Text(
-                text = luck.affirmation,
+                text = "“${luck.affirmation}”",
                 fontFamily = CormorantGaramond,
                 fontWeight = FontWeight.Normal,
                 fontStyle = FontStyle.Italic,
@@ -335,6 +376,7 @@ private fun LuckCell(
     modifier: Modifier = Modifier,
     label: String,
     value: String,
+    swatch: Boolean = false,
 ) {
     Column(
         modifier = modifier,
@@ -346,15 +388,46 @@ private fun LuckCell(
             fontSize = 9.sp,
             color = TigerCream.copy(alpha = 0.60f),
         )
-        Text(
-            text = value,
-            fontFamily = InterFont,
-            fontWeight = FontWeight.Medium,
-            fontSize = 12.sp,
-            color = TigerGoldLight,
-            textAlign = TextAlign.Center,
-        )
+        Spacer(modifier = Modifier.height(4.dp))
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.Center
+        ) {
+            if (swatch) {
+                Box(
+                    modifier = Modifier
+                        .size(10.dp)
+                        .clip(RoundedCornerShape(3.dp))
+                        .background(swatchColor(value))
+                        .border(1.dp, TigerGold.copy(alpha = 0.40f), RoundedCornerShape(3.dp)),
+                )
+                Spacer(modifier = Modifier.width(5.dp))
+            }
+            Text(
+                text = value,
+                fontFamily = InterFont,
+                fontWeight = FontWeight.Medium,
+                fontSize = 12.sp,
+                color = TigerGoldLight,
+                textAlign = TextAlign.Center,
+            )
+        }
     }
+}
+
+private fun swatchColor(name: String): Color = when (name.trim().lowercase()) {
+    "red", "crimson", "scarlet" -> Color(0xFFC8252B)
+    "gold", "golden" -> TigerGold
+    "yellow" -> Color(0xFFF4D03F)
+    "green", "jade", "emerald" -> Color(0xFF2A8A6E)
+    "blue", "azure" -> Color(0xFF1F3A5F)
+    "white", "silver" -> Color(0xFFF5E8C8)
+    "black", "ink" -> Color(0xFF1A0F08)
+    "purple", "violet" -> Color(0xFF7A3F8A)
+    "orange" -> Color(0xFFE08A3C)
+    "brown" -> Color(0xFF6B4423)
+    "pink" -> Color(0xFFE0809B)
+    else -> TigerGold
 }
 
 @Composable

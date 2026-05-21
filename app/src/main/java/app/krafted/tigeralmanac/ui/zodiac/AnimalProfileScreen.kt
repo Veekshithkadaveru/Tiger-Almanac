@@ -25,6 +25,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
@@ -45,7 +46,6 @@ import app.krafted.tigeralmanac.ui.components.TagTone
 import app.krafted.tigeralmanac.ui.theme.CormorantGaramond
 import app.krafted.tigeralmanac.ui.theme.InterFont
 import app.krafted.tigeralmanac.ui.theme.TigerCream
-import app.krafted.tigeralmanac.ui.theme.TigerCreamSoft
 import app.krafted.tigeralmanac.ui.theme.TigerGold
 import app.krafted.tigeralmanac.ui.theme.TigerGoldLight
 import app.krafted.tigeralmanac.ui.theme.TigerInk
@@ -60,9 +60,12 @@ fun AnimalProfileScreen(
     viewModel: ZodiacViewModel,
     onBack: () -> Unit,
     onNavigateToCompatibility: () -> Unit,
+    animalId: String? = null,
     modifier: Modifier = Modifier,
 ) {
     val state by viewModel.state.collectAsState()
+
+    LaunchedEffect(animalId) { animalId?.let(viewModel::showAnimal) }
 
     Box(
         modifier = modifier
@@ -233,7 +236,11 @@ fun AnimalProfileScreen(
                                 .weight(1f)
                                 .clip(RoundedCornerShape(10.dp))
                                 .background(TigerInk.copy(alpha = 0.4f))
-                                .border(1.dp, TigerGold.copy(alpha = 0.25f), RoundedCornerShape(10.dp))
+                                .border(
+                                    1.dp,
+                                    TigerGold.copy(alpha = 0.25f),
+                                    RoundedCornerShape(10.dp)
+                                )
                                 .padding(12.dp),
                         ) {
                             Text(
@@ -263,7 +270,11 @@ fun AnimalProfileScreen(
                                 .weight(1f)
                                 .clip(RoundedCornerShape(10.dp))
                                 .background(TigerInk.copy(alpha = 0.4f))
-                                .border(1.dp, TigerGold.copy(alpha = 0.25f), RoundedCornerShape(10.dp))
+                                .border(
+                                    1.dp,
+                                    TigerGold.copy(alpha = 0.25f),
+                                    RoundedCornerShape(10.dp)
+                                )
                                 .padding(12.dp),
                         ) {
                             Text(
@@ -321,7 +332,11 @@ fun AnimalProfileScreen(
                                             .size(16.dp)
                                             .clip(CircleShape)
                                             .background(colourFor(col))
-                                            .border(1.dp, TigerGold.copy(alpha = 0.45f), CircleShape),
+                                            .border(
+                                                1.dp,
+                                                TigerGold.copy(alpha = 0.45f),
+                                                CircleShape
+                                            ),
                                     )
                                     Spacer(modifier = Modifier.width(8.dp))
                                     Text(

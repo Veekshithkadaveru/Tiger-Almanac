@@ -26,18 +26,20 @@ import app.krafted.tigeralmanac.data.db.AppDatabase
 import app.krafted.tigeralmanac.ui.HomeScreen
 import app.krafted.tigeralmanac.ui.ProfileSetupScreen
 import app.krafted.tigeralmanac.ui.SplashScreen
-import app.krafted.tigeralmanac.ui.iching.HexagramArchiveScreen
-import app.krafted.tigeralmanac.ui.iching.TodaysHexagramScreen
-import app.krafted.tigeralmanac.ui.theme.TigerAlmanacTheme
-import app.krafted.tigeralmanac.ui.theme.TigerSurface
 import app.krafted.tigeralmanac.ui.fengshui.RoomDetailScreen
 import app.krafted.tigeralmanac.ui.fengshui.RoomSelectScreen
+import app.krafted.tigeralmanac.ui.iching.HexagramArchiveScreen
+import app.krafted.tigeralmanac.ui.iching.TodaysHexagramScreen
+import app.krafted.tigeralmanac.ui.search.SearchScreen
+import app.krafted.tigeralmanac.ui.theme.TigerAlmanacTheme
+import app.krafted.tigeralmanac.ui.theme.TigerSurface
 import app.krafted.tigeralmanac.ui.zodiac.AnimalProfileScreen
 import app.krafted.tigeralmanac.ui.zodiac.CompatibilityScreen
 import app.krafted.tigeralmanac.ui.zodiac.ZodiacDashboardScreen
 import app.krafted.tigeralmanac.viewmodel.FengShuiViewModel
 import app.krafted.tigeralmanac.viewmodel.HomeViewModel
 import app.krafted.tigeralmanac.viewmodel.IChingViewModel
+import app.krafted.tigeralmanac.viewmodel.SearchViewModel
 import app.krafted.tigeralmanac.viewmodel.UserProfileViewModel
 import app.krafted.tigeralmanac.viewmodel.ZodiacViewModel
 
@@ -52,6 +54,8 @@ object Routes {
     fun ichingWithHexagram(hexagramId: Int) = "iching?hexagramId=$hexagramId"
     const val ZODIAC = "zodiac"
     const val ANIMAL_PROFILE = "animal_profile"
+    const val ANIMAL_PROFILE_ROUTE = "animal_profile?animalId={animalId}"
+    fun animalProfileWithId(id: String) = "animal_profile?animalId=$id"
     const val COMPATIBILITY = "compatibility"
     const val FENGSHUI_ROOMS = "fengshui_rooms"
     const val FENGSHUI_DETAIL_ROUTE = "fengshui_detail/{roomId}"
@@ -76,6 +80,7 @@ class MainActivity : ComponentActivity() {
             IChingViewModel.factory(this, userProfileDao, hexagramHistoryDao)
         val zodiacViewModelFactory = ZodiacViewModel.factory(this, userProfileDao)
         val fengShuiViewModelFactory = FengShuiViewModel.factory(this, database.bookmarkDao())
+        val searchViewModelFactory = SearchViewModel.factory(this)
 
         setContent {
             TigerAlmanacTheme {
@@ -93,7 +98,8 @@ class MainActivity : ComponentActivity() {
                     homeViewModelFactory = homeViewModelFactory,
                     iChingViewModel = iChingViewModel,
                     zodiacViewModelFactory = zodiacViewModelFactory,
-                    fengShuiViewModel = fengShuiViewModel
+                    fengShuiViewModel = fengShuiViewModel,
+                    searchViewModelFactory = searchViewModelFactory
                 )
             }
         }
@@ -107,7 +113,8 @@ fun TigerAlmanacNavHost(
     homeViewModelFactory: ViewModelProvider.Factory,
     iChingViewModel: IChingViewModel,
     zodiacViewModelFactory: ViewModelProvider.Factory,
-    fengShuiViewModel: FengShuiViewModel
+    fengShuiViewModel: FengShuiViewModel,
+    searchViewModelFactory: ViewModelProvider.Factory
 ) {
     NavHost(navController = navController, startDestination = Routes.SPLASH) {
         composable(Routes.SPLASH) {
@@ -143,6 +150,7 @@ fun TigerAlmanacNavHost(
                 onNavigateZodiac = { navController.navigate(Routes.ZODIAC) },
                 onNavigateFengshui = { navController.navigate(Routes.FENGSHUI_ROOMS) },
                 onNavigateProfile = { navController.navigate(Routes.SETTINGS) },
+                onNavigateSearch = { navController.navigate(Routes.SEARCH) },
             )
         }
         composable(
@@ -180,12 +188,22 @@ fun TigerAlmanacNavHost(
                 onViewFullProfile = { navController.navigate(Routes.ANIMAL_PROFILE) },
             )
         }
-        composable(Routes.ANIMAL_PROFILE) {
+        composable(
+            route = Routes.ANIMAL_PROFILE_ROUTE,
+            arguments = listOf(
+                navArgument("animalId") {
+                    type = NavType.StringType
+                    nullable = true
+                    defaultValue = null
+                }
+            )
+        ) { backStackEntry ->
             val zodiacViewModel: ZodiacViewModel = viewModel(factory = zodiacViewModelFactory)
             AnimalProfileScreen(
                 viewModel = zodiacViewModel,
                 onBack = { navController.popBackStack() },
-                onNavigateToCompatibility = { navController.navigate(Routes.COMPATIBILITY) }
+                onNavigateToCompatibility = { navController.navigate(Routes.COMPATIBILITY) },
+                animalId = backStackEntry.arguments?.getString("animalId"),
             )
         }
         composable(Routes.COMPATIBILITY) {
@@ -214,7 +232,16 @@ fun TigerAlmanacNavHost(
                 onBack = { navController.popBackStack() }
             )
         }
-        composable(Routes.SEARCH) { PlaceholderScreen(Routes.SEARCH) }
+        composable(Routes.SEARCH) {
+            val searchViewModel: SearchViewModel = viewModel(factory = searchViewModelFactory)
+            SearchScreen(
+                viewModel = searchViewModel,
+                onBack = { navController.popBackStack() },
+                onOpenHexagram = { id -> navController.navigate(Routes.ichingWithHexagram(id)) },
+                onOpenAnimal = { id -> navController.navigate(Routes.animalProfileWithId(id)) },
+                onOpenRoom = { id -> navController.navigate(Routes.fengShuiDetailWithRoom(id)) },
+            )
+        }
         composable(Routes.SETTINGS) { PlaceholderScreen(Routes.SETTINGS) }
     }
 }

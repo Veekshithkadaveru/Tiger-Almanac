@@ -78,6 +78,36 @@ class ZodiacViewModel(
         )
     }
 
+    fun showAnimal(animalId: String) {
+        viewModelScope.launch {
+            val today = LocalDate.now()
+
+            val animals = withContext(Dispatchers.IO) {
+                zodiacRepository.loadAnimals()
+            }
+
+            val zodiacProfile = animals.find { it.id.equals(animalId, ignoreCase = true) }
+                ?: return@launch
+            val animal = ZodiacAnimal.entries
+                .find { it.name.equals(zodiacProfile.id, ignoreCase = true) }
+            val birthYear = _state.value.profile?.birthYear
+                ?: zodiacProfile.years.lastOrNull()
+                ?: today.year
+            val yearFortune = zodiacProfile.yearFortune[today.year.toString()]
+            val dailyLuck =
+                calculateDailyLuck(birthYear, today.dayOfYear, today.monthValue, zodiacProfile)
+
+            _state.value = _state.value.copy(
+                animal = animal,
+                zodiacProfile = zodiacProfile,
+                yearFortune = yearFortune,
+                dailyLuck = dailyLuck,
+                selectedMonth = today.monthValue,
+                isLoading = false
+            )
+        }
+    }
+
     fun selectMonth(month: Int) {
         val wrapped = ((month - 1).mod(12)) + 1
         _state.value = _state.value.copy(selectedMonth = wrapped)
