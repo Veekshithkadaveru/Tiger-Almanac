@@ -3,7 +3,8 @@ package app.krafted.tigeralmanac.model
 data class Compatibility(
     val excellent: List<String>,
     val good: List<String>,
-    val challenging: List<String>
+    val challenging: List<String>,
+    val notes: Map<String, String> = emptyMap()
 )
 
 data class YearFortuneDetail(

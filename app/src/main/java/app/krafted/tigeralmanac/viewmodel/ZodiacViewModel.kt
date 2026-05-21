@@ -7,11 +7,13 @@ import androidx.lifecycle.viewModelScope
 import app.krafted.tigeralmanac.data.ZodiacRepository
 import app.krafted.tigeralmanac.data.db.UserProfile
 import app.krafted.tigeralmanac.data.db.UserProfileDao
+import app.krafted.tigeralmanac.model.CompatibilityResult
 import app.krafted.tigeralmanac.model.DailyLuck
 import app.krafted.tigeralmanac.model.YearFortuneDetail
 import app.krafted.tigeralmanac.model.ZodiacAnimal
 import app.krafted.tigeralmanac.model.ZodiacProfile
 import app.krafted.tigeralmanac.model.calculateDailyLuck
+import app.krafted.tigeralmanac.model.resolveCompatibility
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -27,6 +29,7 @@ data class ZodiacUiState(
     val yearFortune: YearFortuneDetail? = null,
     val dailyLuck: DailyLuck? = null,
     val selectedMonth: Int = LocalDate.now().monthValue,
+    val selectedCompatibility: CompatibilityResult? = null,
     val isLoading: Boolean = true
 )
 
@@ -78,6 +81,17 @@ class ZodiacViewModel(
     fun selectMonth(month: Int) {
         val wrapped = ((month - 1).mod(12)) + 1
         _state.value = _state.value.copy(selectedMonth = wrapped)
+    }
+
+    fun selectCompatibilityAnimal(animal: ZodiacAnimal) {
+        val zodiacProfile = _state.value.zodiacProfile ?: return
+        _state.value = _state.value.copy(
+            selectedCompatibility = resolveCompatibility(zodiacProfile, animal)
+        )
+    }
+
+    fun clearCompatibility() {
+        _state.value = _state.value.copy(selectedCompatibility = null)
     }
 
     companion object {

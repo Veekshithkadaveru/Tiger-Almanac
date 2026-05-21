@@ -16,7 +16,21 @@
       "compatibility": {
         "excellent": ["OX", "DRAGON", "MONKEY"],
         "good": ["RAT"],
-        "challenging": ["HORSE", "ROOSTER"]
+        "challenging": ["HORSE", "ROOSTER"],
+        "notes": {
+          "RAT": "With another Rat, you share a quick mind and a knack for opportunity. Two clever schemers can build something remarkable, provided neither tries to outmanoeuvre the other.",
+          "OX": "The steadfast Ox grounds your restless intelligence beautifully. You bring the ideas and charm while the Ox supplies the patience to see them through — a rare and enduring harmony.",
+          "TIGER": "The bold Tiger commands a room you would rather work quietly behind. You can respect each other's drive, but their directness and your subtlety keep a polite distance between you.",
+          "RABBIT": "The gentle Rabbit's caution can puzzle your fast-moving mind, yet there is no real friction here. Treat their sensitivity with care and you will find a calm, pleasant companion.",
+          "DRAGON": "The magnetic Dragon dazzles you, and you happily lend your cleverness to their grand vision. Together you are ambitious, lucky, and almost unstoppable.",
+          "SNAKE": "The watchful Snake matches your strategic mind, though their secrecy can leave you guessing. With mutual trust this becomes a thoughtful, balanced alliance.",
+          "HORSE": "The Horse is your direct opposite in the zodiac, and their impulsive freedom unsettles your need for security. This pairing demands constant compromise to avoid friction.",
+          "GOAT": "The tender Goat lives by feeling where you live by wit. Neither helps nor hinders the other much, but kindness on your part keeps things gracefully even.",
+          "MONKEY": "The inventive Monkey is your perfect playmate — quick, witty, and endlessly entertaining. You scheme and laugh in the same key, making this one of your finest bonds.",
+          "ROOSTER": "The exacting Rooster's blunt criticism grates against your sensitive pride. You both value cleverness, but their need to correct and your need to charm rarely settle comfortably.",
+          "DOG": "The loyal Dog offers steadiness you can trust, even if their worries dim your optimism. With patience this is a workable, dependable connection.",
+          "PIG": "The good-natured Pig enjoys your charm and asks little in return. A relaxed, agreeable pairing, though you must resist the urge to take advantage of their easy trust."
+        }
       },
       "yearFortune": {
         "2026": {
@@ -60,7 +74,21 @@
       "compatibility": {
         "excellent": ["RAT", "SNAKE", "ROOSTER"],
         "good": ["MONKEY"],
-        "challenging": ["TIGER", "DRAGON", "HORSE", "GOAT"]
+        "challenging": ["TIGER", "DRAGON", "HORSE", "GOAT"],
+        "notes": {
+          "RAT": "The clever Rat brings spark and ideas to your steady world. You supply the patience and follow-through their quick minds often lack — a warm, complementary union built to last.",
+          "OX": "With another Ox, you share an unshakeable work ethic and deep loyalty. Two such determined souls move slowly but surely, though you must guard against matching stubbornness.",
+          "TIGER": "The headstrong Tiger charges where you prefer to plod, and their impulsiveness tests your patience sorely. This pairing strains under two immovable wills pulling different ways.",
+          "RABBIT": "The diplomatic Rabbit appreciates the security you offer, and you find their gentleness restful. Neither demands much of the other, making for a calm and civil bond.",
+          "DRAGON": "The flamboyant Dragon's grand gestures clash with your grounded practicality. You see vanity where they see vision, and the friction wears at you both over time.",
+          "SNAKE": "The wise Snake shares your love of patience and quiet depth. You trust their judgement and they value your steadiness — a serene and remarkably stable partnership.",
+          "HORSE": "The restless Horse cannot abide your measured pace, and you cannot abide their inconstancy. Freedom against stability makes this a wearing match.",
+          "GOAT": "The sensitive Goat's worries and your inflexibility rub uncomfortably together. Their need for reassurance meets your reserve, and harmony proves hard to find.",
+          "MONKEY": "The lively Monkey amuses and quickens you, and your reliability anchors their flightiness. A surprisingly good fit when you let their playfulness lighten your seriousness.",
+          "ROOSTER": "The diligent Rooster shares your respect for hard work done precisely right. You admire their standards and they your endurance — a productive, mutually respectful bond.",
+          "DOG": "The faithful Dog values the dependability you embody, and you trust their honest heart. A steady, undramatic connection grounded in shared loyalty.",
+          "PIG": "The good-natured Pig offers easy warmth that softens your serious nature. Neither troubles the other, and a comfortable, kindly rapport grows between you."
+        }
       },
       "yearFortune": {
         "2026": {
@@ -104,7 +132,21 @@
       "compatibility": {
         "excellent": ["HORSE", "DOG"],
         "good": ["PIG"],
-        "challenging": ["MONKEY", "SNAKE", "TIGER"]
+        "challenging": ["MONKEY", "SNAKE", "TIGER"],
+        "notes": {
+          "RAT": "The shrewd Rat works in subtleties you find tiresome, preferring strategy to your direct charge. There is no quarrel here, only a respectful difference in tempo.",
+          "OX": "The immovable Ox meets your headstrong will with equal stubbornness. You respect each other's strength, but neither bends easily, so progress can stall.",
+          "TIGER": "With another Tiger, the room is never short of courage or ego. Two such leaders can inspire greatness together or compete for the same throne — passion runs high either way.",
+          "RABBIT": "The gentle Rabbit's caution balances your boldness without challenging it. You may find their reserve puzzling, but treated kindly they offer a soothing counterpoint.",
+          "DRAGON": "The mighty Dragon matches your fire and ambition, two grand spirits sharing the stage. Mutual admiration carries you far, provided you take turns to lead.",
+          "SNAKE": "The secretive Snake's quiet calculation unsettles your open nature. You crave directness while they prefer the shadows, and the mistrust between you is hard to dispel.",
+          "HORSE": "The free-spirited Horse runs at your pace and shares your thirst for adventure. Warm, spirited, and bold together, this is one of your most exhilarating bonds.",
+          "GOAT": "The tender Goat needs gentleness you must remember to offer. Your strength can shelter them, and their softness eases you, when temper is kept in check.",
+          "MONKEY": "The cunning Monkey delights in outwitting you, and you bristle at being outmanoeuvred. Their tricks and your pride make for a wary, prickly pairing.",
+          "ROOSTER": "The critical Rooster's exacting eye finds fault with your impulsiveness. You can coexist, but their corrections and your independence keep a careful distance between you.",
+          "DOG": "The loyal Dog believes in your causes and stands faithfully at your side. Their devotion steadies your fire — a deeply trusting and protective union.",
+          "PIG": "The generous Pig admires your courage and gives warmth without rivalry. You shield them gladly, and a comfortable, affectionate bond results."
+        }
       },
       "yearFortune": {
         "2026": {
@@ -148,7 +190,21 @@
       "compatibility": {
         "excellent": ["GOAT", "DOG", "PIG"],
         "good": ["RABBIT"],
-        "challenging": ["ROOSTER", "DRAGON", "RAT"]
+        "challenging": ["ROOSTER", "DRAGON", "RAT"],
+        "notes": {
+          "RAT": "The quick, calculating Rat moves faster than you find comfortable, and their ambition can feel abrasive to your gentle spirit. This pairing asks for patience you may struggle to sustain.",
+          "OX": "The steady Ox offers the security you quietly crave, and you soften their seriousness in return. Neither disturbs the other, making for a calm, agreeable companionship.",
+          "TIGER": "The bold Tiger's intensity overwhelms your delicate sensibilities at first, yet their protectiveness can shelter you. Approached carefully, there is more warmth here than friction.",
+          "RABBIT": "With another Rabbit, life is refined, harmonious, and beautifully gentle. Two diplomats create a serene haven together, though someone must eventually make the hard decisions.",
+          "DRAGON": "The domineering Dragon's grand intensity easily overpowers your tender nature. You retreat where they advance, and their impatience leaves you feeling unseen.",
+          "SNAKE": "The elegant Snake shares your love of beauty and quiet, though their secrecy can trouble your sensitive heart. A graceful, low-conflict bond when trust is nurtured.",
+          "HORSE": "The energetic Horse's restlessness can leave you feeling unsteady, yet their warmth is genuine. Neither hostile nor easy, this pairing simply asks for room to breathe.",
+          "GOAT": "The tender Goat is a kindred soul who shares your love of harmony and beauty. Together you create a gentle, nurturing sanctuary — one of your dearest connections.",
+          "MONKEY": "The clever Monkey's restless energy is a curiosity rather than a threat to you. You can enjoy their wit at a comfortable distance without much strain.",
+          "ROOSTER": "The blunt Rooster's sharp criticism wounds your sensitive heart deeply. Their candour and your need for tact pull painfully against each other.",
+          "DOG": "The faithful Dog offers the loyalty and protection that let you flourish. Their steadiness calms your worries — a tender, deeply secure bond.",
+          "PIG": "The generous Pig shares your warmth and gentle love of comfort. Kind and unhurried together, you build an affectionate and peaceful union."
+        }
       },
       "yearFortune": {
         "2026": {
@@ -192,7 +248,21 @@
       "compatibility": {
         "excellent": ["RAT", "MONKEY", "ROOSTER"],
         "good": ["TIGER", "SNAKE"],
-        "challenging": ["OX", "GOAT", "DOG"]
+        "challenging": ["OX", "GOAT", "DOG"],
+        "notes": {
+          "RAT": "The resourceful Rat adores your vision and lends sharp wit to your grand designs. They handle the details you find tedious, freeing you to dream — a lucky and exhilarating union.",
+          "OX": "The plodding Ox sees vanity where you see vision, and their caution drags at your momentum. You find them dull, they find you reckless, and the gulf rarely closes.",
+          "TIGER": "The brave Tiger matches your fire and shares your appetite for boldness. Two charismatic forces, you inspire each other to greatness when you agree to share the spotlight.",
+          "RABBIT": "The cautious Rabbit shrinks from the intensity you radiate so freely. No quarrel arises, but your scale and their reserve seldom truly meet.",
+          "DRAGON": "With another Dragon, the ambition is dazzling and the stage feels crowded. Two visionaries can build empires together or clash over who reigns — the fire burns bright either way.",
+          "SNAKE": "The wise Snake's quiet depth complements your blazing vision beautifully. They counsel where you charge ahead, and their subtle insight makes your dreams sharper.",
+          "HORSE": "The spirited Horse shares your love of momentum and bold gestures. Energetic and warm, you gallop well together so long as neither tries to rein the other in.",
+          "GOAT": "The timid Goat's worries and need for reassurance frustrate your impatient drive. You overwhelm them without meaning to, and harmony proves elusive.",
+          "MONKEY": "The inventive Monkey delights you with cleverness that serves your ambitions splendidly. Quick, lucky, and full of momentum, this is one of your most rewarding bonds.",
+          "ROOSTER": "The confident Rooster's pride and precision dovetail with your grandeur. You admire their diligence and they your vision — a striking, mutually flattering match.",
+          "DOG": "The skeptical Dog questions your grand plans and dampens your fire with worry. Their caution feels like distrust to you, and the friction between you runs deep.",
+          "PIG": "The good-natured Pig admires you and asks for little but warmth in return. An easy, agreeable connection where your confidence and their kindness coexist pleasantly."
+        }
       },
       "yearFortune": {
         "2026": {
@@ -236,7 +306,21 @@
       "compatibility": {
         "excellent": ["OX", "ROOSTER"],
         "good": ["DRAGON"],
-        "challenging": ["TIGER", "PIG", "MONKEY"]
+        "challenging": ["TIGER", "PIG", "MONKEY"],
+        "notes": {
+          "RAT": "The clever Rat matches your strategic mind, though their restlessness contrasts your stillness. With trust this becomes a thoughtful, evenly matched alliance.",
+          "OX": "The patient Ox shares your love of quiet depth and steady purpose. You trust their constancy and they value your wisdom — a serene, profoundly stable bond.",
+          "TIGER": "The brash Tiger's open intensity collides with your guarded subtlety. They demand directness you will not give, and suspicion festers where understanding should grow.",
+          "RABBIT": "The gentle Rabbit shares your refined taste and dislike of conflict. A graceful, low-friction companionship flourishes when you lower your guard enough to be known.",
+          "DRAGON": "The radiant Dragon's vision finds a perfect counsellor in your quiet insight. You temper their fire with wisdom, and they draw you out of the shadows — a fine pairing.",
+          "SNAKE": "With another Snake, the depth is profound and the understanding wordless. Two such private souls share rare intimacy, though you must guard against mutual secrecy.",
+          "HORSE": "The galloping Horse moves far too fast for your contemplative nature. There is no malice between you, only a difference in tempo that keeps you politely apart.",
+          "GOAT": "The artistic Goat shares your sensitivity and love of beauty. Their gentleness poses no threat to your reserve, and a calm, refined rapport can grow.",
+          "MONKEY": "The tricky Monkey's cleverness rivals your own, breeding rivalry rather than trust. You suspect their motives and they tire of your secrecy — a wary, uneasy match.",
+          "ROOSTER": "The precise Rooster admires your composure and shares your discerning eye. You respect their diligence and they your wisdom — an elegant, deeply compatible union.",
+          "DOG": "The loyal Dog offers honesty you can rely upon, even if their worries differ from your calm. A steady, trustworthy connection when you let them in.",
+          "PIG": "The trusting Pig's open warmth feels naive to your watchful nature, and you guard yourself where they give freely. The mismatch in trust strains this pairing."
+        }
       },
       "yearFortune": {
         "2026": {
@@ -280,7 +364,21 @@
       "compatibility": {
         "excellent": ["TIGER", "GOAT", "DOG"],
         "good": ["HORSE"],
-        "challenging": ["RAT", "OX", "ROOSTER"]
+        "challenging": ["RAT", "OX", "ROOSTER"],
+        "notes": {
+          "RAT": "The security-loving Rat is your zodiac opposite, craving the stability your wandering heart resists. Their need to hold on and your need to roam pull constantly against each other.",
+          "OX": "The deliberate Ox cannot keep up with your restless pace, and you chafe at their immovability. Patience against impulse makes this a wearing, ill-fitting match.",
+          "TIGER": "The bold Tiger shares your fire and thirst for adventure. Spirited and warm, you charge toward the horizon together — one of your most exhilarating bonds.",
+          "RABBIT": "The gentle Rabbit's caution differs from your boldness, yet there is real warmth between you. Give them room and reassurance, and this becomes a pleasant, easy companionship.",
+          "DRAGON": "The grand Dragon matches your love of momentum and bold gestures. Energetic together, you gallop well so long as neither tries to rein the other in.",
+          "SNAKE": "The contemplative Snake moves at a pace your spirit cannot abide. No quarrel divides you, only a difference in tempo that keeps you comfortably distant.",
+          "HORSE": "With another Horse, life is a shared adventure of freedom and warmth. Two free spirits understand each other perfectly, though constancy is the lesson you must both learn.",
+          "GOAT": "The tender Goat is a treasured ally whose gentleness soothes your restless heart. You lend them courage and they lend you comfort — a warm, harmonious union.",
+          "MONKEY": "The playful Monkey keeps pace with your energy and shares your love of novelty. Lively and entertaining together, this is an easy, spirited rapport.",
+          "ROOSTER": "The exacting Rooster's need for order grates against your love of freedom. They want commitments you resist, and the friction between you is real.",
+          "DOG": "The faithful Dog offers loyalty that grounds your wandering spirit without caging it. Their devotion and your warmth make a deeply trusting, affectionate bond.",
+          "PIG": "The good-natured Pig enjoys your enthusiasm and asks little but warmth. A relaxed, agreeable pairing where your energy and their ease coexist happily."
+        }
       },
       "yearFortune": {
         "2026": {
@@ -324,7 +422,21 @@
       "compatibility": {
         "excellent": ["RABBIT", "HORSE", "PIG"],
         "good": ["GOAT"],
-        "challenging": ["OX", "DOG"]
+        "challenging": ["OX", "DOG"],
+        "notes": {
+          "RAT": "The quick-witted Rat moves through cleverness where you move through feeling. Neither helps nor hinders the other greatly, and gentleness on your part keeps things easy.",
+          "OX": "The stern Ox's inflexibility leaves little room for your need of reassurance. Their reserve meets your worry, and the warmth you crave proves hard to find.",
+          "TIGER": "The fierce Tiger's intensity can overwhelm you, yet their strength may also shelter your tender heart. Approached gently, there is more comfort here than conflict.",
+          "RABBIT": "The gentle Rabbit is a kindred soul who shares your love of harmony and beauty. Together you create a nurturing, peaceful haven — one of your dearest bonds.",
+          "DRAGON": "The forceful Dragon's grand impatience unsettles your sensitive nature. You shrink where they surge, and the encouragement you need rarely arrives.",
+          "SNAKE": "The elegant Snake shares your artistic soul and dislike of discord. Their composure poses no threat to you, and a calm, refined rapport can quietly bloom.",
+          "HORSE": "The warm Horse is among your finest allies, lending courage to your dreams. Their confidence steadies your worries while your tenderness softens them — a harmonious union.",
+          "GOAT": "With another Goat, life is gentle, creative, and deeply understanding. Two tender hearts nurture each other beautifully, though someone must summon the resolve to decide.",
+          "MONKEY": "The clever Monkey's restless energy is more curiosity than threat to you. You can enjoy their wit at a comfortable, unpressured distance.",
+          "ROOSTER": "The blunt Rooster's criticism stings, but their diligence need not clash with your softness. A workable pairing if their candour is kept kind.",
+          "DOG": "The anxious Dog's worries amplify your own, and their critical streak wounds your gentle heart. Two sensitive souls can spiral together rather than soothe.",
+          "PIG": "The generous Pig shares your warmth and love of comfort. Kind and unhurried together, you build an affectionate, peaceful bond."
+        }
       },
       "yearFortune": {
         "2026": {
@@ -368,7 +480,21 @@
       "compatibility": {
         "excellent": ["RAT", "DRAGON"],
         "good": ["OX"],
-        "challenging": ["TIGER", "SNAKE", "PIG"]
+        "challenging": ["TIGER", "SNAKE", "PIG"],
+        "notes": {
+          "RAT": "The resourceful Rat is your ideal playmate, quick and witty in the same key as you. You scheme and laugh together effortlessly — one of your most delightful and lucky bonds.",
+          "OX": "The steady Ox anchors your flightiness and rewards your humour with reliability. A surprisingly fine fit when you let their steadiness ground your busy mind.",
+          "TIGER": "The proud Tiger bristles at your tricks and refuses to be outwitted. Your cleverness and their pride strike sparks, making for a prickly, competitive pairing.",
+          "RABBIT": "The gentle Rabbit observes your antics with mild curiosity rather than alarm. You can enjoy their calm company at an easy, unhurried distance.",
+          "DRAGON": "The visionary Dragon adores your inventiveness and puts it to grand use. Quick, lucky, and full of momentum, this is among your most rewarding alliances.",
+          "SNAKE": "The watchful Snake rivals your cunning, breeding suspicion rather than trust. They tire of your tricks and you of their secrecy — a wary, uneasy match.",
+          "HORSE": "The spirited Horse keeps pace with your energy and shares your love of novelty. Lively and entertaining together, you make an easy, animated rapport.",
+          "GOAT": "The tender Goat's gentleness is no threat to your quick mind. You can appreciate their sweetness from a comfortable, unpressured distance.",
+          "MONKEY": "With another Monkey, the wit is dazzling and the games never end. Two clever inventors spark endless fun, though follow-through is the discipline you must share.",
+          "ROOSTER": "The exacting Rooster's precision contrasts your improvisation without real hostility. You both prize cleverness, and a balanced rapport is possible with patience.",
+          "DOG": "The earnest Dog's loyalty steadies your restlessness, even if their worries puzzle you. A workable, dependable connection when you honour their sincerity.",
+          "PIG": "The trusting Pig is too easily taken in by your schemes, and guilt or friction follows. Their open faith and your opportunism rarely settle comfortably together."
+        }
       },
       "yearFortune": {
         "2026": {
@@ -412,7 +538,21 @@
       "compatibility": {
         "excellent": ["OX", "SNAKE", "DRAGON"],
         "good": ["ROOSTER"],
-        "challenging": ["RAT", "RABBIT", "DOG"]
+        "challenging": ["RAT", "RABBIT", "DOG"],
+        "notes": {
+          "RAT": "The charming Rat deflects your honest critiques with cleverness that frustrates you. Their need to charm and your need to correct rarely find common ground.",
+          "OX": "The diligent Ox shares your respect for work done precisely right. You admire their endurance and they your standards — a productive, mutually respectful bond.",
+          "TIGER": "The impulsive Tiger resists your corrections and prizes the independence you'd refine. You can coexist, but your exactness and their freedom keep a careful distance.",
+          "RABBIT": "The sensitive Rabbit recoils from your blunt candour, taking your critiques to heart. Your honesty and their need for tact pull painfully against each other.",
+          "DRAGON": "The grand Dragon's vision pairs handsomely with your precision and pride. You admire their scale and they your diligence — a striking, flattering match.",
+          "SNAKE": "The discerning Snake shares your refined eye and composed nature. You respect their wisdom and they your standards — an elegant, deeply compatible union.",
+          "HORSE": "The free-roaming Horse resists the order you cherish, seeking adventure over commitment. Neither hostile nor easy, this pairing simply pulls in different directions.",
+          "GOAT": "The gentle Goat softens under criticism you must remember to temper. A workable rapport when your candour is offered with kindness rather than edge.",
+          "MONKEY": "The improvising Monkey contrasts your precision without real hostility. You both value cleverness, and a balanced connection grows with a little patience.",
+          "ROOSTER": "With another Rooster, the standards are high and the honesty unflinching. Two perfectionists can build something flawless or exhaust each other — temper the critique with care.",
+          "DOG": "The worried Dog's pessimism meets your criticism, and the two sour easily together. Their wariness and your bluntness make for a tense, uneasy match.",
+          "PIG": "The good-natured Pig accepts your candour with easy warmth and little offence. A relaxed pairing where your standards and their kindness coexist pleasantly."
+        }
       },
       "yearFortune": {
         "2026": {
@@ -456,7 +596,21 @@
       "compatibility": {
         "excellent": ["TIGER", "RABBIT", "HORSE"],
         "good": ["DOG"],
-        "challenging": ["DRAGON", "GOAT", "ROOSTER"]
+        "challenging": ["DRAGON", "GOAT", "ROOSTER"],
+        "notes": {
+          "RAT": "The clever Rat offers steadiness you can trust, even when their optimism outruns your caution. A workable, dependable connection built with a little patience.",
+          "OX": "The reliable Ox embodies the dependability you prize most. A steady, undramatic bond grounded in shared loyalty and honest work.",
+          "TIGER": "The brave Tiger fights for the causes you believe in, and you stand faithfully at their side. Their fire and your devotion forge a deeply protective, trusting union.",
+          "RABBIT": "The gentle Rabbit flourishes under the loyalty and protection you offer. Their grace calms your worries — a tender, profoundly secure bond.",
+          "DRAGON": "The boastful Dragon's grand plans rouse your skepticism and worry. Your caution feels like distrust to them, and the friction between you runs deep.",
+          "SNAKE": "The composed Snake offers a calm honesty you can rely upon, though their reserve differs from your candour. A steady connection when trust is earned.",
+          "HORSE": "The warm Horse grounds beautifully in your faithful devotion without feeling caged. Their energy and your loyalty make a trusting, affectionate bond.",
+          "GOAT": "The anxious Goat amplifies your own worries, and your critical streak troubles their tender heart. Two sensitive souls can spiral rather than soothe.",
+          "MONKEY": "The restless Monkey is steadied by your sincerity, even if their tricks puzzle you. A dependable rapport when their playfulness meets your honest heart.",
+          "ROOSTER": "The critical Rooster's bluntness meets your wariness, and the two sour quickly. Their candour and your pessimism make a tense, uneasy pairing.",
+          "DOG": "With another Dog, loyalty and honesty run deep and true. Two faithful guardians trust each other completely, though you must lift each other past shared worry.",
+          "PIG": "The generous Pig's warmth eases your anxious heart with easy kindness. A gentle, sincere bond where neither troubles the other."
+        }
       },
       "yearFortune": {
         "2026": {
@@ -500,7 +654,21 @@
       "compatibility": {
         "excellent": ["GOAT", "RABBIT"],
         "good": ["TIGER", "PIG"],
-        "challenging": ["SNAKE", "MONKEY"]
+        "challenging": ["SNAKE", "MONKEY"],
+        "notes": {
+          "RAT": "The charming Rat enjoys your easy warmth and asks little in return. A relaxed, agreeable pairing, though you should keep a watchful eye on their cleverer schemes.",
+          "OX": "The dependable Ox offers steady warmth that suits your sincere heart. Neither troubles the other, and a comfortable, kindly rapport grows between you.",
+          "TIGER": "The bold Tiger admires your generosity and shelters you gladly without rivalry. Their courage and your warmth make a comfortable, affectionate bond.",
+          "RABBIT": "The gentle Rabbit shares your love of comfort and harmony. Kind and unhurried together, you build an affectionate, peaceful union.",
+          "DRAGON": "The grand Dragon enjoys your admiration and asks only warmth in return. An easy, agreeable connection where their confidence and your kindness sit pleasantly side by side.",
+          "SNAKE": "The guarded Snake finds your open trust naive, and you cannot fathom their secrecy. The mismatch in how freely you each give of yourselves strains this pairing.",
+          "HORSE": "The spirited Horse enjoys your good nature and easy company. A relaxed, agreeable rapport where their energy and your warmth coexist happily.",
+          "GOAT": "The tender Goat shares your warmth and gentle love of comfort. Kind and unhurried, you create a sweet, affectionate, and harmonious bond.",
+          "MONKEY": "The cunning Monkey too easily takes advantage of your open trust, leaving friction in their wake. Your generous faith and their opportunism rarely settle well together.",
+          "PIG": "With another Pig, life is generous, sincere, and full of shared comfort. Two warm hearts enjoy each other completely, though you must together guard against indulgence and misplaced trust.",
+          "ROOSTER": "The blunt Rooster's candour you accept with easy good humour and little offence. A relaxed pairing where their standards and your kindness coexist comfortably.",
+          "DOG": "The faithful Dog's loyalty meets your sincerity warmly, easing their anxious heart. A gentle, honest bond where neither troubles the other."
+        }
       },
       "yearFortune": {
         "2026": {
