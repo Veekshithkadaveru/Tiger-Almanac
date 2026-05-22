@@ -71,7 +71,9 @@ fun Tag(
             fontFamily = FontFamily.SansSerif,
             fontSize = 10.sp,
             fontWeight = FontWeight.Medium,
-            letterSpacing = 1.sp
+            letterSpacing = 1.sp,
+            maxLines = 1,
+            softWrap = false
         )
     }
 }

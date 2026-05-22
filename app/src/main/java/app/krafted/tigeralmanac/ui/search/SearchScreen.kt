@@ -5,6 +5,8 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -44,7 +46,7 @@ import app.krafted.tigeralmanac.ui.components.ScreenBackground
 import app.krafted.tigeralmanac.ui.components.SealHeader
 import app.krafted.tigeralmanac.ui.components.Tag
 import app.krafted.tigeralmanac.ui.components.TagTone
-import app.krafted.tigeralmanac.ui.drawBehindUnderline
+import app.krafted.tigeralmanac.ui.components.drawBehindUnderline
 import app.krafted.tigeralmanac.ui.theme.CormorantGaramond
 import app.krafted.tigeralmanac.ui.theme.InterFont
 import app.krafted.tigeralmanac.ui.theme.TigerCream
@@ -291,6 +293,7 @@ private fun FengShuiRow(result: SearchResult.FengShui, onClick: () -> Unit) {
     }
 }
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 private fun EmptyState(onSuggestion: (String) -> Unit) {
     val suggestions = listOf("strength", "patience", "bedroom")
@@ -313,7 +316,10 @@ private fun EmptyState(onSuggestion: (String) -> Unit) {
             color = TigerCreamSoft,
         )
         Spacer(modifier = Modifier.height(8.dp))
-        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+        FlowRow(
+            horizontalArrangement = Arrangement.spacedBy(8.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp)
+        ) {
             suggestions.forEach { term ->
                 Tag(
                     text = term,

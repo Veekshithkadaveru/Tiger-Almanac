@@ -45,46 +45,51 @@ class IChingViewModel(
         viewModelScope.launch {
             ensureHexagramsLoaded()
 
-            userProfileDao.getUserProfileFlow().collect { profile ->
-                if (profile == null) {
-                    _state.value = _state.value.copy(isLoading = false)
-                } else {
-                    val today = LocalDate.now()
-                    val dayOfYear = today.dayOfYear
-                    val birthYear = profile.birthYear
+            launch {
+                userProfileDao.getUserProfileFlow().collect { profile ->
+                    if (profile == null) {
+                        _state.value = _state.value.copy(
+                            todayHexagram = null,
+                            isLoading = false
+                        )
+                    } else {
+                        val today = LocalDate.now()
+                        val dayOfYear = today.dayOfYear
+                        val birthYear = profile.birthYear
 
-                    val todayHexagram = if (hexagrams.isNotEmpty()) {
-                        hexagrams[(dayOfYear + birthYear) % hexagrams.size]
-                    } else null
+                        val todayHexagram = if (hexagrams.isNotEmpty()) {
+                            hexagrams[Math.floorMod(dayOfYear + birthYear, hexagrams.size)]
+                        } else null
 
-                    if (todayHexagram != null) {
-                        val dateKey = today.format(DateTimeFormatter.ISO_LOCAL_DATE)
-                        if (hexagramHistoryDao.getHistoryForDate(dateKey) == null) {
-                            hexagramHistoryDao.insertHistory(
-                                HexagramHistory(
-                                    date = dateKey,
-                                    hexagramId = todayHexagram.id,
-                                    drawnAt = System.currentTimeMillis()
+                        if (todayHexagram != null) {
+                            val dateKey = today.format(DateTimeFormatter.ISO_LOCAL_DATE)
+                            val existing = hexagramHistoryDao.getHistoryForDate(dateKey)
+                            if (existing == null || existing.hexagramId != todayHexagram.id) {
+                                hexagramHistoryDao.insertHistory(
+                                    HexagramHistory(
+                                        date = dateKey,
+                                        hexagramId = todayHexagram.id,
+                                        drawnAt = System.currentTimeMillis()
+                                    )
                                 )
-                            )
+                            }
                         }
-                    }
 
-                    _state.value = _state.value.copy(
-                        todayHexagram = todayHexagram,
-                        isLoading = false
-                    )
+                        _state.value = _state.value.copy(
+                            todayHexagram = todayHexagram,
+                            isLoading = false
+                        )
+                    }
                 }
             }
-        }
 
-        viewModelScope.launch {
-            ensureHexagramsLoaded()
-            hexagramHistoryDao.getRecentHistoryFlow().collect { history ->
-                val entries = history.mapNotNull { row ->
-                    hexagramsById[row.hexagramId]?.let { HexagramArchiveEntry(row.date, it) }
+            launch {
+                hexagramHistoryDao.getRecentHistoryFlow().collect { history ->
+                    val entries = history.mapNotNull { row ->
+                        hexagramsById[row.hexagramId]?.let { HexagramArchiveEntry(row.date, it) }
+                    }
+                    _state.value = _state.value.copy(archiveHistory = entries)
                 }
-                _state.value = _state.value.copy(archiveHistory = entries)
             }
         }
     }

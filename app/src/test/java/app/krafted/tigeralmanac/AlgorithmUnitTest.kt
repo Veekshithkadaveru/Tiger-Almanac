@@ -90,8 +90,49 @@ class AlgorithmUnitTest {
         val dayOfYear = 142
         val birthYear = 1996
         
-        val selectedIndex = (dayOfYear + birthYear) % totalHexagramsCount
+        val selectedIndex = Math.floorMod(dayOfYear + birthYear, totalHexagramsCount)
         assertEquals(26, selectedIndex) // (142 + 1996) % 64 = 2138 % 64 = 26
+
+        // Test with negative birth year (BC birth year or invalid input)
+        val negativeBirthYear = -10
+        val negativeIndex = Math.floorMod(dayOfYear + negativeBirthYear, totalHexagramsCount)
+        // (142 - 10) % 64 = 132 % 64 = 4
+        assertEquals(4, negativeIndex)
+    }
+
+    @Test
+    fun testNegativeBirthYearDailyLuck() {
+        val profile = ZodiacProfile(
+            id = "RAT",
+            name = "Rat",
+            chineseName = "鼠",
+            years = listOf(1924, 1936, 1948, 1960, 1972, 1984, 1996, 2008, 2020),
+            element = "Water",
+            polarity = "Yang",
+            personality = "Resourceful...",
+            strengths = listOf("Intelligent", "Resourceful"),
+            weaknesses = listOf("Calculating"),
+            luckyNumbers = listOf(2, 3),
+            luckyColours = listOf("Blue", "Gold", "Green"),
+            luckyDirections = listOf("North", "Northwest", "West"),
+            compatibility = Compatibility(
+                excellent = listOf("OX", "DRAGON", "MONKEY"),
+                good = listOf("RAT"),
+                challenging = listOf("HORSE", "ROOSTER")
+            ),
+            yearFortune = emptyMap(),
+            monthlyFortune = emptyMap()
+        )
+
+        // Test negative birth year does not crash and yields correct, positive values
+        // Day of Year = 142, Birth Year = -10, Month = 5
+        val dailyLuck = calculateDailyLuck(-10, 142, 5, profile)
+        assertNotNull(dailyLuck)
+        
+        // (142 - 10) % 3 = 132 % 3 = 0 -> Blue
+        assertEquals("Blue", dailyLuck.luckyColour)
+        // (142 - 10) % 2 = 132 % 2 = 0 -> 2
+        assertEquals(2, dailyLuck.luckyNumber)
     }
 
     @Test

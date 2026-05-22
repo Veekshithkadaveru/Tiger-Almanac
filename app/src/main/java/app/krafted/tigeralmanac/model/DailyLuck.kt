@@ -62,16 +62,30 @@ private val affirmations = listOf(
     "What is rooted in virtue cannot be uprooted by misfortune."
 )
 
-fun calculateDailyLuck(birthYear: Int, dayOfYear: Int, month: Int, profile: ZodiacProfile): DailyLuck {
+fun calculateDailyLuck(
+    birthYear: Int,
+    dayOfYear: Int,
+    month: Int,
+    profile: ZodiacProfile
+): DailyLuck {
     val heavenlyStem = dayOfYear % 10
     val earthlyBranch = dayOfYear % 12
     return DailyLuck(
-        luckyColour = profile.luckyColours[(dayOfYear + birthYear) % profile.luckyColours.size],
-        luckyNumber = profile.luckyNumbers[(dayOfYear + birthYear) % profile.luckyNumbers.size],
-        luckyDirection = profile.luckyDirections[(dayOfYear + month) % profile.luckyDirections.size],
+        luckyColour = profile.luckyColours[Math.floorMod(
+            dayOfYear + birthYear,
+            profile.luckyColours.size
+        )],
+        luckyNumber = profile.luckyNumbers[Math.floorMod(
+            dayOfYear + birthYear,
+            profile.luckyNumbers.size
+        )],
+        luckyDirection = profile.luckyDirections[Math.floorMod(
+            dayOfYear + month,
+            profile.luckyDirections.size
+        )],
         luckyElement = elementCycle[heavenlyStem],
         avoidColour = avoidColourCycle[heavenlyStem],
         dayEnergy = dayEnergies[earthlyBranch],
-        affirmation = affirmations[(dayOfYear + birthYear) % affirmations.size]
+        affirmation = affirmations[Math.floorMod(dayOfYear + birthYear, affirmations.size)]
     )
 }

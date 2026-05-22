@@ -78,7 +78,7 @@ class HomeViewModel(
         val rooms = data.third
 
         val todayHexagram = if (hexagrams.isNotEmpty()) {
-            hexagrams[(dayOfYear + birthYear) % hexagrams.size]
+            hexagrams[Math.floorMod(dayOfYear + birthYear, hexagrams.size)]
         } else null
 
         val animalName = ZodiacAnimal.calculateZodiacAnimal(birthYear).name

@@ -11,11 +11,11 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.gestures.snapping.rememberSnapFlingBehavior
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -26,14 +26,10 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.itemsIndexed
-import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -64,6 +60,8 @@ import app.krafted.tigeralmanac.ui.components.RibbonButton
 import app.krafted.tigeralmanac.ui.components.ScreenBackground
 import app.krafted.tigeralmanac.ui.components.Tag
 import app.krafted.tigeralmanac.ui.components.TagTone
+import app.krafted.tigeralmanac.ui.components.YearPicker
+import app.krafted.tigeralmanac.ui.components.drawBehindUnderline
 import app.krafted.tigeralmanac.ui.theme.TigerCream
 import app.krafted.tigeralmanac.ui.theme.TigerGold
 import app.krafted.tigeralmanac.ui.theme.TigerGoldLight
@@ -315,108 +313,17 @@ fun WelcomeStepContent() {
     }
 }
 
-@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun YearPickerStep(
     selectedYear: Int,
     onYearChange: (Int) -> Unit,
     activeAnimal: ZodiacAnimal
 ) {
-    val years = remember { (1924..2006).toList() }
-    val initialIndex = remember { years.indexOf(selectedYear).coerceAtLeast(0) }
-    val lazyListState = rememberLazyListState(initialFirstVisibleItemIndex = initialIndex)
-    val snapFlingBehavior = rememberSnapFlingBehavior(lazyListState)
-
-    LaunchedEffect(lazyListState.firstVisibleItemIndex) {
-        val centerIndex = lazyListState.firstVisibleItemIndex
-        if (centerIndex in years.indices) {
-            onYearChange(years[centerIndex])
-        }
-    }
-
-    Column(
-        modifier = Modifier.fillMaxWidth(),
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        GoldFrame(
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(180.dp),
-            padding = 0.dp
-        ) {
-            Box(modifier = Modifier.fillMaxSize()) {
-                LazyColumn(
-                    state = lazyListState,
-                    flingBehavior = snapFlingBehavior,
-                    contentPadding = PaddingValues(vertical = 66.dp),
-                    modifier = Modifier.fillMaxSize(),
-                    horizontalAlignment = Alignment.CenterHorizontally
-                ) {
-                    itemsIndexed(years) { _, y ->
-                        val isSelected = y == selectedYear
-                        Text(
-                            text = y.toString(),
-                            fontFamily = FontFamily.Serif,
-                            fontSize = if (isSelected) 32.sp else 20.sp,
-                            color = if (isSelected) TigerGoldLight else TigerCream.copy(alpha = 0.82f),
-                            fontWeight = if (isSelected) FontWeight.SemiBold else FontWeight.Normal,
-                            letterSpacing = 2.sp,
-                            modifier = Modifier
-                                .padding(vertical = 6.dp)
-                                .clickable {
-                                    val idx = years.indexOf(y)
-                                    if (idx >= 0) {
-                                        onYearChange(y)
-                                    }
-                                }
-                        )
-                    }
-                }
-
-                Box(
-                    modifier = Modifier
-                        .align(Alignment.Center)
-                        .fillMaxWidth()
-                        .height(44.dp)
-                        .padding(horizontal = 14.dp)
-                        .border(1.dp, TigerGold.copy(alpha = 0.4f), RoundedCornerShape(8.dp))
-                )
-            }
-        }
-
-        Spacer(modifier = Modifier.height(20.dp))
-
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .background(TigerInk.copy(alpha = 0.55f), RoundedCornerShape(12.dp))
-                .border(1.dp, TigerGold.copy(alpha = 0.3f), RoundedCornerShape(12.dp))
-                .padding(horizontal = 16.dp, vertical = 12.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Text(
-                text = activeAnimal.emoji,
-                fontSize = 28.sp,
-                modifier = Modifier.padding(end = 12.dp)
-            )
-
-            Column {
-                Text(
-                    text = "Year of the ${activeAnimal.displayName} · ${activeAnimal.chineseName}",
-                    color = TigerGoldLight,
-                    fontFamily = FontFamily.Serif,
-                    fontSize = 17.sp,
-                    fontWeight = FontWeight.SemiBold
-                )
-                Text(
-                    text = "${activeAnimal.element} element",
-                    color = TigerCream.copy(alpha = 0.86f),
-                    fontFamily = FontFamily.SansSerif,
-                    fontSize = 11.sp
-                )
-            }
-        }
-    }
+    YearPicker(
+        selectedYear = selectedYear,
+        onYearChange = onYearChange,
+        activeAnimal = activeAnimal
+    )
 }
 
 @Composable
@@ -578,6 +485,7 @@ fun NameInputStep(
     }
 }
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun ConfirmCardStep(
     animal: ZodiacAnimal,
@@ -667,9 +575,10 @@ fun ConfirmCardStep(
 
             Spacer(modifier = Modifier.height(14.dp))
 
-            Row(
+            FlowRow(
                 modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(6.dp)
+                horizontalArrangement = Arrangement.spacedBy(6.dp),
+                verticalArrangement = Arrangement.spacedBy(6.dp)
             ) {
                 profile.strengths.take(4).forEach { strength ->
                     Tag(text = strength, tone = TagTone.GOLD)
@@ -685,15 +594,4 @@ fun ConfirmCardStep(
             )
         }
     }
-}
-
-@Composable
-fun Modifier.drawBehindUnderline(): Modifier {
-    return this.background(
-        Brush.verticalGradient(
-            0f to Color.Transparent,
-            0.95f to Color.Transparent,
-            1f to TigerGold.copy(alpha = 0.5f)
-        )
-    )
 }

@@ -25,6 +25,7 @@ import app.krafted.tigeralmanac.data.ZodiacRepository
 import app.krafted.tigeralmanac.data.db.AppDatabase
 import app.krafted.tigeralmanac.ui.HomeScreen
 import app.krafted.tigeralmanac.ui.ProfileSetupScreen
+import app.krafted.tigeralmanac.ui.SettingsScreen
 import app.krafted.tigeralmanac.ui.SplashScreen
 import app.krafted.tigeralmanac.ui.fengshui.RoomDetailScreen
 import app.krafted.tigeralmanac.ui.fengshui.RoomSelectScreen
@@ -74,7 +75,7 @@ class MainActivity : ComponentActivity() {
         val hexagramHistoryDao = database.hexagramHistoryDao()
         val zodiacRepository = ZodiacRepository(this)
         val userProfileViewModelFactory =
-            UserProfileViewModel.factory(userProfileDao, zodiacRepository)
+            UserProfileViewModel.factory(database, zodiacRepository)
         val homeViewModelFactory = HomeViewModel.factory(this, userProfileDao)
         val iChingViewModelFactory =
             IChingViewModel.factory(this, userProfileDao, hexagramHistoryDao)
@@ -242,7 +243,17 @@ fun TigerAlmanacNavHost(
                 onOpenRoom = { id -> navController.navigate(Routes.fengShuiDetailWithRoom(id)) },
             )
         }
-        composable(Routes.SETTINGS) { PlaceholderScreen(Routes.SETTINGS) }
+        composable(Routes.SETTINGS) {
+            SettingsScreen(
+                viewModel = userProfileViewModel,
+                onBack = { navController.popBackStack() },
+                onResetComplete = {
+                    navController.navigate(Routes.PROFILE_SETUP) {
+                        popUpTo(0) { inclusive = true }
+                    }
+                },
+            )
+        }
     }
 }
 

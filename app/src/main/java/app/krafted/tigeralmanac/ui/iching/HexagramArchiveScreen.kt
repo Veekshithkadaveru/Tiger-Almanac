@@ -8,9 +8,11 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -69,7 +71,8 @@ fun HexagramArchiveScreen(
 ) {
     val state by viewModel.state.collectAsState()
     val history = state.archiveHistory
-    val today = remember { LocalDate.now().format(DateTimeFormatter.ISO_LOCAL_DATE) }
+    val today = remember { LocalDate.now() }
+    val todayStr = remember(today) { today.format(DateTimeFormatter.ISO_LOCAL_DATE) }
 
     var visibleCount by remember { mutableIntStateOf(0) }
     LaunchedEffect(history.size) {
@@ -112,7 +115,7 @@ fun HexagramArchiveScreen(
                 )
             }
 
-            if (history.size < 2) {
+            if (history.isEmpty()) {
                 item {
                     Spacer(modifier = Modifier.height(8.dp))
                     GoldFrame(modifier = Modifier.fillMaxWidth()) {
@@ -130,7 +133,8 @@ fun HexagramArchiveScreen(
                 itemsIndexed(history) { index, entry ->
                     ArchiveRow(
                         entry = entry,
-                        isToday = entry.date == today,
+                        isToday = entry.date == todayStr,
+                        today = today,
                         visible = index < visibleCount,
                         onClick = { onOpenHexagram(entry.hexagram.id) },
                     )
@@ -163,6 +167,7 @@ private fun BackRow(onBack: () -> Unit) {
 private fun ArchiveRow(
     entry: HexagramArchiveEntry,
     isToday: Boolean,
+    today: LocalDate,
     visible: Boolean,
     onClick: () -> Unit,
 ) {
@@ -197,13 +202,16 @@ private fun ArchiveRow(
             .clickable { onClick() }
             .padding(14.dp),
     ) {
-        Row(verticalAlignment = Alignment.CenterVertically) {
+        Row(
+            modifier = Modifier.height(IntrinsicSize.Min),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
             Column(
                 modifier = Modifier.width(72.dp),
                 verticalArrangement = Arrangement.spacedBy(6.dp),
             ) {
                 Text(
-                    text = dateLabel(entry.date),
+                    text = dateLabel(entry.date, today),
                     fontFamily = InterFont,
                     fontWeight = FontWeight.Medium,
                     fontSize = 12.sp,
@@ -216,7 +224,7 @@ private fun ArchiveRow(
             Box(
                 modifier = Modifier
                     .width(1.dp)
-                    .height(36.dp)
+                    .fillMaxHeight()
                     .background(
                         Brush.verticalGradient(
                             listOf(
@@ -258,12 +266,12 @@ private fun ArchiveRow(
     }
 }
 
-private fun dateLabel(iso: String): String {
+private fun dateLabel(iso: String, today: LocalDate): String {
     return try {
         val date = LocalDate.parse(iso)
-        when (date) {
-            LocalDate.now() -> "Today"
-            LocalDate.now().minusDays(1) -> "Yesterday"
+        when {
+            date.isEqual(today) -> date.format(DateTimeFormatter.ofPattern("MMM d"))
+            date.isEqual(today.minusDays(1)) -> "Yesterday"
             else -> date.format(DateTimeFormatter.ofPattern("MMM d"))
         }
     } catch (e: Exception) {
