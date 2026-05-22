@@ -31,6 +31,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -41,6 +42,7 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -75,7 +77,7 @@ fun TodaysHexagramScreen(
     onViewArchive: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    val state by viewModel.state.collectAsState()
+    val state by viewModel.state.collectAsStateWithLifecycle()
     val hexagram =
         if (hexagramId != null) viewModel.hexagramForId(hexagramId) else state.todayHexagram
 
@@ -247,7 +249,7 @@ private fun StaggerSection(
         modifier = Modifier
             .fillMaxWidth()
             .alpha(alpha)
-            .padding(top = offset.dp),
+            .graphicsLayer { translationY = offset.dp.toPx() },
     ) {
         content()
     }

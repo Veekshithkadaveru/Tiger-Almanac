@@ -72,11 +72,17 @@ class UserProfileViewModel(
         }
     }
 
-    fun resetProfile() {
+    fun resetProfile(onComplete: () -> Unit = {}) {
         if (profile.value == null) return
         viewModelScope.launch {
-            withContext(Dispatchers.IO) {
-                db.clearAllTables()
+            try {
+                withContext(Dispatchers.IO) {
+                    db.clearAllTables()
+                }
+            } catch (e: Exception) {
+                e.printStackTrace()
+            } finally {
+                onComplete()
             }
         }
     }

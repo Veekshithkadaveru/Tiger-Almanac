@@ -68,24 +68,58 @@ fun calculateDailyLuck(
     month: Int,
     profile: ZodiacProfile
 ): DailyLuck {
-    val heavenlyStem = dayOfYear % 10
-    val earthlyBranch = dayOfYear % 12
+    val heavenlyStem = Math.floorMod(dayOfYear, 10)
+    val earthlyBranch = Math.floorMod(dayOfYear, 12)
+
+    val luckyColour = if (profile.luckyColours.isNotEmpty()) {
+        profile.luckyColours[Math.floorMod(dayOfYear + birthYear, profile.luckyColours.size)]
+    } else {
+        "Gold"
+    }
+
+    val luckyNumber = if (profile.luckyNumbers.isNotEmpty()) {
+        profile.luckyNumbers[Math.floorMod(dayOfYear + birthYear, profile.luckyNumbers.size)]
+    } else {
+        8
+    }
+
+    val luckyDirection = if (profile.luckyDirections.isNotEmpty()) {
+        profile.luckyDirections[Math.floorMod(dayOfYear + month, profile.luckyDirections.size)]
+    } else {
+        "South"
+    }
+
+    val luckyElement = if (elementCycle.isNotEmpty()) {
+        elementCycle[Math.floorMod(heavenlyStem, elementCycle.size)]
+    } else {
+        "Earth"
+    }
+
+    val avoidColour = if (avoidColourCycle.isNotEmpty()) {
+        avoidColourCycle[Math.floorMod(heavenlyStem, avoidColourCycle.size)]
+    } else {
+        "None"
+    }
+
+    val dayEnergy = if (dayEnergies.isNotEmpty()) {
+        dayEnergies[Math.floorMod(earthlyBranch, dayEnergies.size)]
+    } else {
+        "Day of Harmony"
+    }
+
+    val affirmation = if (affirmations.isNotEmpty()) {
+        affirmations[Math.floorMod(dayOfYear + birthYear, affirmations.size)]
+    } else {
+        "Harmony is the ultimate wisdom."
+    }
+
     return DailyLuck(
-        luckyColour = profile.luckyColours[Math.floorMod(
-            dayOfYear + birthYear,
-            profile.luckyColours.size
-        )],
-        luckyNumber = profile.luckyNumbers[Math.floorMod(
-            dayOfYear + birthYear,
-            profile.luckyNumbers.size
-        )],
-        luckyDirection = profile.luckyDirections[Math.floorMod(
-            dayOfYear + month,
-            profile.luckyDirections.size
-        )],
-        luckyElement = elementCycle[heavenlyStem],
-        avoidColour = avoidColourCycle[heavenlyStem],
-        dayEnergy = dayEnergies[earthlyBranch],
-        affirmation = affirmations[Math.floorMod(dayOfYear + birthYear, affirmations.size)]
+        luckyColour = luckyColour,
+        luckyNumber = luckyNumber,
+        luckyDirection = luckyDirection,
+        luckyElement = luckyElement,
+        avoidColour = avoidColour,
+        dayEnergy = dayEnergy,
+        affirmation = affirmation
     )
 }

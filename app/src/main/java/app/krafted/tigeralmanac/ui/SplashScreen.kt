@@ -21,6 +21,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -57,7 +58,7 @@ fun SplashScreen(
     onSkipToHome: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-    val profileState by viewModel.profile.collectAsState()
+    val profileState by viewModel.profile.collectAsStateWithLifecycle()
     var phase by remember { mutableStateOf(0) }
 
     LaunchedEffect(Unit) {

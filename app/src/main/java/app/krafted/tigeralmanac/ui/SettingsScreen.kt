@@ -12,12 +12,15 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -58,7 +61,7 @@ fun SettingsScreen(
     onResetComplete: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-    val profile by viewModel.profile.collectAsState()
+    val profile by viewModel.profile.collectAsStateWithLifecycle()
 
     var showYearPicker by remember { mutableStateOf(false) }
     var showNameEditor by remember { mutableStateOf(false) }
@@ -114,66 +117,80 @@ fun SettingsScreen(
                 )
             }
 
-            if (profile != null) {
-                val current = profile!!
-                val animal = ZodiacAnimal.calculateZodiacAnimal(current.birthYear)
-                item {
-                    GoldFrame(
+            when (val current = profile) {
+                null -> item {
+                    Box(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .entrance(index = 0),
-                        padding = 18.dp
+                            .height(160.dp),
+                        contentAlignment = Alignment.Center
                     ) {
-                        Text(
-                            text = current.name,
-                            color = TigerGoldLight,
-                            fontFamily = CormorantGaramond,
-                            fontWeight = FontWeight.SemiBold,
-                            fontSize = 26.sp
-                        )
-                        Spacer(modifier = Modifier.height(6.dp))
-                        Text(
-                            text = "${animal.emoji} ${animal.displayName} (${animal.chineseName})",
-                            color = TigerCream,
-                            fontFamily = InterFont,
-                            fontSize = 14.sp
-                        )
-                        Spacer(modifier = Modifier.height(2.dp))
-                        Text(
-                            text = "Born ${current.birthYear}",
-                            color = TigerCream.copy(alpha = 0.7f),
-                            fontFamily = InterFont,
-                            fontSize = 12.sp,
-                            letterSpacing = 1.sp
+                        CircularProgressIndicator(
+                            color = TigerGold,
+                            modifier = Modifier.size(40.dp)
                         )
                     }
                 }
+                else -> {
+                    val animal = ZodiacAnimal.calculateZodiacAnimal(current.birthYear)
+                    item {
+                        GoldFrame(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .entrance(index = 0),
+                            padding = 18.dp
+                        ) {
+                            Text(
+                                text = current.name,
+                                color = TigerGoldLight,
+                                fontFamily = CormorantGaramond,
+                                fontWeight = FontWeight.SemiBold,
+                                fontSize = 26.sp
+                            )
+                            Spacer(modifier = Modifier.height(6.dp))
+                            Text(
+                                text = "${animal.emoji} ${animal.displayName} (${animal.chineseName})",
+                                color = TigerCream,
+                                fontFamily = InterFont,
+                                fontSize = 14.sp
+                            )
+                            Spacer(modifier = Modifier.height(2.dp))
+                            Text(
+                                text = "Born ${current.birthYear}",
+                                color = TigerCream.copy(alpha = 0.7f),
+                                fontFamily = InterFont,
+                                fontSize = 12.sp,
+                                letterSpacing = 1.sp
+                            )
+                        }
+                    }
 
-                item {
-                    SettingsRow(
-                        label = "Change Birth Year",
-                        value = current.birthYear.toString(),
-                        onClick = { showYearPicker = true },
-                        modifier = Modifier.entrance(index = 1)
-                    )
-                }
+                    item {
+                        SettingsRow(
+                            label = "Change Birth Year",
+                            value = current.birthYear.toString(),
+                            onClick = { showYearPicker = true },
+                            modifier = Modifier.entrance(index = 1)
+                        )
+                    }
 
-                item {
-                    SettingsRow(
-                        label = "Change Name",
-                        value = current.name,
-                        onClick = { showNameEditor = true },
-                        modifier = Modifier.entrance(index = 2)
-                    )
-                }
+                    item {
+                        SettingsRow(
+                            label = "Change Name",
+                            value = current.name,
+                            onClick = { showNameEditor = true },
+                            modifier = Modifier.entrance(index = 2)
+                        )
+                    }
 
-                item {
-                    SettingsRow(
-                        label = "Reset Profile",
-                        value = "",
-                        onClick = { showResetConfirm = true },
-                        modifier = Modifier.entrance(index = 3)
-                    )
+                    item {
+                        SettingsRow(
+                            label = "Reset Profile",
+                            value = "",
+                            onClick = { showResetConfirm = true },
+                            modifier = Modifier.entrance(index = 3)
+                        )
+                    }
                 }
             }
 
@@ -219,9 +236,8 @@ fun SettingsScreen(
                 message = "This will clear your saved name, birth year, and onboarding. You will return to setup. This cannot be undone.",
                 confirmLabel = "RESET",
                 onConfirm = {
-                    viewModel.resetProfile()
                     showResetConfirm = false
-                    onResetComplete()
+                    viewModel.resetProfile(onComplete = onResetComplete)
                 },
                 onDismiss = { showResetConfirm = false }
             )

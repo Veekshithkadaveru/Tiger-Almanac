@@ -35,6 +35,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -73,7 +74,7 @@ fun RoomDetailScreen(
     onBack: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    val state by viewModel.state.collectAsState()
+    val state by viewModel.state.collectAsStateWithLifecycle()
 
     LaunchedEffect(roomId) {
         roomId?.let { viewModel.selectRoom(it) }
@@ -166,12 +167,12 @@ fun RoomDetailScreen(
 
                 room.tips.forEachIndexed { index, tip ->
                     val bookmarked = state.bookmarkedTipIds.contains(
-                        FengShuiViewModel.tipId(room.id, index)
+                        FengShuiViewModel.tipId(room.id, tip.title)
                     )
                     TipCard(
                         tip = tip,
                         bookmarked = bookmarked,
-                        onToggle = { viewModel.toggleBookmark(room.id, index) },
+                        onToggle = { viewModel.toggleBookmark(room.id, tip.title) },
                         modifier = Modifier.entrance(index = index),
                     )
                     Spacer(modifier = Modifier.height(12.dp))

@@ -31,6 +31,7 @@ import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -83,7 +84,7 @@ fun ProfileSetupScreen(
     var selectedMonth by remember { mutableStateOf(7) }
     var nameInput by remember { mutableStateOf("") }
 
-    val zodiacProfiles by viewModel.zodiacProfiles.collectAsState()
+    val zodiacProfiles by viewModel.zodiacProfiles.collectAsStateWithLifecycle()
     val activeAnimal = remember(selectedYear) {
         ZodiacAnimal.calculateZodiacAnimal(selectedYear)
     }

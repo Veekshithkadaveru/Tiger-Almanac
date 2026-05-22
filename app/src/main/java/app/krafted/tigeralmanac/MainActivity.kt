@@ -1,7 +1,9 @@
 package app.krafted.tigeralmanac
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.ComponentActivity
+import androidx.activity.compose.BackHandler
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.animation.AnimatedContentTransitionScope
@@ -9,6 +11,10 @@ import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableLongStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
@@ -179,6 +185,20 @@ fun TigerAlmanacNavHost(
         }
         composable(Routes.HOME) {
             val homeViewModel: HomeViewModel = viewModel(factory = homeViewModelFactory)
+            var lastBackPressTime by remember { mutableLongStateOf(0L) }
+            BackHandler {
+                val now = System.currentTimeMillis()
+                if (now - lastBackPressTime < 2000L) {
+                    (navController.context as? ComponentActivity)?.finish()
+                } else {
+                    lastBackPressTime = now
+                    Toast.makeText(
+                        navController.context,
+                        "Press back again to exit",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }
             HomeScreen(
                 viewModel = homeViewModel,
                 onNavigateIching = { navController.navigate(Routes.ICHING) },

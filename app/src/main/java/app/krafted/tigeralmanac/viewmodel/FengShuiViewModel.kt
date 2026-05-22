@@ -52,9 +52,9 @@ class FengShuiViewModel(
         )
     }
 
-    fun toggleBookmark(roomId: String, tipIndex: Int) {
+    fun toggleBookmark(roomId: String, tipTitle: String) {
         viewModelScope.launch {
-            val id = tipId(roomId, tipIndex)
+            val id = tipId(roomId, tipTitle)
             if (_state.value.bookmarkedTipIds.contains(id)) {
                 bookmarkDao.deleteBookmarkById(id)
             } else {
@@ -64,7 +64,7 @@ class FengShuiViewModel(
     }
 
     companion object {
-        fun tipId(roomId: String, index: Int) = "${roomId}_$index"
+        fun tipId(roomId: String, tipTitle: String) = "${roomId}_$tipTitle"
 
         fun factory(context: Context, bookmarkDao: BookmarkDao): ViewModelProvider.Factory =
             object : ViewModelProvider.Factory {

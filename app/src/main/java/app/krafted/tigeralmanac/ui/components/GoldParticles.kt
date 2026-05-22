@@ -37,29 +37,24 @@ fun GoldParticles(modifier: Modifier = Modifier, count: Int = 18) {
         }
     }
 
-    val infiniteTransition = rememberInfiniteTransition(label = "particles")
-    val progresses = particles.map { particle ->
-        infiniteTransition.animateFloat(
-            initialValue = 0f,
-            targetValue = 1f,
-            animationSpec = infiniteRepeatable(
-                animation = tween(
-                    particle.durationMs,
-                    delayMillis = particle.delayMs,
-                    easing = LinearEasing
-                ),
-                repeatMode = RepeatMode.Restart
-            ),
-            label = "particle_pos"
-        )
-    }
+    val infiniteTransition = rememberInfiniteTransition(label = "gold_particles")
+    val timeMsState = infiniteTransition.animateFloat(
+        initialValue = 0f,
+        targetValue = 60000f,
+        animationSpec = infiniteRepeatable(
+            animation = tween(60000, easing = LinearEasing),
+            repeatMode = RepeatMode.Restart
+        ),
+        label = "global_time"
+    )
 
     Canvas(modifier = modifier.fillMaxSize()) {
         val w = size.width
         val h = size.height
 
-        particles.forEachIndexed { index, particle ->
-            val progress = progresses[index].value
+        particles.forEach { particle ->
+            val totalTime = timeMsState.value + particle.delayMs.toFloat()
+            val progress = (totalTime % particle.durationMs.toFloat()) / particle.durationMs.toFloat()
             val currentY = h * (1f - progress * 1.1f)
             val startX = w * particle.xPercent
             val currentX = (startX + (particle.drift * progress)).coerceIn(0f, w)

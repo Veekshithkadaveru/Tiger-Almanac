@@ -121,17 +121,31 @@ class HomeViewModel(
     }
 
     companion object {
+        private val cnyDates = mapOf(
+            2023 to LocalDate.of(2023, 1, 22),
+            2024 to LocalDate.of(2024, 2, 10),
+            2025 to LocalDate.of(2025, 1, 29),
+            2026 to LocalDate.of(2026, 2, 17),
+            2027 to LocalDate.of(2027, 2, 6),
+            2028 to LocalDate.of(2028, 1, 26),
+            2029 to LocalDate.of(2029, 2, 13),
+            2030 to LocalDate.of(2030, 2, 3)
+        )
+
         fun calculateLunarDate(today: LocalDate): String {
-            val refCNY = LocalDate.of(2026, 2, 17)
-            val days = if (today.year == 2026) {
-                val daysFromCNY = ChronoUnit.DAYS.between(refCNY, today)
-                if (daysFromCNY >= 0) daysFromCNY else {
-                    ChronoUnit.DAYS.between(LocalDate.of(2025, 1, 29), today)
+            val currentYearCny = cnyDates[today.year]
+            val refCNY = if (currentYearCny != null) {
+                if (!today.isBefore(currentYearCny)) {
+                    currentYearCny
+                } else {
+                    cnyDates[today.year - 1]
                 }
-            } else if (today.year == 2025) {
-                ChronoUnit.DAYS.between(LocalDate.of(2025, 1, 29), today)
-            } else if (today.year == 2024) {
-                ChronoUnit.DAYS.between(LocalDate.of(2024, 2, 10), today)
+            } else {
+                null
+            }
+
+            val days = if (refCNY != null) {
+                ChronoUnit.DAYS.between(refCNY, today)
             } else {
                 (today.dayOfYear + 10L)
             }

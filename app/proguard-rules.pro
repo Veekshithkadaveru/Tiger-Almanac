@@ -19,3 +19,9 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+# Keep model classes for Gson deserialization
+-keep class app.krafted.tigeralmanac.model.** { *; }
+
+# Keep Room database, entities, and DAOs
+-keep class app.krafted.tigeralmanac.data.db.** { *; }

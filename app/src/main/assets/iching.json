@@ -17,7 +17,12 @@
       "luckyElement": "Metal",
       "luckyColour": "Gold",
       "luckyNumber": 1,
-      "tags": ["creativity", "strength", "leadership", "beginnings"]
+      "tags": [
+        "creativity",
+        "strength",
+        "leadership",
+        "beginnings"
+      ]
     },
     {
       "id": 2,
@@ -36,7 +41,12 @@
       "luckyElement": "Earth",
       "luckyColour": "Yellow",
       "luckyNumber": 2,
-      "tags": ["patience", "receptivity", "nurturing", "completion"]
+      "tags": [
+        "patience",
+        "receptivity",
+        "nurturing",
+        "completion"
+      ]
     },
     {
       "id": 3,
@@ -55,7 +65,12 @@
       "luckyElement": "Water",
       "luckyColour": "Blue",
       "luckyNumber": 3,
-      "tags": ["beginnings", "difficulty", "perseverance", "growth"]
+      "tags": [
+        "beginnings",
+        "difficulty",
+        "perseverance",
+        "growth"
+      ]
     },
     {
       "id": 4,
@@ -74,7 +89,12 @@
       "luckyElement": "Wood",
       "luckyColour": "Green",
       "luckyNumber": 4,
-      "tags": ["learning", "humility", "inexperience", "guidance"]
+      "tags": [
+        "learning",
+        "humility",
+        "inexperience",
+        "guidance"
+      ]
     },
     {
       "id": 5,
@@ -93,7 +113,12 @@
       "luckyElement": "Water",
       "luckyColour": "Black",
       "luckyNumber": 5,
-      "tags": ["patience", "timing", "trust", "preparation"]
+      "tags": [
+        "patience",
+        "timing",
+        "trust",
+        "preparation"
+      ]
     },
     {
       "id": 6,
@@ -112,7 +137,12 @@
       "luckyElement": "Metal",
       "luckyColour": "White",
       "luckyNumber": 6,
-      "tags": ["conflict", "caution", "resolution", "withdrawal"]
+      "tags": [
+        "conflict",
+        "caution",
+        "resolution",
+        "withdrawal"
+      ]
     },
     {
       "id": 7,
@@ -131,7 +161,12 @@
       "luckyElement": "Earth",
       "luckyColour": "Brown",
       "luckyNumber": 7,
-      "tags": ["leadership", "discipline", "organisation", "effort"]
+      "tags": [
+        "leadership",
+        "discipline",
+        "organisation",
+        "effort"
+      ]
     },
     {
       "id": 8,
@@ -150,7 +185,12 @@
       "luckyElement": "Water",
       "luckyColour": "Blue",
       "luckyNumber": 8,
-      "tags": ["union", "alliance", "community", "relationship"]
+      "tags": [
+        "union",
+        "alliance",
+        "community",
+        "relationship"
+      ]
     },
     {
       "id": 9,
@@ -169,7 +209,12 @@
       "luckyElement": "Wood",
       "luckyColour": "Green",
       "luckyNumber": 9,
-      "tags": ["patience", "subtle_influence", "restraint", "preparation"]
+      "tags": [
+        "patience",
+        "subtle_influence",
+        "restraint",
+        "preparation"
+      ]
     },
     {
       "id": 10,
@@ -188,7 +233,12 @@
       "luckyElement": "Metal",
       "luckyColour": "Gold",
       "luckyNumber": 10,
-      "tags": ["conduct", "caution", "integrity", "danger"]
+      "tags": [
+        "conduct",
+        "caution",
+        "integrity",
+        "danger"
+      ]
     },
     {
       "id": 11,
@@ -207,7 +257,12 @@
       "luckyElement": "Earth",
       "luckyColour": "Yellow",
       "luckyNumber": 11,
-      "tags": ["peace", "harmony", "prosperity", "alignment"]
+      "tags": [
+        "peace",
+        "harmony",
+        "prosperity",
+        "alignment"
+      ]
     },
     {
       "id": 12,
@@ -226,7 +281,12 @@
       "luckyElement": "Metal",
       "luckyColour": "White",
       "luckyNumber": 12,
-      "tags": ["stagnation", "withdrawal", "patience", "inner_work"]
+      "tags": [
+        "stagnation",
+        "withdrawal",
+        "patience",
+        "inner_work"
+      ]
     },
     {
       "id": 13,
@@ -245,7 +305,12 @@
       "luckyElement": "Fire",
       "luckyColour": "Red",
       "luckyNumber": 13,
-      "tags": ["community", "fellowship", "alliance", "openness"]
+      "tags": [
+        "community",
+        "fellowship",
+        "alliance",
+        "openness"
+      ]
     },
     {
       "id": 14,
@@ -264,7 +329,12 @@
       "luckyElement": "Fire",
       "luckyColour": "Red",
       "luckyNumber": 14,
-      "tags": ["abundance", "wealth", "generosity", "responsibility"]
+      "tags": [
+        "abundance",
+        "wealth",
+        "generosity",
+        "responsibility"
+      ]
     },
     {
       "id": 15,
@@ -283,7 +353,12 @@
       "luckyElement": "Earth",
       "luckyColour": "Yellow",
       "luckyNumber": 15,
-      "tags": ["humility", "modesty", "understatement", "substance"]
+      "tags": [
+        "humility",
+        "modesty",
+        "understatement",
+        "substance"
+      ]
     },
     {
       "id": 16,
@@ -302,7 +377,12 @@
       "luckyElement": "Wood",
       "luckyColour": "Green",
       "luckyNumber": 16,
-      "tags": ["enthusiasm", "joy", "energy", "inspiration"]
+      "tags": [
+        "enthusiasm",
+        "joy",
+        "energy",
+        "inspiration"
+      ]
     },
     {
       "id": 17,
@@ -321,7 +401,12 @@
       "luckyElement": "Metal",
       "luckyColour": "Gold",
       "luckyNumber": 17,
-      "tags": ["adaptability", "following", "yielding", "alignment"]
+      "tags": [
+        "adaptability",
+        "following",
+        "yielding",
+        "alignment"
+      ]
     },
     {
       "id": 18,
@@ -340,7 +425,12 @@
       "luckyElement": "Wood",
       "luckyColour": "Green",
       "luckyNumber": 18,
-      "tags": ["repair", "restoration", "neglect", "renewal"]
+      "tags": [
+        "repair",
+        "restoration",
+        "neglect",
+        "renewal"
+      ]
     },
     {
       "id": 19,
@@ -359,7 +449,12 @@
       "luckyElement": "Earth",
       "luckyColour": "Yellow",
       "luckyNumber": 19,
-      "tags": ["opportunity", "approach", "timing", "action"]
+      "tags": [
+        "opportunity",
+        "approach",
+        "timing",
+        "action"
+      ]
     },
     {
       "id": 20,
@@ -378,7 +473,12 @@
       "luckyElement": "Wood",
       "luckyColour": "Green",
       "luckyNumber": 20,
-      "tags": ["observation", "contemplation", "perspective", "clarity"]
+      "tags": [
+        "observation",
+        "contemplation",
+        "perspective",
+        "clarity"
+      ]
     },
     {
       "id": 21,
@@ -397,7 +497,12 @@
       "luckyElement": "Fire",
       "luckyColour": "Red",
       "luckyNumber": 21,
-      "tags": ["decisiveness", "confrontation", "justice", "obstacles"]
+      "tags": [
+        "decisiveness",
+        "confrontation",
+        "justice",
+        "obstacles"
+      ]
     },
     {
       "id": 22,
@@ -416,7 +521,12 @@
       "luckyElement": "Fire",
       "luckyColour": "Gold",
       "luckyNumber": 22,
-      "tags": ["beauty", "grace", "presentation", "form"]
+      "tags": [
+        "beauty",
+        "grace",
+        "presentation",
+        "form"
+      ]
     },
     {
       "id": 23,
@@ -435,7 +545,12 @@
       "luckyElement": "Earth",
       "luckyColour": "Brown",
       "luckyNumber": 23,
-      "tags": ["dissolution", "decline", "withdrawal", "ending"]
+      "tags": [
+        "dissolution",
+        "decline",
+        "withdrawal",
+        "ending"
+      ]
     },
     {
       "id": 24,
@@ -454,7 +569,12 @@
       "luckyElement": "Wood",
       "luckyColour": "Green",
       "luckyNumber": 24,
-      "tags": ["return", "renewal", "turning_point", "recovery"]
+      "tags": [
+        "return",
+        "renewal",
+        "turning_point",
+        "recovery"
+      ]
     },
     {
       "id": 25,
@@ -473,7 +593,12 @@
       "luckyElement": "Metal",
       "luckyColour": "White",
       "luckyNumber": 25,
-      "tags": ["innocence", "authenticity", "naturalness", "truth"]
+      "tags": [
+        "innocence",
+        "authenticity",
+        "naturalness",
+        "truth"
+      ]
     },
     {
       "id": 26,
@@ -492,7 +617,12 @@
       "luckyElement": "Metal",
       "luckyColour": "Gold",
       "luckyNumber": 26,
-      "tags": ["restraint", "accumulation", "power", "patience"]
+      "tags": [
+        "restraint",
+        "accumulation",
+        "power",
+        "patience"
+      ]
     },
     {
       "id": 27,
@@ -511,7 +641,12 @@
       "luckyElement": "Earth",
       "luckyColour": "Yellow",
       "luckyNumber": 27,
-      "tags": ["nourishment", "nutrition", "provision", "care"]
+      "tags": [
+        "nourishment",
+        "nutrition",
+        "provision",
+        "care"
+      ]
     },
     {
       "id": 28,
@@ -530,7 +665,12 @@
       "luckyElement": "Water",
       "luckyColour": "Blue",
       "luckyNumber": 28,
-      "tags": ["excess", "critical_mass", "exceptional_action", "crisis"]
+      "tags": [
+        "excess",
+        "critical_mass",
+        "exceptional_action",
+        "crisis"
+      ]
     },
     {
       "id": 29,
@@ -549,7 +689,12 @@
       "luckyElement": "Water",
       "luckyColour": "Black",
       "luckyNumber": 29,
-      "tags": ["danger", "perseverance", "flow", "courage"]
+      "tags": [
+        "danger",
+        "perseverance",
+        "flow",
+        "courage"
+      ]
     },
     {
       "id": 30,
@@ -568,7 +713,12 @@
       "luckyElement": "Fire",
       "luckyColour": "Red",
       "luckyNumber": 30,
-      "tags": ["clarity", "brilliance", "light", "dependence"]
+      "tags": [
+        "clarity",
+        "brilliance",
+        "light",
+        "dependence"
+      ]
     },
     {
       "id": 31,
@@ -587,7 +737,12 @@
       "luckyElement": "Water",
       "luckyColour": "Blue",
       "luckyNumber": 31,
-      "tags": ["influence", "attraction", "relationship", "openness"]
+      "tags": [
+        "influence",
+        "attraction",
+        "relationship",
+        "openness"
+      ]
     },
     {
       "id": 32,
@@ -606,7 +761,12 @@
       "luckyElement": "Wood",
       "luckyColour": "Green",
       "luckyNumber": 32,
-      "tags": ["duration", "perseverance", "constancy", "endurance"]
+      "tags": [
+        "duration",
+        "perseverance",
+        "constancy",
+        "endurance"
+      ]
     },
     {
       "id": 33,
@@ -625,7 +785,12 @@
       "luckyElement": "Metal",
       "luckyColour": "White",
       "luckyNumber": 33,
-      "tags": ["retreat", "withdrawal", "strategy", "preservation"]
+      "tags": [
+        "retreat",
+        "withdrawal",
+        "strategy",
+        "preservation"
+      ]
     },
     {
       "id": 34,
@@ -644,7 +809,12 @@
       "luckyElement": "Metal",
       "luckyColour": "Gold",
       "luckyNumber": 34,
-      "tags": ["strength", "power", "restraint", "righteousness"]
+      "tags": [
+        "strength",
+        "power",
+        "restraint",
+        "righteousness"
+      ]
     },
     {
       "id": 35,
@@ -663,7 +833,12 @@
       "luckyElement": "Fire",
       "luckyColour": "Red",
       "luckyNumber": 35,
-      "tags": ["progress", "advancement", "recognition", "merit"]
+      "tags": [
+        "progress",
+        "advancement",
+        "recognition",
+        "merit"
+      ]
     },
     {
       "id": 36,
@@ -682,7 +857,12 @@
       "luckyElement": "Fire",
       "luckyColour": "Red",
       "luckyNumber": 36,
-      "tags": ["adversity", "concealment", "inner_light", "perseverance"]
+      "tags": [
+        "adversity",
+        "concealment",
+        "inner_light",
+        "perseverance"
+      ]
     },
     {
       "id": 37,
@@ -701,7 +881,12 @@
       "luckyElement": "Wood",
       "luckyColour": "Green",
       "luckyNumber": 37,
-      "tags": ["family", "relationships", "foundation", "home"]
+      "tags": [
+        "family",
+        "relationships",
+        "foundation",
+        "home"
+      ]
     },
     {
       "id": 38,
@@ -709,7 +894,7 @@
       "name": "Kui",
       "englishName": "Opposition",
       "chineseName": "睽",
-      "symbol": "☱☲",
+      "symbol": "☲☱",
       "element": "Lake/Fire",
       "attribute": "Polarity",
       "image": "Above, fire; below, the lake. Opposition.",
@@ -720,7 +905,12 @@
       "luckyElement": "Fire",
       "luckyColour": "Red",
       "luckyNumber": 38,
-      "tags": ["opposition", "polarity", "tension", "creative_difference"]
+      "tags": [
+        "opposition",
+        "polarity",
+        "tension",
+        "creative_difference"
+      ]
     },
     {
       "id": 39,
@@ -739,7 +929,12 @@
       "luckyElement": "Water",
       "luckyColour": "Blue",
       "luckyNumber": 39,
-      "tags": ["obstruction", "difficulty", "alternative_path", "counsel"]
+      "tags": [
+        "obstruction",
+        "difficulty",
+        "alternative_path",
+        "counsel"
+      ]
     },
     {
       "id": 40,
@@ -758,7 +953,12 @@
       "luckyElement": "Wood",
       "luckyColour": "Green",
       "luckyNumber": 40,
-      "tags": ["liberation", "release", "resolution", "movement"]
+      "tags": [
+        "liberation",
+        "release",
+        "resolution",
+        "movement"
+      ]
     },
     {
       "id": 41,
@@ -777,7 +977,12 @@
       "luckyElement": "Earth",
       "luckyColour": "Yellow",
       "luckyNumber": 41,
-      "tags": ["decrease", "simplification", "letting_go", "purification"]
+      "tags": [
+        "decrease",
+        "simplification",
+        "letting_go",
+        "purification"
+      ]
     },
     {
       "id": 42,
@@ -796,7 +1001,12 @@
       "luckyElement": "Wood",
       "luckyColour": "Green",
       "luckyNumber": 42,
-      "tags": ["increase", "expansion", "growth", "investment"]
+      "tags": [
+        "increase",
+        "expansion",
+        "growth",
+        "investment"
+      ]
     },
     {
       "id": 43,
@@ -815,7 +1025,12 @@
       "luckyElement": "Metal",
       "luckyColour": "Gold",
       "luckyNumber": 43,
-      "tags": ["breakthrough", "resolution", "decisiveness", "clarity"]
+      "tags": [
+        "breakthrough",
+        "resolution",
+        "decisiveness",
+        "clarity"
+      ]
     },
     {
       "id": 44,
@@ -834,7 +1049,12 @@
       "luckyElement": "Metal",
       "luckyColour": "White",
       "luckyNumber": 44,
-      "tags": ["encounter", "temptation", "discernment", "caution"]
+      "tags": [
+        "encounter",
+        "temptation",
+        "discernment",
+        "caution"
+      ]
     },
     {
       "id": 45,
@@ -853,7 +1073,12 @@
       "luckyElement": "Earth",
       "luckyColour": "Yellow",
       "luckyNumber": 45,
-      "tags": ["gathering", "community", "congregation", "collective"]
+      "tags": [
+        "gathering",
+        "community",
+        "congregation",
+        "collective"
+      ]
     },
     {
       "id": 46,
@@ -872,7 +1097,12 @@
       "luckyElement": "Wood",
       "luckyColour": "Green",
       "luckyNumber": 46,
-      "tags": ["growth", "ascent", "progress", "patience"]
+      "tags": [
+        "growth",
+        "ascent",
+        "progress",
+        "patience"
+      ]
     },
     {
       "id": 47,
@@ -891,7 +1121,12 @@
       "luckyElement": "Water",
       "luckyColour": "Black",
       "luckyNumber": 47,
-      "tags": ["exhaustion", "adversity", "resilience", "depletion"]
+      "tags": [
+        "exhaustion",
+        "adversity",
+        "resilience",
+        "depletion"
+      ]
     },
     {
       "id": 48,
@@ -910,7 +1145,12 @@
       "luckyElement": "Water",
       "luckyColour": "Blue",
       "luckyNumber": 48,
-      "tags": ["source", "depth", "nourishment", "constancy"]
+      "tags": [
+        "source",
+        "depth",
+        "nourishment",
+        "constancy"
+      ]
     },
     {
       "id": 49,
@@ -929,7 +1169,12 @@
       "luckyElement": "Fire",
       "luckyColour": "Red",
       "luckyNumber": 49,
-      "tags": ["revolution", "transformation", "fundamental_change", "necessity"]
+      "tags": [
+        "revolution",
+        "transformation",
+        "fundamental_change",
+        "necessity"
+      ]
     },
     {
       "id": 50,
@@ -948,7 +1193,12 @@
       "luckyElement": "Fire",
       "luckyColour": "Gold",
       "luckyNumber": 50,
-      "tags": ["transformation", "nourishment", "excellence", "offering"]
+      "tags": [
+        "transformation",
+        "nourishment",
+        "excellence",
+        "offering"
+      ]
     },
     {
       "id": 51,
@@ -967,7 +1217,12 @@
       "luckyElement": "Wood",
       "luckyColour": "Green",
       "luckyNumber": 51,
-      "tags": ["shock", "awakening", "stability", "resilience"]
+      "tags": [
+        "shock",
+        "awakening",
+        "stability",
+        "resilience"
+      ]
     },
     {
       "id": 52,
@@ -986,7 +1241,12 @@
       "luckyElement": "Earth",
       "luckyColour": "Brown",
       "luckyNumber": 52,
-      "tags": ["stillness", "meditation", "rest", "non_action"]
+      "tags": [
+        "stillness",
+        "meditation",
+        "rest",
+        "non_action"
+      ]
     },
     {
       "id": 53,
@@ -1005,7 +1265,12 @@
       "luckyElement": "Wood",
       "luckyColour": "Green",
       "luckyNumber": 53,
-      "tags": ["development", "gradual_progress", "patience", "natural_pace"]
+      "tags": [
+        "development",
+        "gradual_progress",
+        "patience",
+        "natural_pace"
+      ]
     },
     {
       "id": 54,
@@ -1024,7 +1289,12 @@
       "luckyElement": "Metal",
       "luckyColour": "White",
       "luckyNumber": 54,
-      "tags": ["relationships", "subordination", "caution", "motivation"]
+      "tags": [
+        "relationships",
+        "subordination",
+        "caution",
+        "motivation"
+      ]
     },
     {
       "id": 55,
@@ -1043,7 +1313,12 @@
       "luckyElement": "Fire",
       "luckyColour": "Gold",
       "luckyNumber": 55,
-      "tags": ["abundance", "fullness", "peak", "presence"]
+      "tags": [
+        "abundance",
+        "fullness",
+        "peak",
+        "presence"
+      ]
     },
     {
       "id": 56,
@@ -1062,7 +1337,12 @@
       "luckyElement": "Fire",
       "luckyColour": "Red",
       "luckyNumber": 56,
-      "tags": ["travel", "transition", "impermanence", "adaptability"]
+      "tags": [
+        "travel",
+        "transition",
+        "impermanence",
+        "adaptability"
+      ]
     },
     {
       "id": 57,
@@ -1081,7 +1361,12 @@
       "luckyElement": "Wood",
       "luckyColour": "Green",
       "luckyNumber": 57,
-      "tags": ["gentleness", "penetration", "consistency", "patience"]
+      "tags": [
+        "gentleness",
+        "penetration",
+        "consistency",
+        "patience"
+      ]
     },
     {
       "id": 58,
@@ -1100,7 +1385,12 @@
       "luckyElement": "Metal",
       "luckyColour": "White",
       "luckyNumber": 58,
-      "tags": ["joy", "delight", "relationships", "alignment"]
+      "tags": [
+        "joy",
+        "delight",
+        "relationships",
+        "alignment"
+      ]
     },
     {
       "id": 59,
@@ -1119,7 +1409,12 @@
       "luckyElement": "Water",
       "luckyColour": "Blue",
       "luckyNumber": 59,
-      "tags": ["dissolution", "renewal", "dispersion", "community"]
+      "tags": [
+        "dissolution",
+        "renewal",
+        "dispersion",
+        "community"
+      ]
     },
     {
       "id": 60,
@@ -1138,7 +1433,12 @@
       "luckyElement": "Water",
       "luckyColour": "Black",
       "luckyNumber": 60,
-      "tags": ["limitation", "boundaries", "structure", "regulation"]
+      "tags": [
+        "limitation",
+        "boundaries",
+        "structure",
+        "regulation"
+      ]
     },
     {
       "id": 61,
@@ -1157,7 +1457,12 @@
       "luckyElement": "Wood",
       "luckyColour": "Green",
       "luckyNumber": 61,
-      "tags": ["sincerity", "inner_truth", "authenticity", "influence"]
+      "tags": [
+        "sincerity",
+        "inner_truth",
+        "authenticity",
+        "influence"
+      ]
     },
     {
       "id": 62,
@@ -1176,7 +1481,12 @@
       "luckyElement": "Earth",
       "luckyColour": "Yellow",
       "luckyNumber": 62,
-      "tags": ["modesty", "small_steps", "caution", "precision"]
+      "tags": [
+        "modesty",
+        "small_steps",
+        "caution",
+        "precision"
+      ]
     },
     {
       "id": 63,
@@ -1195,7 +1505,12 @@
       "luckyElement": "Water",
       "luckyColour": "Blue",
       "luckyNumber": 63,
-      "tags": ["completion", "order", "achievement", "transition"]
+      "tags": [
+        "completion",
+        "order",
+        "achievement",
+        "transition"
+      ]
     },
     {
       "id": 64,
@@ -1214,7 +1529,12 @@
       "luckyElement": "Fire",
       "luckyColour": "Red",
       "luckyNumber": 64,
-      "tags": ["transition", "threshold", "vigilance", "completion"]
+      "tags": [
+        "transition",
+        "threshold",
+        "vigilance",
+        "completion"
+      ]
     }
   ]
 }
