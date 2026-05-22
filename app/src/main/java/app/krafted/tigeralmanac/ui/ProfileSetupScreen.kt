@@ -62,6 +62,7 @@ import app.krafted.tigeralmanac.ui.components.Tag
 import app.krafted.tigeralmanac.ui.components.TagTone
 import app.krafted.tigeralmanac.ui.components.YearPicker
 import app.krafted.tigeralmanac.ui.components.drawBehindUnderline
+import app.krafted.tigeralmanac.ui.components.entrance
 import app.krafted.tigeralmanac.ui.theme.TigerCream
 import app.krafted.tigeralmanac.ui.theme.TigerGold
 import app.krafted.tigeralmanac.ui.theme.TigerGoldLight
@@ -268,10 +269,10 @@ fun WelcomeStepContent() {
             contentAlignment = Alignment.Center
         ) {
             Image(
-                painter = painterResource(id = R.drawable.tiger004_sym_1),
+                painter = painterResource(id = R.drawable.app_logo),
                 contentDescription = null,
-                modifier = Modifier.fillMaxSize(0.9f),
-                contentScale = ContentScale.Fit
+                modifier = Modifier.fillMaxSize(),
+                contentScale = ContentScale.Crop
             )
         }
 
@@ -422,7 +423,9 @@ fun NameInputStep(
     onNameChange: (String) -> Unit
 ) {
     GoldFrame(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier
+            .fillMaxWidth()
+            .entrance(),
         padding = 20.dp
     ) {
         Text(
@@ -493,7 +496,9 @@ fun ConfirmCardStep(
     profile: app.krafted.tigeralmanac.model.ZodiacProfile?
 ) {
     GoldFrame(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier
+            .fillMaxWidth()
+            .entrance(),
         padding = 20.dp
     ) {
         Row(

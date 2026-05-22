@@ -1,7 +1,5 @@
 package app.krafted.tigeralmanac.ui.fengshui
 
-import androidx.compose.animation.core.animateFloatAsState
-import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -25,16 +23,12 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -47,6 +41,7 @@ import app.krafted.tigeralmanac.ui.components.ScreenBackground
 import app.krafted.tigeralmanac.ui.components.SealHeader
 import app.krafted.tigeralmanac.ui.components.Tag
 import app.krafted.tigeralmanac.ui.components.TagTone
+import app.krafted.tigeralmanac.ui.components.entrance
 import app.krafted.tigeralmanac.ui.components.rememberDrawableId
 import app.krafted.tigeralmanac.ui.theme.CormorantGaramond
 import app.krafted.tigeralmanac.ui.theme.InterFont
@@ -57,7 +52,6 @@ import app.krafted.tigeralmanac.ui.theme.TigerInk
 import app.krafted.tigeralmanac.ui.theme.TigerJade
 import app.krafted.tigeralmanac.ui.theme.TigerSurface
 import app.krafted.tigeralmanac.viewmodel.FengShuiViewModel
-import kotlinx.coroutines.delay
 
 @Composable
 fun RoomSelectScreen(
@@ -100,13 +94,15 @@ fun RoomSelectScreen(
                     SealHeader(
                         title = "風水",
                         subtitle = "FENG SHUI",
-                        symbolRes = R.drawable.tiger004_sym_6,
+                        symbolRes = R.drawable.app_logo,
                     )
                 }
                 itemsIndexed(state.rooms) { index, room ->
-                    StaggerItem(index = index) {
-                        RoomCard(room = room, onClick = { onSelectRoom(room.id) })
-                    }
+                    RoomCard(
+                        room = room,
+                        onClick = { onSelectRoom(room.id) },
+                        modifier = Modifier.entrance(index = index),
+                    )
                 }
             }
         }
@@ -133,42 +129,13 @@ private fun TopBar(
 }
 
 @Composable
-private fun StaggerItem(
-    index: Int,
-    content: @Composable () -> Unit,
-) {
-    var visible by remember { mutableStateOf(false) }
-    LaunchedEffect(Unit) {
-        delay(index * 60L)
-        visible = true
-    }
-    val alpha by animateFloatAsState(
-        targetValue = if (visible) 1f else 0f,
-        animationSpec = tween(durationMillis = 350),
-        label = "cardAlpha",
-    )
-    val offset by animateFloatAsState(
-        targetValue = if (visible) 0f else 18f,
-        animationSpec = tween(durationMillis = 350),
-        label = "cardOffset",
-    )
-    Box(
-        modifier = Modifier
-            .fillMaxWidth()
-            .alpha(alpha)
-            .padding(top = offset.dp),
-    ) {
-        content()
-    }
-}
-
-@Composable
 private fun RoomCard(
     room: Room,
     onClick: () -> Unit,
+    modifier: Modifier = Modifier,
 ) {
     GoldFrame(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
             .clickable(onClick = onClick),
     ) {
@@ -188,7 +155,8 @@ private fun RoomCard(
                 Image(
                     painter = painterResource(rememberDrawableId(room.symbol)),
                     contentDescription = null,
-                    modifier = Modifier.size(48.dp),
+                    modifier = Modifier.fillMaxSize(),
+                    contentScale = ContentScale.Crop,
                 )
             }
             Column(

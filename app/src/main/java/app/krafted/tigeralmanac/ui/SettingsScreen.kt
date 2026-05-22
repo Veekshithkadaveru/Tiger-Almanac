@@ -41,6 +41,7 @@ import app.krafted.tigeralmanac.ui.components.ScreenBackground
 import app.krafted.tigeralmanac.ui.components.SealHeader
 import app.krafted.tigeralmanac.ui.components.YearPicker
 import app.krafted.tigeralmanac.ui.components.drawBehindUnderline
+import app.krafted.tigeralmanac.ui.components.entrance
 import app.krafted.tigeralmanac.ui.theme.CormorantGaramond
 import app.krafted.tigeralmanac.ui.theme.InterFont
 import app.krafted.tigeralmanac.ui.theme.TigerCream
@@ -108,7 +109,7 @@ fun SettingsScreen(
                 SealHeader(
                     title = "Settings",
                     subtitle = "設定",
-                    symbolRes = R.drawable.tiger004_sym_7,
+                    symbolRes = R.drawable.app_logo,
                     modifier = Modifier.padding(bottom = 4.dp)
                 )
             }
@@ -118,7 +119,9 @@ fun SettingsScreen(
                 val animal = ZodiacAnimal.calculateZodiacAnimal(current.birthYear)
                 item {
                     GoldFrame(
-                        modifier = Modifier.fillMaxWidth(),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .entrance(index = 0),
                         padding = 18.dp
                     ) {
                         Text(
@@ -150,7 +153,8 @@ fun SettingsScreen(
                     SettingsRow(
                         label = "Change Birth Year",
                         value = current.birthYear.toString(),
-                        onClick = { showYearPicker = true }
+                        onClick = { showYearPicker = true },
+                        modifier = Modifier.entrance(index = 1)
                     )
                 }
 
@@ -158,7 +162,8 @@ fun SettingsScreen(
                     SettingsRow(
                         label = "Change Name",
                         value = current.name,
-                        onClick = { showNameEditor = true }
+                        onClick = { showNameEditor = true },
+                        modifier = Modifier.entrance(index = 2)
                     )
                 }
 
@@ -166,7 +171,8 @@ fun SettingsScreen(
                     SettingsRow(
                         label = "Reset Profile",
                         value = "",
-                        onClick = { showResetConfirm = true }
+                        onClick = { showResetConfirm = true },
+                        modifier = Modifier.entrance(index = 3)
                     )
                 }
             }
@@ -227,10 +233,11 @@ fun SettingsScreen(
 private fun SettingsRow(
     label: String,
     value: String,
-    onClick: () -> Unit
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier
 ) {
     GoldFrame(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
             .clickable(
                 interactionSource = remember { MutableInteractionSource() },

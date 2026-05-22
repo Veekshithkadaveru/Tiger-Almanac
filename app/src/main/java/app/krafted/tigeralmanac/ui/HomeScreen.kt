@@ -1,7 +1,5 @@
 package app.krafted.tigeralmanac.ui
 
-import androidx.compose.animation.core.animateFloatAsState
-import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -24,15 +22,11 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
@@ -49,6 +43,7 @@ import app.krafted.tigeralmanac.ui.components.ScreenBackground
 import app.krafted.tigeralmanac.ui.components.SealHeader
 import app.krafted.tigeralmanac.ui.components.ToolCard
 import app.krafted.tigeralmanac.ui.components.WhisperLine
+import app.krafted.tigeralmanac.ui.components.entrance
 import app.krafted.tigeralmanac.ui.theme.CormorantGaramond
 import app.krafted.tigeralmanac.ui.theme.InterFont
 import app.krafted.tigeralmanac.ui.theme.TigerCream
@@ -58,7 +53,6 @@ import app.krafted.tigeralmanac.ui.theme.TigerInk
 import app.krafted.tigeralmanac.ui.theme.TigerRed
 import app.krafted.tigeralmanac.ui.theme.TigerSurface
 import app.krafted.tigeralmanac.viewmodel.HomeViewModel
-import kotlinx.coroutines.delay
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
@@ -92,21 +86,6 @@ fun HomeScreen(
                 modifier = Modifier.align(Alignment.Center),
             )
         } else {
-            var showGreeting by remember { mutableStateOf(false) }
-            var showToday by remember { mutableStateOf(false) }
-            var showWhisper by remember { mutableStateOf(false) }
-            var showPaths by remember { mutableStateOf(false) }
-
-            LaunchedEffect(Unit) {
-                showGreeting = true
-                delay(50)
-                showToday = true
-                delay(50)
-                showWhisper = true
-                delay(50)
-                showPaths = true
-            }
-
             LazyColumn(
                 modifier = Modifier
                     .fillMaxSize()
@@ -116,7 +95,7 @@ fun HomeScreen(
                 contentPadding = PaddingValues(top = 24.dp, bottom = 32.dp),
             ) {
                 item {
-                    StaggerSection(visible = showGreeting) {
+                    Box(modifier = Modifier.entrance(index = 0)) {
                         GreetingHeader(
                             name = state.profile?.name ?: "Traveller",
                             birthYear = state.profile?.birthYear ?: 1990,
@@ -127,13 +106,13 @@ fun HomeScreen(
                 }
                 item {
                     Spacer(modifier = Modifier.height(20.dp))
-                    StaggerSection(visible = showToday) {
+                    Box(modifier = Modifier.entrance(index = 1)) {
                         TodayPanel(state)
                     }
                 }
                 item {
                     Spacer(modifier = Modifier.height(20.dp))
-                    StaggerSection(visible = showWhisper) {
+                    Box(modifier = Modifier.entrance(index = 2)) {
                         WhisperStrip(
                             iching = state.todayWhisperIching,
                             zodiac = state.todayWhisperZodiac,
@@ -146,7 +125,7 @@ fun HomeScreen(
                 }
                 item {
                     Spacer(modifier = Modifier.height(20.dp))
-                    StaggerSection(visible = showPaths) {
+                    Box(modifier = Modifier.entrance(index = 3)) {
                         ThreePaths(
                             onNavigateIching = onNavigateIching,
                             onNavigateZodiac = onNavigateZodiac,
@@ -157,31 +136,6 @@ fun HomeScreen(
                 }
             }
         }
-    }
-}
-
-@Composable
-private fun StaggerSection(
-    visible: Boolean,
-    content: @Composable () -> Unit,
-) {
-    val alpha by animateFloatAsState(
-        targetValue = if (visible) 1f else 0f,
-        animationSpec = tween(durationMillis = 350),
-        label = "sectionAlpha",
-    )
-    val offset by animateFloatAsState(
-        targetValue = if (visible) 0f else 18f,
-        animationSpec = tween(durationMillis = 350),
-        label = "sectionOffset",
-    )
-    Box(
-        modifier = Modifier
-            .fillMaxWidth()
-            .alpha(alpha)
-            .padding(top = offset.dp),
-    ) {
-        content()
     }
 }
 
@@ -256,7 +210,7 @@ private fun TodayPanel(
         SealHeader(
             title = "今日",
             subtitle = "TODAY'S READING",
-            symbolRes = R.drawable.tiger004_sym_1,
+            symbolRes = R.drawable.app_logo,
         )
         Spacer(modifier = Modifier.height(14.dp))
         Row(
@@ -463,19 +417,19 @@ private fun ThreePaths(
             ToolCard(
                 title = "I Ching",
                 subtitle = "Daily hexagram reading",
-                symbolRes = R.drawable.tiger004_sym_1,
+                symbolRes = R.drawable.app_logo,
                 onClick = onNavigateIching,
             )
             ToolCard(
                 title = "Zodiac",
                 subtitle = "Your fortune & destiny",
-                symbolRes = R.drawable.tiger004_sym_3,
+                symbolRes = R.drawable.app_logo,
                 onClick = onNavigateZodiac,
             )
             ToolCard(
                 title = "Feng Shui",
                 subtitle = "Harmonise your space",
-                symbolRes = R.drawable.tiger004_sym_6,
+                symbolRes = R.drawable.app_logo,
                 onClick = onNavigateFengshui,
             )
         }

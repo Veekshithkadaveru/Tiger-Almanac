@@ -18,7 +18,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.material3.Text
@@ -47,6 +47,7 @@ import app.krafted.tigeralmanac.ui.components.SealHeader
 import app.krafted.tigeralmanac.ui.components.Tag
 import app.krafted.tigeralmanac.ui.components.TagTone
 import app.krafted.tigeralmanac.ui.components.drawBehindUnderline
+import app.krafted.tigeralmanac.ui.components.entrance
 import app.krafted.tigeralmanac.ui.theme.CormorantGaramond
 import app.krafted.tigeralmanac.ui.theme.InterFont
 import app.krafted.tigeralmanac.ui.theme.TigerCream
@@ -96,7 +97,7 @@ fun SearchScreen(
                 SealHeader(
                     title = "搜尋",
                     subtitle = "SEARCH THE ALMANAC",
-                    symbolRes = R.drawable.tiger004_sym_2,
+                    symbolRes = R.drawable.app_logo,
                 )
                 Spacer(modifier = Modifier.height(8.dp))
                 SearchBar(
@@ -117,23 +118,35 @@ fun SearchScreen(
             } else {
                 if (state.ichingResults.isNotEmpty()) {
                     item { SectionLabel("I CHING") }
-                    items(state.ichingResults, key = { "iching-${it.id}" }) { result ->
-                        IChingRow(result = result, onClick = { onOpenHexagram(result.id) })
+                    itemsIndexed(state.ichingResults, key = { _, it -> "iching-${it.id}" }) { index, result ->
+                        IChingRow(
+                            result = result,
+                            onClick = { onOpenHexagram(result.id) },
+                            modifier = Modifier.entrance(index = index),
+                        )
                     }
                 }
                 if (state.zodiacResults.isNotEmpty()) {
                     item { SectionLabel("ZODIAC") }
-                    items(state.zodiacResults, key = { "zodiac-${it.id}" }) { result ->
-                        ZodiacRow(result = result, onClick = { onOpenAnimal(result.id) })
+                    itemsIndexed(state.zodiacResults, key = { _, it -> "zodiac-${it.id}" }) { index, result ->
+                        ZodiacRow(
+                            result = result,
+                            onClick = { onOpenAnimal(result.id) },
+                            modifier = Modifier.entrance(index = index),
+                        )
                     }
                 }
                 if (state.fengShuiResults.isNotEmpty()) {
                     item { SectionLabel("FENG SHUI") }
-                    items(
+                    itemsIndexed(
                         state.fengShuiResults,
-                        key = { "fengshui-${it.roomId}-${it.tipTitle}" },
-                    ) { result ->
-                        FengShuiRow(result = result, onClick = { onOpenRoom(result.roomId) })
+                        key = { _, it -> "fengshui-${it.roomId}-${it.tipTitle}" },
+                    ) { index, result ->
+                        FengShuiRow(
+                            result = result,
+                            onClick = { onOpenRoom(result.roomId) },
+                            modifier = Modifier.entrance(index = index),
+                        )
                     }
                 }
             }
@@ -218,10 +231,11 @@ private fun SectionLabel(text: String) {
 @Composable
 private fun ResultRow(
     onClick: () -> Unit,
+    modifier: Modifier = Modifier,
     content: @Composable () -> Unit,
 ) {
     GoldFrame(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
             .clip(RoundedCornerShape(14.dp))
             .clickable { onClick() },
@@ -231,8 +245,12 @@ private fun ResultRow(
 }
 
 @Composable
-private fun IChingRow(result: SearchResult.IChing, onClick: () -> Unit) {
-    ResultRow(onClick = onClick) {
+private fun IChingRow(
+    result: SearchResult.IChing,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    ResultRow(onClick = onClick, modifier = modifier) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             Column(modifier = Modifier.weight(1f)) {
                 Text(
@@ -256,8 +274,12 @@ private fun IChingRow(result: SearchResult.IChing, onClick: () -> Unit) {
 }
 
 @Composable
-private fun ZodiacRow(result: SearchResult.Zodiac, onClick: () -> Unit) {
-    ResultRow(onClick = onClick) {
+private fun ZodiacRow(
+    result: SearchResult.Zodiac,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    ResultRow(onClick = onClick, modifier = modifier) {
         Text(
             text = "${result.emoji}  ${result.name}",
             fontFamily = CormorantGaramond,
@@ -269,8 +291,12 @@ private fun ZodiacRow(result: SearchResult.Zodiac, onClick: () -> Unit) {
 }
 
 @Composable
-private fun FengShuiRow(result: SearchResult.FengShui, onClick: () -> Unit) {
-    ResultRow(onClick = onClick) {
+private fun FengShuiRow(
+    result: SearchResult.FengShui,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    ResultRow(onClick = onClick, modifier = modifier) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             Column(modifier = Modifier.weight(1f)) {
                 Text(

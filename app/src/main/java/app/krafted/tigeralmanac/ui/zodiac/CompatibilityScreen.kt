@@ -23,7 +23,7 @@ import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
-import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.foundation.lazy.grid.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Text
@@ -45,6 +45,7 @@ import app.krafted.tigeralmanac.model.ZodiacAnimal
 import app.krafted.tigeralmanac.ui.components.GoldFrame
 import app.krafted.tigeralmanac.ui.components.ScreenBackground
 import app.krafted.tigeralmanac.ui.components.SealHeader
+import app.krafted.tigeralmanac.ui.components.entrance
 import app.krafted.tigeralmanac.ui.theme.CormorantGaramond
 import app.krafted.tigeralmanac.ui.theme.InterFont
 import app.krafted.tigeralmanac.ui.theme.TigerCream
@@ -108,7 +109,7 @@ fun CompatibilityScreen(
                 SealHeader(
                     title = "Compatibility",
                     subtitle = "TAP A SIGN TO REVEAL THE BOND",
-                    symbolRes = R.drawable.tiger004_sym_3,
+                    symbolRes = R.drawable.app_logo,
                     modifier = Modifier.fillMaxWidth(),
                 )
 
@@ -119,11 +120,12 @@ fun CompatibilityScreen(
                     horizontalArrangement = Arrangement.spacedBy(12.dp),
                     verticalArrangement = Arrangement.spacedBy(12.dp),
                 ) {
-                    items(ZodiacAnimal.values().toList()) { animal ->
+                    itemsIndexed(ZodiacAnimal.values().toList()) { index, animal ->
                         AnimalCard(
                             animal = animal,
                             isOwn = animal == state.animal,
                             onClick = { viewModel.selectCompatibilityAnimal(animal) },
+                            modifier = Modifier.entrance(index = index),
                         )
                     }
                 }
@@ -154,10 +156,11 @@ private fun AnimalCard(
     animal: ZodiacAnimal,
     isOwn: Boolean,
     onClick: () -> Unit,
+    modifier: Modifier = Modifier,
 ) {
     val shape = RoundedCornerShape(14.dp)
     Column(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
             .aspectRatio(0.85f)
             .clip(shape)

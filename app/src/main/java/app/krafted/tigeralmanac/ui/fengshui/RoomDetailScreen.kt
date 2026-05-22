@@ -1,6 +1,13 @@
 package app.krafted.tigeralmanac.ui.fengshui
 
-import androidx.compose.animation.animateContentSize
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.spring
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.expandVertically
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.shrinkVertically
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -31,10 +38,12 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -46,6 +55,7 @@ import app.krafted.tigeralmanac.ui.components.GoldFrame
 import app.krafted.tigeralmanac.ui.components.ScreenBackground
 import app.krafted.tigeralmanac.ui.components.Tag
 import app.krafted.tigeralmanac.ui.components.TagTone
+import app.krafted.tigeralmanac.ui.components.entrance
 import app.krafted.tigeralmanac.ui.components.rememberDrawableId
 import app.krafted.tigeralmanac.ui.theme.CormorantGaramond
 import app.krafted.tigeralmanac.ui.theme.InterFont
@@ -54,6 +64,7 @@ import app.krafted.tigeralmanac.ui.theme.TigerGold
 import app.krafted.tigeralmanac.ui.theme.TigerGoldLight
 import app.krafted.tigeralmanac.ui.theme.TigerSurface
 import app.krafted.tigeralmanac.viewmodel.FengShuiViewModel
+import kotlinx.coroutines.launch
 
 @Composable
 fun RoomDetailScreen(
@@ -161,6 +172,7 @@ fun RoomDetailScreen(
                         tip = tip,
                         bookmarked = bookmarked,
                         onToggle = { viewModel.toggleBookmark(room.id, index) },
+                        modifier = Modifier.entrance(index = index),
                     )
                     Spacer(modifier = Modifier.height(12.dp))
                 }
@@ -177,12 +189,15 @@ private fun TipCard(
     tip: FengShuiTip,
     bookmarked: Boolean,
     onToggle: () -> Unit,
+    modifier: Modifier = Modifier,
 ) {
     var expanded by remember { mutableStateOf(false) }
     val shape = RoundedCornerShape(14.dp)
+    val scope = rememberCoroutineScope()
+    val starScale = remember { Animatable(1f) }
 
     Box(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
             .clip(shape)
             .clickable { expanded = !expanded }
@@ -192,8 +207,7 @@ private fun TipCard(
                 } else {
                     Modifier
                 }
-            )
-            .animateContentSize(),
+            ),
     ) {
         GoldFrame(modifier = Modifier.fillMaxWidth()) {
             Row(
@@ -215,7 +229,17 @@ private fun TipCard(
                     color = if (bookmarked) TigerGoldLight else TigerCream.copy(alpha = 0.6f),
                     modifier = Modifier
                         .clip(RoundedCornerShape(8.dp))
-                        .clickable { onToggle() }
+                        .clickable {
+                            onToggle()
+                            scope.launch {
+                                starScale.animateTo(1.3f, spring(stiffness = 500f))
+                                starScale.animateTo(1f, spring(stiffness = 500f))
+                            }
+                        }
+                        .graphicsLayer {
+                            scaleX = starScale.value
+                            scaleY = starScale.value
+                        }
                         .padding(4.dp),
                 )
             }
@@ -230,17 +254,23 @@ private fun TipCard(
                 Tag(text = tip.priority, tone = priorityTone(tip.priority))
             }
 
-            if (expanded) {
-                Spacer(modifier = Modifier.height(12.dp))
-                Text(
-                    text = tip.body,
-                    fontFamily = InterFont,
-                    fontWeight = FontWeight.Normal,
-                    fontSize = 14.sp,
-                    lineHeight = 22.sp,
-                    letterSpacing = 0.25.sp,
-                    color = TigerCream,
-                )
+            AnimatedVisibility(
+                visible = expanded,
+                enter = fadeIn(tween(200)) + expandVertically(tween(200)),
+                exit = fadeOut(tween(200)) + shrinkVertically(tween(200)),
+            ) {
+                Column {
+                    Spacer(modifier = Modifier.height(12.dp))
+                    Text(
+                        text = tip.body,
+                        fontFamily = InterFont,
+                        fontWeight = FontWeight.Normal,
+                        fontSize = 14.sp,
+                        lineHeight = 22.sp,
+                        letterSpacing = 0.25.sp,
+                        color = TigerCream,
+                    )
+                }
             }
         }
     }

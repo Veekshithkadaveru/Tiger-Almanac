@@ -40,6 +40,7 @@ import androidx.compose.ui.unit.sp
 import app.krafted.tigeralmanac.R
 import app.krafted.tigeralmanac.ui.components.GoldFrame
 import app.krafted.tigeralmanac.ui.components.RibbonButton
+import app.krafted.tigeralmanac.ui.components.entrance
 import app.krafted.tigeralmanac.ui.components.ScreenBackground
 import app.krafted.tigeralmanac.ui.components.Tag
 import app.krafted.tigeralmanac.ui.components.TagTone
@@ -154,7 +155,7 @@ fun AnimalProfileScreen(
 
                 Spacer(modifier = Modifier.height(24.dp))
 
-                GoldFrame(modifier = Modifier.fillMaxWidth()) {
+                GoldFrame(modifier = Modifier.fillMaxWidth().entrance(index = 0)) {
                     Text(
                         text = "PERSONALITY",
                         color = TigerGold,
@@ -177,7 +178,7 @@ fun AnimalProfileScreen(
 
                 Spacer(modifier = Modifier.height(16.dp))
 
-                GoldFrame(modifier = Modifier.fillMaxWidth()) {
+                GoldFrame(modifier = Modifier.fillMaxWidth().entrance(index = 1)) {
                     Text(
                         text = "STRENGTHS",
                         color = TigerGold,
@@ -217,7 +218,7 @@ fun AnimalProfileScreen(
 
                 Spacer(modifier = Modifier.height(16.dp))
 
-                GoldFrame(modifier = Modifier.fillMaxWidth()) {
+                GoldFrame(modifier = Modifier.fillMaxWidth().entrance(index = 2)) {
                     Text(
                         text = "LUCKY INFLUENCES",
                         color = TigerGold,
@@ -354,7 +355,7 @@ fun AnimalProfileScreen(
 
                 Spacer(modifier = Modifier.height(16.dp))
 
-                GoldFrame(modifier = Modifier.fillMaxWidth()) {
+                GoldFrame(modifier = Modifier.fillMaxWidth().entrance(index = 3)) {
                     Text(
                         text = "BIRTH YEARS",
                         color = TigerGold,

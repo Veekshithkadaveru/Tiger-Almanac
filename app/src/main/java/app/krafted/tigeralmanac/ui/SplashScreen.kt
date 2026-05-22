@@ -119,10 +119,10 @@ fun SplashScreen(
                 contentAlignment = Alignment.Center
             ) {
                 Image(
-                    painter = painterResource(id = R.drawable.tiger004_sym_1),
+                    painter = painterResource(id = R.drawable.app_logo),
                     contentDescription = null,
-                    modifier = Modifier.fillMaxSize(0.85f),
-                    contentScale = ContentScale.Fit
+                    modifier = Modifier.fillMaxSize(),
+                    contentScale = ContentScale.Crop
                 )
             }
 

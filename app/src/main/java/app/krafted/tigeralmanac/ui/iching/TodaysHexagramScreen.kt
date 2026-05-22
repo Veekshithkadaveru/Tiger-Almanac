@@ -311,7 +311,7 @@ private fun HexagramHeader(
             horizontalArrangement = Arrangement.Center,
         ) {
             Image(
-                painter = painterResource(R.drawable.tiger004_sym_1),
+                painter = painterResource(R.drawable.app_logo),
                 contentDescription = null,
                 modifier = Modifier.size(26.dp),
             )
@@ -326,7 +326,7 @@ private fun HexagramHeader(
             )
             Spacer(modifier = Modifier.width(14.dp))
             Image(
-                painter = painterResource(R.drawable.tiger004_sym_2),
+                painter = painterResource(R.drawable.app_logo),
                 contentDescription = null,
                 modifier = Modifier.size(26.dp),
             )
@@ -344,6 +344,7 @@ private fun HexagramHeader(
         HexagramSymbol(
             symbol = hexagram.symbol,
             lineColor = TigerGoldLight,
+            animated = true,
         )
     }
 }
@@ -371,7 +372,7 @@ private fun JudgmentCard(
         SealHeader(
             title = "卦辭",
             subtitle = "THE JUDGMENT",
-            symbolRes = R.drawable.tiger004_sym_1,
+            symbolRes = R.drawable.app_logo,
         )
         Spacer(modifier = Modifier.height(12.dp))
         Text(
@@ -394,7 +395,7 @@ private fun MeaningCard(
         SealHeader(
             title = "釋義",
             subtitle = "MEANING",
-            symbolRes = R.drawable.tiger004_sym_2,
+            symbolRes = R.drawable.app_logo,
         )
         Spacer(modifier = Modifier.height(12.dp))
         Text(
@@ -414,7 +415,7 @@ private fun GuidanceCard(
 ) {
     val shape = RoundedCornerShape(14.dp)
     Column(modifier = Modifier.fillMaxWidth()) {
-        SealHeader(title = "指引", subtitle = "GUIDANCE", symbolRes = R.drawable.tiger004_sym_1)
+        SealHeader(title = "指引", subtitle = "GUIDANCE", symbolRes = R.drawable.app_logo)
         Spacer(modifier = Modifier.height(10.dp))
         Box(
             modifier = Modifier
@@ -449,7 +450,7 @@ private fun WarningCard(
     warning: String,
 ) {
     GoldFrame(modifier = Modifier.fillMaxWidth()) {
-        SealHeader(title = "戒", subtitle = "CAUTION", symbolRes = R.drawable.tiger004_sym_2)
+        SealHeader(title = "戒", subtitle = "CAUTION", symbolRes = R.drawable.app_logo)
         Spacer(modifier = Modifier.height(12.dp))
         Row(
             modifier = Modifier
@@ -493,7 +494,7 @@ private fun LuckyStrip(
     luckyNumber: Int,
 ) {
     GoldFrame(modifier = Modifier.fillMaxWidth()) {
-        SealHeader(title = "吉兆", subtitle = "FORTUNE", symbolRes = R.drawable.tiger004_sym_1)
+        SealHeader(title = "吉兆", subtitle = "FORTUNE", symbolRes = R.drawable.app_logo)
         Spacer(modifier = Modifier.height(12.dp))
         Row(modifier = Modifier.fillMaxWidth()) {
             LuckCell(

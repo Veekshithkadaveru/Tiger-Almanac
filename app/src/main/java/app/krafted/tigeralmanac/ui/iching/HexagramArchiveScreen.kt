@@ -111,7 +111,7 @@ fun HexagramArchiveScreen(
                 SealHeader(
                     title = "卦曆",
                     subtitle = "HEXAGRAM ARCHIVE",
-                    symbolRes = R.drawable.tiger004_sym_2,
+                    symbolRes = R.drawable.app_logo,
                 )
             }
 

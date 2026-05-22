@@ -4,15 +4,11 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Text
+import androidx.compose.animation.AnimatedContentTransitionScope
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.unit.sp
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
@@ -33,7 +29,6 @@ import app.krafted.tigeralmanac.ui.iching.HexagramArchiveScreen
 import app.krafted.tigeralmanac.ui.iching.TodaysHexagramScreen
 import app.krafted.tigeralmanac.ui.search.SearchScreen
 import app.krafted.tigeralmanac.ui.theme.TigerAlmanacTheme
-import app.krafted.tigeralmanac.ui.theme.TigerSurface
 import app.krafted.tigeralmanac.ui.zodiac.AnimalProfileScreen
 import app.krafted.tigeralmanac.ui.zodiac.CompatibilityScreen
 import app.krafted.tigeralmanac.ui.zodiac.ZodiacDashboardScreen
@@ -117,8 +112,41 @@ fun TigerAlmanacNavHost(
     fengShuiViewModel: FengShuiViewModel,
     searchViewModelFactory: ViewModelProvider.Factory
 ) {
-    NavHost(navController = navController, startDestination = Routes.SPLASH) {
-        composable(Routes.SPLASH) {
+    NavHost(
+        navController = navController,
+        startDestination = Routes.SPLASH,
+        enterTransition = {
+            slideIntoContainer(
+                AnimatedContentTransitionScope.SlideDirection.Left,
+                tween(350)
+            ) + fadeIn(tween(350))
+        },
+        exitTransition = {
+            slideOutOfContainer(
+                AnimatedContentTransitionScope.SlideDirection.Left,
+                tween(350)
+            ) + fadeOut(tween(350))
+        },
+        popEnterTransition = {
+            slideIntoContainer(
+                AnimatedContentTransitionScope.SlideDirection.Right,
+                tween(350)
+            ) + fadeIn(tween(350))
+        },
+        popExitTransition = {
+            slideOutOfContainer(
+                AnimatedContentTransitionScope.SlideDirection.Right,
+                tween(350)
+            ) + fadeOut(tween(350))
+        },
+    ) {
+        composable(
+            Routes.SPLASH,
+            enterTransition = { fadeIn(tween(350)) },
+            exitTransition = { fadeOut(tween(350)) },
+            popEnterTransition = { fadeIn(tween(350)) },
+            popExitTransition = { fadeOut(tween(350)) },
+        ) {
             SplashScreen(
                 viewModel = userProfileViewModel,
                 onEnterAlmanac = {
@@ -133,7 +161,13 @@ fun TigerAlmanacNavHost(
                 }
             )
         }
-        composable(Routes.PROFILE_SETUP) {
+        composable(
+            Routes.PROFILE_SETUP,
+            enterTransition = { fadeIn(tween(350)) },
+            exitTransition = { fadeOut(tween(350)) },
+            popEnterTransition = { fadeIn(tween(350)) },
+            popExitTransition = { fadeOut(tween(350)) },
+        ) {
             ProfileSetupScreen(
                 viewModel = userProfileViewModel,
                 onComplete = {
@@ -257,19 +291,3 @@ fun TigerAlmanacNavHost(
     }
 }
 
-@Composable
-fun PlaceholderScreen(routeName: String) {
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(TigerSurface),
-        contentAlignment = Alignment.Center
-    ) {
-        Text(
-            text = routeName,
-            color = app.krafted.tigeralmanac.ui.theme.TigerGold,
-            fontFamily = FontFamily.Serif,
-            fontSize = 20.sp
-        )
-    }
-}
